@@ -1,0 +1,1255 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Shop Ta Puff — Grossiste Puff & Vape</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Figtree:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="locked">
+
+<!-- AGE GATE -->
+<div class="agegate" id="ageGate">
+  <div class="agegate-card">
+    <img class="agegate-logo" src="images/img001.jpg" alt="Shop Ta Puff">
+    <h2 class="agegate-title">Bienvenue sur Shop Ta Puff</h2>
+    <p class="agegate-sub">Notre site est réservé aux personnes majeures.<br>Les produits contiennent de la nicotine.</p>
+    <p class="agegate-q">As-tu plus de 18 ans ?</p>
+    <button class="ag-yes" onclick="acceptAge()">✓ Oui, j'ai 18 ans ou plus</button>
+    <button class="ag-no" onclick="rejectAge()">✕ Non, je suis mineur</button>
+    <div class="ag-warn"><strong>⚠️ Avertissement légal :</strong> Vente interdite aux mineurs. La nicotine est hautement addictive.</div>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="nl" onclick="go('home')">
+    <img src="images/img001.jpg" alt="STP">
+    <div><div class="nln">Shop Ta Puff</div><div class="nls">by Puff JNR</div></div>
+  </div>
+  <ul class="nul">
+    <li><a onclick="go('home')" id="a-home" class="ac">Accueil</a></li>
+    <li><a onclick="go('jnr')" id="a-jnr">JNR</a></li>
+    <li><a onclick="go('adalya')" id="a-adalya">Adalya</a></li>
+    <li><a onclick="go('tornado')" id="a-tornado">Tornado</a></li>
+    <li><a onclick="go('razzbar')" id="a-razzbar">Razzbar</a></li>
+    <li><a onclick="go('alfaker')" id="a-alfaker">Al Faker</a></li>
+    <li><a onclick="go('histoire')" id="a-histoire">Histoire</a></li>
+    <li><a onclick="go('contact')" id="a-contact">Contact</a></li>
+  </ul>
+  <div style="display:flex;align-items:center;gap:.75rem">
+    <button class="ncb" onclick="openCart()">🛒 Panier<span class="nbb" id="nbb">0</span></button>
+    <button class="ham" id="ham" onclick="tM()"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="mnv" id="mnv">
+  <a onclick="go('home');tM()">Accueil</a>
+  <a onclick="go('jnr');tM()">JNR</a>
+  <a onclick="go('adalya');tM()">Adalya</a>
+  <a onclick="go('tornado');tM()">Tornado</a>
+  <a onclick="go('razzbar');tM()">Razzbar</a>
+  <a onclick="go('alfaker');tM()">Al Faker</a>
+  <a onclick="go('histoire');tM()">Notre Histoire</a>
+  <a onclick="go('contact');tM()">Contact</a>
+  <a onclick="go('legal');tM()" style="font-size:1.2rem;color:var(--gy)">Mentions Légales</a>
+</div>
+
+<!-- HOME -->
+<div class="pg ac" id="pg-home">
+  <section>
+    <img class="hero-img-desk" src="images/img002.jpg" alt="Shop Ta Puff">
+    <img class="hero-img-mob"  src="images/img003.jpg"  alt="Shop Ta Puff">
+    <div class="hero-ctas">
+      <button class="btn-pri" onclick="go('jnr')">Voir le catalogue →</button>
+      <button class="btn-sec" onclick="document.getElementById('sec-marques').scrollIntoView({behavior:'smooth'})">Nos marques</button>
+    </div>
+  </section>
+
+  <section class="section" id="sec-marques">
+    <div class="sec-head">
+      <p class="eyebrow">Nos 5 marques</p>
+      <h2 class="sec-title">Choisis ta marque</h2>
+      <p class="sec-sub">33 modèles • +880 goûts • Prix dégressifs automatiques sur le panier total</p>
+    </div>
+    <div class="bgr">
+      <div class="bc" onclick="go('jnr')"><img class="bci" src="images/img004.jpg" alt="JNR"><span class="bcn">JNR</span><span class="bcd">10 modèles • 9K → 50K</span></div>
+      <div class="bc" onclick="go('adalya')"><img class="bci" src="images/img005.jpg" alt="Adalya"><span class="bcn">Adalya</span><span class="bcd">6 modèles • 10K → 30K</span></div>
+      <div class="bc" onclick="go('tornado')"><img class="bci" src="images/img006.jpg" alt="Tornado"><span class="bcn">Tornado</span><span class="bcd">6 modèles • 9K → 25K</span></div>
+      <div class="bc" onclick="go('razzbar')"><img class="bci" src="images/img007.jpg" alt="Razzbar"><span class="bcn">Razzbar</span><span class="bcd">5 modèles • 15K → 50K</span></div>
+      <div class="bc" onclick="go('alfaker')"><img class="bci" src="images/img008.jpg" alt="Al Faker"><span class="bcn">Al Faker</span><span class="bcd">6 modèles • 8K → 60K</span></div>
+    </div>
+  </section>
+
+  <section class="promo-section">
+    <img class="promo-img-desk" src="images/img009.jpg" alt="Tarifs dégressifs" onclick="go('jnr')">
+    <img class="promo-img-mob"  src="images/img010.jpg"  alt="Tarifs dégressifs" onclick="go('jnr')">
+  </section>
+
+  <section class="section" style="background:var(--lt)">
+    <div class="sec-head">
+      <p class="eyebrow">Navigation</p>
+      <h2 class="sec-title">On t'accompagne</h2>
+    </div>
+    <div class="nvg">
+      <div class="nvc" onclick="go('histoire')"><img src="images/img011.jpg" alt="Histoire"><span class="nvt">Notre Histoire</span><span class="nvd">Découvre qui on est.</span></div>
+      <div class="nvc" onclick="go('contact')"><img src="images/img012.jpg" alt="Contact"><span class="nvt">Contacte-nous</span><span class="nvd">Une question ? On répond vite.</span></div>
+      <div class="nvc" onclick="openCart()"><img src="images/img013.jpg" alt="Panier"><span class="nvt">Mon Panier</span><span class="nvd">Finalise ta commande.</span></div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="fg-grid">
+      <div class="fb"><img src="images/img001.jpg" alt="Logo"><p>Grossiste de puff et vape à des prix défiant toute concurrence. Réservé aux +18 ans.</p></div>
+      <div class="fc"><h5>Marques</h5><ul>
+        <li><a onclick="go('jnr')">JNR</a></li><li><a onclick="go('adalya')">Adalya</a></li>
+        <li><a onclick="go('tornado')">Tornado</a></li><li><a onclick="go('razzbar')">Razzbar</a></li>
+        <li><a onclick="go('alfaker')">Al Faker</a></li>
+      </ul></div>
+      <div class="fc"><h5>Remises panier</h5><ul>
+        <li><a>≥ 5 boîtes — −5%</a></li><li><a>≥ 10 boîtes — −10%</a></li>
+        <li><a>≥ 30 boîtes — −15%</a></li><li><a>≥ 50 boîtes — −20%</a></li>
+      </ul></div>
+      <div class="fc"><h5>Infos</h5><ul>
+        <li><a onclick="go('histoire')">Notre Histoire</a></li>
+        <li><a onclick="go('contact')">Contact</a></li>
+        <li><a onclick="go('legal')">Mentions Légales</a></li>
+        <li><a onclick="go('legal')">CGV</a></li>
+      </ul></div>
+    </div>
+    <div class="fbt"><p>© 2025 Shop Ta Puff — Puff JNR. Tous droits réservés.</p><span class="agb">🔞 +18 ANS UNIQUEMENT</span></div>
+  </footer>
+</div>
+
+
+<div class="pg" id="pg-jnr">
+  <div class="chd" style="background:#7C3AED"><div class="chdi">
+    <img class="chl" src="images/img004.jpg" alt="JNR">
+    <div class="cht">
+      <div class="chbr"><a onclick="go('home')">Accueil</a> › JNR</div>
+      <h1 class="chmain">JNR</h1><p class="chsub">10 modèles • Boîtes de 10</p>
+    </div>
+  </div></div>
+  <div class="fbr"><span class="flbl">Filtrer :</span><button class="fc2 on" onclick="fi(this,'all','jnr')">Tous (10)</button><button class="fc2" onclick="fi(this,'alien','jnr')">Alien 🛸</button><button class="fc2" onclick="fi(this,'shisha','jnr')">Shisha</button><button class="fc2" onclick="fi(this,'aerox','jnr')">AeroX</button><button class="fc2" onclick="fi(this,'mega','jnr')">Mega Box</button></div>
+  <div class="gw"><p class="gcn" id="cn-jnr">10 produits</p><div class="pgrid" id="gr-jnr"><div class="pc" data-b="jnr" data-s="alien" data-model="JNR 9K Alien" data-flavors="[{&quot;name&quot;: &quot;Mixed Berry&quot;, &quot;emoji&quot;: &quot;🫐🍓&quot;, &quot;cats&quot;: [&quot;fruit&quot;]}, {&quot;name&quot;: &quot;Blueberry Raspberry&quot;, &quot;emoji&quot;: &quot;🫐🍓&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Blueberry Cherry Cranberry&quot;, &quot;emoji&quot;: &quot;🫐🍒&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Blue Razz Cherry&quot;, &quot;emoji&quot;: &quot;🫐🍒&quot;, &quot;cats&quot;: [&quot;fruit&quot;]}, {&quot;name&quot;: &quot;Blue Razz Ice&quot;, &quot;emoji&quot;: &quot;🫐🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;]}, {&quot;name&quot;: &quot;Blueberry Ice&quot;, &quot;emoji&quot;: &quot;🫐🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Mr Blue&quot;, &quot;emoji&quot;: &quot;🫐💙&quot;, &quot;cats&quot;: [&quot;fruit&quot;]}, {&quot;name&quot;: &quot;Lemon & Lime&quot;, &quot;emoji&quot;: &quot;🍋🟢&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Lemon Lime&quot;, &quot;emoji&quot;: &quot;🍋🟢&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Gummy Bear&quot;, &quot;emoji&quot;: &quot;🍬🐻&quot;, &quot;cats&quot;: [&quot;bonbon&quot;]}, {&quot;name&quot;: &quot;Watermelon Lychee&quot;, &quot;emoji&quot;: &quot;🍉🌸&quot;, &quot;cats&quot;: [&quot;tropical&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Watermelon Bubblegum&quot;, &quot;emoji&quot;: &quot;🍉🍬&quot;, &quot;cats&quot;: [&quot;bonbon&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Strawberry Candy Ice&quot;, &quot;emoji&quot;: &quot;🍓🍬🧊&quot;, &quot;cats&quot;: [&quot;bonbon&quot;, &quot;ice&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Strawberry Kiwi&quot;, &quot;emoji&quot;: &quot;🍓🥝&quot;, &quot;cats&quot;: [&quot;tropical&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Strawberry Banana&quot;, &quot;emoji&quot;: &quot;🍓🍌&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Strawberry Mango&quot;, &quot;emoji&quot;: &quot;🍓🥭&quot;, &quot;cats&quot;: [&quot;tropical&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Strawberry Watermelon&quot;, &quot;emoji&quot;: &quot;🍓🍉&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Strawberry Ice&quot;, &quot;emoji&quot;: &quot;🍓🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Peach Mango Ice&quot;, &quot;emoji&quot;: &quot;🍑🥭🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;, &quot;tropical&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Peach Mango Pineapple&quot;, &quot;emoji&quot;: &quot;🍑🥭🍍&quot;, &quot;cats&quot;: [&quot;tropical&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Pineapple Peach Mango&quot;, &quot;emoji&quot;: &quot;🍍🍑🥭&quot;, &quot;cats&quot;: [&quot;tropical&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Mango Peach Watermelon&quot;, &quot;emoji&quot;: &quot;🥭🍑🍉&quot;, &quot;cats&quot;: [&quot;tropical&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Grape Ice&quot;, &quot;emoji&quot;: &quot;🍇🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;]}, {&quot;name&quot;: &quot;Cola Ice&quot;, &quot;emoji&quot;: &quot;🥤🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;boisson&quot;]}, {&quot;name&quot;: &quot;Banana Ice&quot;, &quot;emoji&quot;: &quot;🍌🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;]}, {&quot;name&quot;: &quot;Lush Ice&quot;, &quot;emoji&quot;: &quot;🍉🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;]}, {&quot;name&quot;: &quot;Mixed Fruit&quot;, &quot;emoji&quot;: &quot;🍓🍍🍉&quot;, &quot;cats&quot;: [&quot;fruit&quot;]}]" data-pb="32" data-box="10" data-u="3.2">
+  <div class="pc-img">
+    <img src="images/img014.jpg" alt="JNR 9K Alien" loading="lazy"><span class="pbdg bh">Hot 🔥</span>
+    <span class="ppf">9,000 puffs</span>
+  </div>
+  <div class="pc-info">
+    <div><div class="pc-title">JNR 9K Alien</div><div class="pc-series">Série Alien • Mesh Coil</div>
+    <div class="pc-binfo">📦 Boîte de 10 • 27 goûts</div></div>
+    <div class="pc-flavor">
+      <div class="pc-lbl">Goût</div>
+      <button class="flv-btn" onclick="openFP(this)"><span class="flv-cur">— Choisir un goût —</span><span>▾</span></button>
+    </div>
+    <div>
+      <div class="pc-lbl">Quantité de boîtes</div>
+      <div class="qty-row">
+        <div class="qty-ctrl">
+          <button class="qty-btn" onclick="chgQ(this,-1)">−</button>
+          <span class="qty-n">1</span>
+          <button class="qty-btn" onclick="chgQ(this,1)">+</button>
+        </div>
+        <div class="qty-info">
+          <div><div class="qi-lbl">Prix unitaire</div><div class="qi-val" data-out="u">3.20€</div></div>
+          <div><div class="qi-lbl">/ boîte</div><div class="qi-val" data-out="b">32.00€</div></div>
+        </div>
+      </div>
+    </div>
+    <button class="add-btn" onclick="addCart(this,'JNR 9K Alien','images/img014.jpg')">Ajouter au panier →</button>
+  </div>
+</div><div class="pc" data-b="jnr" data-s="alien" data-model="JNR 10K Alien" data-flavors="[{&quot;name&quot;: &quot;Mixed Berry&quot;, &quot;emoji&quot;: &quot;🫐🍓&quot;, &quot;cats&quot;: [&quot;fruit&quot;]}, {&quot;name&quot;: &quot;Blueberry Raspberry&quot;, &quot;emoji&quot;: &quot;🫐🍓&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Blueberry Cherry Cranberry&quot;, &quot;emoji&quot;: &quot;🫐🍒&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Blue Razz Cherry&quot;, &quot;emoji&quot;: &quot;🫐🍒&quot;, &quot;cats&quot;: [&quot;fruit&quot;]}, {&quot;name&quot;: &quot;Blue Razz Ice&quot;, &quot;emoji&quot;: &quot;🫐🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;]}, {&quot;name&quot;: &quot;Blueberry Ice&quot;, &quot;emoji&quot;: &quot;🫐🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Mr Blue&quot;, &quot;emoji&quot;: &quot;🫐💙&quot;, &quot;cats&quot;: [&quot;fruit&quot;]}, {&quot;name&quot;: &quot;Lemon & Lime&quot;, &quot;emoji&quot;: &quot;🍋🟢&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Lemon Lime&quot;, &quot;emoji&quot;: &quot;🍋🟢&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Gummy Bear&quot;, &quot;emoji&quot;: &quot;🍬🐻&quot;, &quot;cats&quot;: [&quot;bonbon&quot;]}, {&quot;name&quot;: &quot;Watermelon Lychee&quot;, &quot;emoji&quot;: &quot;🍉🌸&quot;, &quot;cats&quot;: [&quot;tropical&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Watermelon Bubblegum&quot;, &quot;emoji&quot;: &quot;🍉🍬&quot;, &quot;cats&quot;: [&quot;bonbon&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Strawberry Candy Ice&quot;, &quot;emoji&quot;: &quot;🍓🍬🧊&quot;, &quot;cats&quot;: [&quot;bonbon&quot;, &quot;ice&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Strawberry Kiwi&quot;, &quot;emoji&quot;: &quot;🍓🥝&quot;, &quot;cats&quot;: [&quot;tropical&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Strawberry Banana&quot;, &quot;emoji&quot;: &quot;🍓🍌&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Strawberry Mango&quot;, &quot;emoji&quot;: &quot;🍓🥭&quot;, &quot;cats&quot;: [&quot;tropical&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Strawberry Watermelon&quot;, &quot;emoji&quot;: &quot;🍓🍉&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Strawberry Ice&quot;, &quot;emoji&quot;: &quot;🍓🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Peach Mango Ice&quot;, &quot;emoji&quot;: &quot;🍑🥭🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;, &quot;tropical&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Pineapple Peach Mango&quot;, &quot;emoji&quot;: &quot;🍍🍑🥭&quot;, &quot;cats&quot;: [&quot;tropical&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Mango Peach Watermelon&quot;, &quot;emoji&quot;: &quot;🥭🍑🍉&quot;, &quot;cats&quot;: [&quot;tropical&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Grape Ice&quot;, &quot;emoji&quot;: &quot;🍇🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;]}, {&quot;name&quot;: &quot;Cola Ice&quot;, &quot;emoji&quot;: &quot;🥤🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;boisson&quot;]}, {&quot;name&quot;: &quot;Banana Ice&quot;, &quot;emoji&quot;: &quot;🍌🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;]}, {&quot;name&quot;: &quot;Lush Ice&quot;, &quot;emoji&quot;: &quot;🍉🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;]}, {&quot;name&quot;: &quot;Rainbow Candy&quot;, &quot;emoji&quot;: &quot;🌈🍬&quot;, &quot;cats&quot;: [&quot;bonbon&quot;]}]" data-pb="36" data-box="10" data-u="3.6">
+  <div class="pc-img">
+    <img src="images/img015.jpg" alt="JNR 10K Alien" loading="lazy"><span class="pbdg bn">Nouveau</span>
+    <span class="ppf">10,000 puffs</span>
+  </div>
+  <div class="pc-info">
+    <div><div class="pc-title">JNR 10K Alien</div><div class="pc-series">Série Alien • 650mAh</div>
+    <div class="pc-binfo">📦 Boîte de 10 • 26 goûts</div></div>
+    <div class="pc-flavor">
+      <div class="pc-lbl">Goût</div>
+      <button class="flv-btn" onclick="openFP(this)"><span class="flv-cur">— Choisir un goût —</span><span>▾</span></button>
+    </div>
+    <div>
+      <div class="pc-lbl">Quantité de boîtes</div>
+      <div class="qty-row">
+        <div class="qty-ctrl">
+          <button class="qty-btn" onclick="chgQ(this,-1)">−</button>
+          <span class="qty-n">1</span>
+          <button class="qty-btn" onclick="chgQ(this,1)">+</button>
+        </div>
+        <div class="qty-info">
+          <div><div class="qi-lbl">Prix unitaire</div><div class="qi-val" data-out="u">3.60€</div></div>
+          <div><div class="qi-lbl">/ boîte</div><div class="qi-val" data-out="b">36.00€</div></div>
+        </div>
+      </div>
+    </div>
+    <button class="add-btn" onclick="addCart(this,'JNR 10K Alien','images/img015.jpg')">Ajouter au panier →</button>
+  </div>
+</div><div class="pc" data-b="jnr" data-s="shisha" data-model="JNR 12K Shisha" data-flavors="[{&quot;name&quot;: &quot;Love 66&quot;, &quot;emoji&quot;: &quot;💜🍉🍓&quot;, &quot;cats&quot;: [&quot;chicha&quot;]}, {&quot;name&quot;: &quot;Magic Love&quot;, &quot;emoji&quot;: &quot;💜🍓&quot;, &quot;cats&quot;: [&quot;chicha&quot;]}, {&quot;name&quot;: &quot;Lady Killer&quot;, &quot;emoji&quot;: &quot;🍑🥭🌿&quot;, &quot;cats&quot;: [&quot;chicha&quot;]}, {&quot;name&quot;: &quot;Lady Killa&quot;, &quot;emoji&quot;: &quot;🍑🥭🌿&quot;, &quot;cats&quot;: [&quot;chicha&quot;]}, {&quot;name&quot;: &quot;Hawaii&quot;, &quot;emoji&quot;: &quot;🍍🥭🌴&quot;, &quot;cats&quot;: [&quot;tropical&quot;, &quot;chicha&quot;]}, {&quot;name&quot;: &quot;Blue Melon&quot;, &quot;emoji&quot;: &quot;🫐🍈&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;chicha&quot;]}, {&quot;name&quot;: &quot;Blueberry Mint&quot;, &quot;emoji&quot;: &quot;🫐🌿&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;menthe&quot;, &quot;chicha&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Blueberry On Ice&quot;, &quot;emoji&quot;: &quot;🫐🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Blueberry Gum&quot;, &quot;emoji&quot;: &quot;🫐🍬&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Blueberry Raspberry&quot;, &quot;emoji&quot;: &quot;🫐🍓&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Blue Razz Ice&quot;, &quot;emoji&quot;: &quot;🫐🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;]}, {&quot;name&quot;: &quot;Blue Razz Cherry&quot;, &quot;emoji&quot;: &quot;🫐🍒&quot;, &quot;cats&quot;: [&quot;fruit&quot;]}, {&quot;name&quot;: &quot;Mango Banana&quot;, &quot;emoji&quot;: &quot;🥭🍌&quot;, &quot;cats&quot;: [&quot;tropical&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Mango Ice&quot;, &quot;emoji&quot;: &quot;🥭🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;, &quot;tropical&quot;]}, {&quot;name&quot;: &quot;Peach Ice&quot;, &quot;emoji&quot;: &quot;🍑🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;]}, {&quot;name&quot;: &quot;Peach Mango Ice&quot;, &quot;emoji&quot;: &quot;🍑🥭🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;, &quot;tropical&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Watermelon Ice&quot;, &quot;emoji&quot;: &quot;🍉🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Watermelon Bubblegum&quot;, &quot;emoji&quot;: &quot;🍉🍬&quot;, &quot;cats&quot;: [&quot;bonbon&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Strawberry Kiwi&quot;, &quot;emoji&quot;: &quot;🍓🥝&quot;, &quot;cats&quot;: [&quot;tropical&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Strawberry Ice&quot;, &quot;emoji&quot;: &quot;🍓🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Strawberry Banana&quot;, &quot;emoji&quot;: &quot;🍓🍌&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Cherry&quot;, &quot;emoji&quot;: &quot;🍒&quot;, &quot;cats&quot;: [&quot;fruit&quot;]}, {&quot;name&quot;: &quot;Cherry Ice&quot;, &quot;emoji&quot;: &quot;🍒🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;]}, {&quot;name&quot;: &quot;Grape Ice&quot;, &quot;emoji&quot;: &quot;🍇🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;]}, {&quot;name&quot;: &quot;Cola Ice&quot;, &quot;emoji&quot;: &quot;🥤🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;boisson&quot;]}, {&quot;name&quot;: &quot;Lemon Mint&quot;, &quot;emoji&quot;: &quot;🍋🌿&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;menthe&quot;]}, {&quot;name&quot;: &quot;Mint&quot;, &quot;emoji&quot;: &quot;🌿&quot;, &quot;cats&quot;: [&quot;menthe&quot;]}, {&quot;name&quot;: &quot;Cool Mint&quot;, &quot;emoji&quot;: &quot;🌿❄️&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;menthe&quot;]}, {&quot;name&quot;: &quot;Gum Mint&quot;, &quot;emoji&quot;: &quot;🍬🌿&quot;, &quot;cats&quot;: [&quot;bonbon&quot;, &quot;menthe&quot;]}]" data-pb="36" data-box="10" data-u="3.6">
+  <div class="pc-img">
+    <img src="images/img016.jpg" alt="JNR 12K Shisha" loading="lazy"><span class="pbdg bt">Top vente</span>
+    <span class="ppf">12,000 puffs</span>
+  </div>
+  <div class="pc-info">
+    <div><div class="pc-title">JNR 12K Shisha</div><div class="pc-series">Hookah • Mesh Coil</div>
+    <div class="pc-binfo">📦 Boîte de 10 • 29 goûts</div></div>
+    <div class="pc-flavor">
+      <div class="pc-lbl">Goût</div>
+      <button class="flv-btn" onclick="openFP(this)"><span class="flv-cur">— Choisir un goût —</span><span>▾</span></button>
+    </div>
+    <div>
+      <div class="pc-lbl">Quantité de boîtes</div>
+      <div class="qty-row">
+        <div class="qty-ctrl">
+          <button class="qty-btn" onclick="chgQ(this,-1)">−</button>
+          <span class="qty-n">1</span>
+          <button class="qty-btn" onclick="chgQ(this,1)">+</button>
+        </div>
+        <div class="qty-info">
+          <div><div class="qi-lbl">Prix unitaire</div><div class="qi-val" data-out="u">3.60€</div></div>
+          <div><div class="qi-lbl">/ boîte</div><div class="qi-val" data-out="b">36.00€</div></div>
+        </div>
+      </div>
+    </div>
+    <button class="add-btn" onclick="addCart(this,'JNR 12K Shisha','images/img016.jpg')">Ajouter au panier →</button>
+  </div>
+</div><div class="pc" data-b="jnr" data-s="aerox" data-model="JNR 16K" data-flavors="[{&quot;name&quot;: &quot;Sakura Grape&quot;, &quot;emoji&quot;: &quot;🍇🌸&quot;, &quot;cats&quot;: [&quot;fruit&quot;]}, {&quot;name&quot;: &quot;Grape Ice&quot;, &quot;emoji&quot;: &quot;🍇🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;]}, {&quot;name&quot;: &quot;Watermelon Ice&quot;, &quot;emoji&quot;: &quot;🍉🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Watermelon Bubblegum&quot;, &quot;emoji&quot;: &quot;🍉🍬&quot;, &quot;cats&quot;: [&quot;bonbon&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Watermelon Strawberry&quot;, &quot;emoji&quot;: &quot;🍉🍓&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Blue Razz Ice&quot;, &quot;emoji&quot;: &quot;🫐🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;]}, {&quot;name&quot;: &quot;Blue Razz Cherry&quot;, &quot;emoji&quot;: &quot;🫐🍒&quot;, &quot;cats&quot;: [&quot;fruit&quot;]}, {&quot;name&quot;: &quot;Blueberry Raspberry&quot;, &quot;emoji&quot;: &quot;🫐🍓&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Blueberry Raspberry Cherry&quot;, &quot;emoji&quot;: &quot;🫐🍓🍒&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Mixed Berries&quot;, &quot;emoji&quot;: &quot;🫐🍓&quot;, &quot;cats&quot;: [&quot;fruit&quot;]}, {&quot;name&quot;: &quot;Berry Burst&quot;, &quot;emoji&quot;: &quot;🫐💥&quot;, &quot;cats&quot;: [&quot;fruit&quot;]}, {&quot;name&quot;: &quot;Mango Passion Fruit&quot;, &quot;emoji&quot;: &quot;🥭🌴&quot;, &quot;cats&quot;: [&quot;tropical&quot;, &quot;fruit&quot;]}, {&quot;name&quot;: &quot;Mango Peach&quot;, &quot;emoji&quot;: &quot;🥭🍑&quot;, &quot;cats&quot;: [&quot;tropical&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Mango Peach Watermelon&quot;, &quot;emoji&quot;: &quot;🥭🍑🍉&quot;, &quot;cats&quot;: [&quot;tropical&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Strawberry Mango Peach&quot;, &quot;emoji&quot;: &quot;🍓🥭🍑&quot;, &quot;cats&quot;: [&quot;tropical&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Strawberry Kiwi&quot;, &quot;emoji&quot;: &quot;🍓🥝&quot;, &quot;cats&quot;: [&quot;tropical&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Strawberry Banana&quot;, &quot;emoji&quot;: &quot;🍓🍌&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Strawberry Ice&quot;, &quot;emoji&quot;: &quot;🍓🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Peach Ice&quot;, &quot;emoji&quot;: &quot;🍑🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;]}, {&quot;name&quot;: &quot;Peach Mango Ice&quot;, &quot;emoji&quot;: &quot;🍑🥭🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;, &quot;tropical&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Cola Ice&quot;, &quot;emoji&quot;: &quot;🥤🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;boisson&quot;]}, {&quot;name&quot;: &quot;Lemon Lime&quot;, &quot;emoji&quot;: &quot;🍋🟢&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Pineapple Ice&quot;, &quot;emoji&quot;: &quot;🍍🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;, &quot;tropical&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Pineapple Mango&quot;, &quot;emoji&quot;: &quot;🍍🥭&quot;, &quot;cats&quot;: [&quot;tropical&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Lush Ice&quot;, &quot;emoji&quot;: &quot;🍉🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;]}, {&quot;name&quot;: &quot;Mint&quot;, &quot;emoji&quot;: &quot;🌿&quot;, &quot;cats&quot;: [&quot;menthe&quot;]}, {&quot;name&quot;: &quot;Cool Mint&quot;, &quot;emoji&quot;: &quot;🌿❄️&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;menthe&quot;]}]" data-pb="48" data-box="10" data-u="4.8">
+  <div class="pc-img">
+    <img src="images/img017.jpg" alt="JNR 16K" loading="lazy"><span class="pbdg bn">Nouveau</span>
+    <span class="ppf">16,000 puffs</span>
+  </div>
+  <div class="pc-info">
+    <div><div class="pc-title">JNR 16K</div><div class="pc-series">Écran digital • Mesh Coil</div>
+    <div class="pc-binfo">📦 Boîte de 10 • 27 goûts</div></div>
+    <div class="pc-flavor">
+      <div class="pc-lbl">Goût</div>
+      <button class="flv-btn" onclick="openFP(this)"><span class="flv-cur">— Choisir un goût —</span><span>▾</span></button>
+    </div>
+    <div>
+      <div class="pc-lbl">Quantité de boîtes</div>
+      <div class="qty-row">
+        <div class="qty-ctrl">
+          <button class="qty-btn" onclick="chgQ(this,-1)">−</button>
+          <span class="qty-n">1</span>
+          <button class="qty-btn" onclick="chgQ(this,1)">+</button>
+        </div>
+        <div class="qty-info">
+          <div><div class="qi-lbl">Prix unitaire</div><div class="qi-val" data-out="u">4.80€</div></div>
+          <div><div class="qi-lbl">/ boîte</div><div class="qi-val" data-out="b">48.00€</div></div>
+        </div>
+      </div>
+    </div>
+    <button class="add-btn" onclick="addCart(this,'JNR 16K','images/img017.jpg')">Ajouter au panier →</button>
+  </div>
+</div><div class="pc" data-b="jnr" data-s="aerox" data-model="JNR 18K" data-flavors="[{&quot;name&quot;: &quot;Peach Ice&quot;, &quot;emoji&quot;: &quot;🍑🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;]}, {&quot;name&quot;: &quot;Berry Burst&quot;, &quot;emoji&quot;: &quot;🫐💥&quot;, &quot;cats&quot;: [&quot;fruit&quot;]}, {&quot;name&quot;: &quot;Strawberry Banana&quot;, &quot;emoji&quot;: &quot;🍓🍌&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Cola Ice&quot;, &quot;emoji&quot;: &quot;🥤🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;boisson&quot;]}, {&quot;name&quot;: &quot;Blue Razz Ice&quot;, &quot;emoji&quot;: &quot;🫐🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;]}, {&quot;name&quot;: &quot;Blue Razz Cherry&quot;, &quot;emoji&quot;: &quot;🫐🍒&quot;, &quot;cats&quot;: [&quot;fruit&quot;]}, {&quot;name&quot;: &quot;Blueberry Raspberry&quot;, &quot;emoji&quot;: &quot;🫐🍓&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Blueberry Raspberry Cherry&quot;, &quot;emoji&quot;: &quot;🫐🍓🍒&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Blueberry Sour Raspberry&quot;, &quot;emoji&quot;: &quot;🫐🍓⚡&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Mixed Berries&quot;, &quot;emoji&quot;: &quot;🫐🍓&quot;, &quot;cats&quot;: [&quot;fruit&quot;]}, {&quot;name&quot;: &quot;Tangy Fruit Berries&quot;, &quot;emoji&quot;: &quot;🫐⚡&quot;, &quot;cats&quot;: [&quot;fruit&quot;]}, {&quot;name&quot;: &quot;Cherry Berry&quot;, &quot;emoji&quot;: &quot;🍒🫐&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Strawberry Kiwi&quot;, &quot;emoji&quot;: &quot;🍓🥝&quot;, &quot;cats&quot;: [&quot;tropical&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Strawberry Ice&quot;, &quot;emoji&quot;: &quot;🍓🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Strawberry Watermelon&quot;, &quot;emoji&quot;: &quot;🍓🍉&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Watermelon Ice&quot;, &quot;emoji&quot;: &quot;🍉🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Watermelon Bubblegum&quot;, &quot;emoji&quot;: &quot;🍉🍬&quot;, &quot;cats&quot;: [&quot;bonbon&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Mango Passion Fruit&quot;, &quot;emoji&quot;: &quot;🥭🌴&quot;, &quot;cats&quot;: [&quot;tropical&quot;, &quot;fruit&quot;]}, {&quot;name&quot;: &quot;Mango Peach Watermelon&quot;, &quot;emoji&quot;: &quot;🥭🍑🍉&quot;, &quot;cats&quot;: [&quot;tropical&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Mango Ice&quot;, &quot;emoji&quot;: &quot;🥭🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;, &quot;tropical&quot;]}, {&quot;name&quot;: &quot;Peach Mango Ice&quot;, &quot;emoji&quot;: &quot;🍑🥭🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;, &quot;tropical&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Pineapple Peach Mango&quot;, &quot;emoji&quot;: &quot;🍍🍑🥭&quot;, &quot;cats&quot;: [&quot;tropical&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Pineapple Mango&quot;, &quot;emoji&quot;: &quot;🍍🥭&quot;, &quot;cats&quot;: [&quot;tropical&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Sakura Grape&quot;, &quot;emoji&quot;: &quot;🍇🌸&quot;, &quot;cats&quot;: [&quot;fruit&quot;]}, {&quot;name&quot;: &quot;Grape Ice&quot;, &quot;emoji&quot;: &quot;🍇🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;]}, {&quot;name&quot;: &quot;Cherry Cola&quot;, &quot;emoji&quot;: &quot;🍒🥤&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;boisson&quot;]}, {&quot;name&quot;: &quot;Lemon Lime&quot;, &quot;emoji&quot;: &quot;🍋🟢&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Lemon Mint&quot;, &quot;emoji&quot;: &quot;🍋🌿&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;menthe&quot;]}, {&quot;name&quot;: &quot;Banana Ice&quot;, &quot;emoji&quot;: &quot;🍌🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;]}, {&quot;name&quot;: &quot;Lush Ice&quot;, &quot;emoji&quot;: &quot;🍉🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;]}, {&quot;name&quot;: &quot;Gummy Bear&quot;, &quot;emoji&quot;: &quot;🍬🐻&quot;, &quot;cats&quot;: [&quot;bonbon&quot;]}, {&quot;name&quot;: &quot;Rainbow Candy&quot;, &quot;emoji&quot;: &quot;🌈🍬&quot;, &quot;cats&quot;: [&quot;bonbon&quot;]}, {&quot;name&quot;: &quot;Mint&quot;, &quot;emoji&quot;: &quot;🌿&quot;, &quot;cats&quot;: [&quot;menthe&quot;]}, {&quot;name&quot;: &quot;Cool Mint&quot;, &quot;emoji&quot;: &quot;🌿❄️&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;menthe&quot;]}, {&quot;name&quot;: &quot;Love 66&quot;, &quot;emoji&quot;: &quot;💜🍉🍓&quot;, &quot;cats&quot;: [&quot;chicha&quot;]}]" data-pb="52" data-box="10" data-u="5.2">
+  <div class="pc-img">
+    <img src="images/img018.jpg" alt="JNR 18K" loading="lazy"><span class="pbdg bh">Hot 🔥</span>
+    <span class="ppf">18,000 puffs</span>
+  </div>
+  <div class="pc-info">
+    <div><div class="pc-title">JNR 18K</div><div class="pc-series">Falcon-X • 850mAh</div>
+    <div class="pc-binfo">📦 Boîte de 10 • 35 goûts</div></div>
+    <div class="pc-flavor">
+      <div class="pc-lbl">Goût</div>
+      <button class="flv-btn" onclick="openFP(this)"><span class="flv-cur">— Choisir un goût —</span><span>▾</span></button>
+    </div>
+    <div>
+      <div class="pc-lbl">Quantité de boîtes</div>
+      <div class="qty-row">
+        <div class="qty-ctrl">
+          <button class="qty-btn" onclick="chgQ(this,-1)">−</button>
+          <span class="qty-n">1</span>
+          <button class="qty-btn" onclick="chgQ(this,1)">+</button>
+        </div>
+        <div class="qty-info">
+          <div><div class="qi-lbl">Prix unitaire</div><div class="qi-val" data-out="u">5.20€</div></div>
+          <div><div class="qi-lbl">/ boîte</div><div class="qi-val" data-out="b">52.00€</div></div>
+        </div>
+      </div>
+    </div>
+    <button class="add-btn" onclick="addCart(this,'JNR 18K','images/img018.jpg')">Ajouter au panier →</button>
+  </div>
+</div><div class="pc" data-b="jnr" data-s="shisha" data-model="JNR 22K Shisha Max" data-flavors="[{&quot;name&quot;: &quot;Love 66&quot;, &quot;emoji&quot;: &quot;💜🍉🍓&quot;, &quot;cats&quot;: [&quot;chicha&quot;]}, {&quot;name&quot;: &quot;Magic Love&quot;, &quot;emoji&quot;: &quot;💜🍓&quot;, &quot;cats&quot;: [&quot;chicha&quot;]}, {&quot;name&quot;: &quot;Lady Killer&quot;, &quot;emoji&quot;: &quot;🍑🥭🌿&quot;, &quot;cats&quot;: [&quot;chicha&quot;]}, {&quot;name&quot;: &quot;Lady Killa&quot;, &quot;emoji&quot;: &quot;🍑🥭🌿&quot;, &quot;cats&quot;: [&quot;chicha&quot;]}, {&quot;name&quot;: &quot;Hawaii&quot;, &quot;emoji&quot;: &quot;🍍🥭🌴&quot;, &quot;cats&quot;: [&quot;tropical&quot;, &quot;chicha&quot;]}, {&quot;name&quot;: &quot;Blue Melon&quot;, &quot;emoji&quot;: &quot;🫐🍈&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;chicha&quot;]}, {&quot;name&quot;: &quot;Blueberry Mint&quot;, &quot;emoji&quot;: &quot;🫐🌿&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;menthe&quot;, &quot;chicha&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Blueberry Mint Candy&quot;, &quot;emoji&quot;: &quot;🫐🌿🍬&quot;, &quot;cats&quot;: [&quot;menthe&quot;, &quot;bonbon&quot;, &quot;mix&quot;, &quot;fruit&quot;, &quot;chicha&quot;]}, {&quot;name&quot;: &quot;Blueberry On Ice&quot;, &quot;emoji&quot;: &quot;🫐🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Blue Razz Cherry&quot;, &quot;emoji&quot;: &quot;🫐🍒&quot;, &quot;cats&quot;: [&quot;fruit&quot;]}, {&quot;name&quot;: &quot;Blue Razz Ice&quot;, &quot;emoji&quot;: &quot;🫐🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;]}, {&quot;name&quot;: &quot;Mango Banana&quot;, &quot;emoji&quot;: &quot;🥭🍌&quot;, &quot;cats&quot;: [&quot;tropical&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Mango Ice&quot;, &quot;emoji&quot;: &quot;🥭🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;, &quot;tropical&quot;]}, {&quot;name&quot;: &quot;Peach Ice&quot;, &quot;emoji&quot;: &quot;🍑🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;]}, {&quot;name&quot;: &quot;Watermelon Ice&quot;, &quot;emoji&quot;: &quot;🍉🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Watermelon Bubblegum&quot;, &quot;emoji&quot;: &quot;🍉🍬&quot;, &quot;cats&quot;: [&quot;bonbon&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Strawberry Kiwi&quot;, &quot;emoji&quot;: &quot;🍓🥝&quot;, &quot;cats&quot;: [&quot;tropical&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Strawberry Ice&quot;, &quot;emoji&quot;: &quot;🍓🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Cherry&quot;, &quot;emoji&quot;: &quot;🍒&quot;, &quot;cats&quot;: [&quot;fruit&quot;]}, {&quot;name&quot;: &quot;Cherry Ice&quot;, &quot;emoji&quot;: &quot;🍒🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;]}, {&quot;name&quot;: &quot;Grape Ice&quot;, &quot;emoji&quot;: &quot;🍇🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;]}, {&quot;name&quot;: &quot;Cola Ice&quot;, &quot;emoji&quot;: &quot;🥤🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;boisson&quot;]}, {&quot;name&quot;: &quot;Lemon Mint&quot;, &quot;emoji&quot;: &quot;🍋🌿&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;menthe&quot;]}, {&quot;name&quot;: &quot;Mint&quot;, &quot;emoji&quot;: &quot;🌿&quot;, &quot;cats&quot;: [&quot;menthe&quot;]}, {&quot;name&quot;: &quot;Cool Mint&quot;, &quot;emoji&quot;: &quot;🌿❄️&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;menthe&quot;]}, {&quot;name&quot;: &quot;Gum Mint&quot;, &quot;emoji&quot;: &quot;🍬🌿&quot;, &quot;cats&quot;: [&quot;bonbon&quot;, &quot;menthe&quot;]}]" data-pb="48" data-box="10" data-u="4.8">
+  <div class="pc-img">
+    <img src="images/img019.jpg" alt="JNR 22K Shisha Max" loading="lazy"><span class="pbdg bt">Top vente</span>
+    <span class="ppf">22,000 puffs</span>
+  </div>
+  <div class="pc-info">
+    <div><div class="pc-title">JNR 22K Shisha Max</div><div class="pc-series">Hookah MAX • Écran</div>
+    <div class="pc-binfo">📦 Boîte de 10 • 26 goûts</div></div>
+    <div class="pc-flavor">
+      <div class="pc-lbl">Goût</div>
+      <button class="flv-btn" onclick="openFP(this)"><span class="flv-cur">— Choisir un goût —</span><span>▾</span></button>
+    </div>
+    <div>
+      <div class="pc-lbl">Quantité de boîtes</div>
+      <div class="qty-row">
+        <div class="qty-ctrl">
+          <button class="qty-btn" onclick="chgQ(this,-1)">−</button>
+          <span class="qty-n">1</span>
+          <button class="qty-btn" onclick="chgQ(this,1)">+</button>
+        </div>
+        <div class="qty-info">
+          <div><div class="qi-lbl">Prix unitaire</div><div class="qi-val" data-out="u">4.80€</div></div>
+          <div><div class="qi-lbl">/ boîte</div><div class="qi-val" data-out="b">48.00€</div></div>
+        </div>
+      </div>
+    </div>
+    <button class="add-btn" onclick="addCart(this,'JNR 22K Shisha Max','images/img019.jpg')">Ajouter au panier →</button>
+  </div>
+</div><div class="pc" data-b="jnr" data-s="aerox" data-model="JNR 28K" data-flavors="[{&quot;name&quot;: &quot;Strawberry Kiwi&quot;, &quot;emoji&quot;: &quot;🍓🥝&quot;, &quot;cats&quot;: [&quot;tropical&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Strawberry Banana&quot;, &quot;emoji&quot;: &quot;🍓🍌&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Strawberry Ice&quot;, &quot;emoji&quot;: &quot;🍓🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Strawberry Watermelon&quot;, &quot;emoji&quot;: &quot;🍓🍉&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Strawberry Raspberry Cherry Ice&quot;, &quot;emoji&quot;: &quot;🍓🍒🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Blue Razz Ice&quot;, &quot;emoji&quot;: &quot;🫐🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;]}, {&quot;name&quot;: &quot;Blue Razz Cherry&quot;, &quot;emoji&quot;: &quot;🫐🍒&quot;, &quot;cats&quot;: [&quot;fruit&quot;]}, {&quot;name&quot;: &quot;Blueberry Raspberry&quot;, &quot;emoji&quot;: &quot;🫐🍓&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Blueberry Raspberry Cherry&quot;, &quot;emoji&quot;: &quot;🫐🍓🍒&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Blueberry Sour Raspberry&quot;, &quot;emoji&quot;: &quot;🫐🍓⚡&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Blueberry Ice&quot;, &quot;emoji&quot;: &quot;🫐🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Peach Ice&quot;, &quot;emoji&quot;: &quot;🍑🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;]}, {&quot;name&quot;: &quot;Juicy Peach Ice&quot;, &quot;emoji&quot;: &quot;🍑🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;]}, {&quot;name&quot;: &quot;Peach Mango Ice&quot;, &quot;emoji&quot;: &quot;🍑🥭🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;, &quot;tropical&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Mango Peach Watermelon&quot;, &quot;emoji&quot;: &quot;🥭🍑🍉&quot;, &quot;cats&quot;: [&quot;tropical&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Mango Passion Fruit&quot;, &quot;emoji&quot;: &quot;🥭🌴&quot;, &quot;cats&quot;: [&quot;tropical&quot;, &quot;fruit&quot;]}, {&quot;name&quot;: &quot;Watermelon Bubblegum&quot;, &quot;emoji&quot;: &quot;🍉🍬&quot;, &quot;cats&quot;: [&quot;bonbon&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Watermelon Ice&quot;, &quot;emoji&quot;: &quot;🍉🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Berry Burst&quot;, &quot;emoji&quot;: &quot;🫐💥&quot;, &quot;cats&quot;: [&quot;fruit&quot;]}, {&quot;name&quot;: &quot;Mixed Berries&quot;, &quot;emoji&quot;: &quot;🫐🍓&quot;, &quot;cats&quot;: [&quot;fruit&quot;]}, {&quot;name&quot;: &quot;Cola Ice&quot;, &quot;emoji&quot;: &quot;🥤🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;boisson&quot;]}, {&quot;name&quot;: &quot;Cherry Cola&quot;, &quot;emoji&quot;: &quot;🍒🥤&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;boisson&quot;]}, {&quot;name&quot;: &quot;Grape Ice&quot;, &quot;emoji&quot;: &quot;🍇🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;]}, {&quot;name&quot;: &quot;Sakura Grape&quot;, &quot;emoji&quot;: &quot;🍇🌸&quot;, &quot;cats&quot;: [&quot;fruit&quot;]}, {&quot;name&quot;: &quot;Lemon Lime&quot;, &quot;emoji&quot;: &quot;🍋🟢&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Lush Ice&quot;, &quot;emoji&quot;: &quot;🍉🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;]}, {&quot;name&quot;: &quot;Pineapple Mango&quot;, &quot;emoji&quot;: &quot;🍍🥭&quot;, &quot;cats&quot;: [&quot;tropical&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Banana Ice&quot;, &quot;emoji&quot;: &quot;🍌🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;]}, {&quot;name&quot;: &quot;Rainbow Candy&quot;, &quot;emoji&quot;: &quot;🌈🍬&quot;, &quot;cats&quot;: [&quot;bonbon&quot;]}, {&quot;name&quot;: &quot;Gummy Bear&quot;, &quot;emoji&quot;: &quot;🍬🐻&quot;, &quot;cats&quot;: [&quot;bonbon&quot;]}]" data-pb="60" data-box="10" data-u="6.0">
+  <div class="pc-img">
+    <img src="images/img020.jpg" alt="JNR 28K" loading="lazy">
+    <span class="ppf">28,000 puffs</span>
+  </div>
+  <div class="pc-info">
+    <div><div class="pc-title">JNR 28K</div><div class="pc-series">Falcon-X Plus</div>
+    <div class="pc-binfo">📦 Boîte de 10 • 30 goûts</div></div>
+    <div class="pc-flavor">
+      <div class="pc-lbl">Goût</div>
+      <button class="flv-btn" onclick="openFP(this)"><span class="flv-cur">— Choisir un goût —</span><span>▾</span></button>
+    </div>
+    <div>
+      <div class="pc-lbl">Quantité de boîtes</div>
+      <div class="qty-row">
+        <div class="qty-ctrl">
+          <button class="qty-btn" onclick="chgQ(this,-1)">−</button>
+          <span class="qty-n">1</span>
+          <button class="qty-btn" onclick="chgQ(this,1)">+</button>
+        </div>
+        <div class="qty-info">
+          <div><div class="qi-lbl">Prix unitaire</div><div class="qi-val" data-out="u">6.00€</div></div>
+          <div><div class="qi-lbl">/ boîte</div><div class="qi-val" data-out="b">60.00€</div></div>
+        </div>
+      </div>
+    </div>
+    <button class="add-btn" onclick="addCart(this,'JNR 28K','images/img020.jpg')">Ajouter au panier →</button>
+  </div>
+</div><div class="pc" data-b="jnr" data-s="aerox" data-model="JNR 32K AeroX Pod" data-flavors="[{&quot;name&quot;: &quot;Watermelon Bubblegum&quot;, &quot;emoji&quot;: &quot;🍉🍬&quot;, &quot;cats&quot;: [&quot;bonbon&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Blue Razz Cherry&quot;, &quot;emoji&quot;: &quot;🫐🍒&quot;, &quot;cats&quot;: [&quot;fruit&quot;]}, {&quot;name&quot;: &quot;Blue Razz Ice&quot;, &quot;emoji&quot;: &quot;🫐🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;]}, {&quot;name&quot;: &quot;Blueberry Ice&quot;, &quot;emoji&quot;: &quot;🫐🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Blueberry Raspberry&quot;, &quot;emoji&quot;: &quot;🫐🍓&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Blueberry Raspberry Cherry&quot;, &quot;emoji&quot;: &quot;🫐🍓🍒&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Strawberry Banana&quot;, &quot;emoji&quot;: &quot;🍓🍌&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Strawberry Kiwi&quot;, &quot;emoji&quot;: &quot;🍓🥝&quot;, &quot;cats&quot;: [&quot;tropical&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Strawberry Ice&quot;, &quot;emoji&quot;: &quot;🍓🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Strawberry Watermelon&quot;, &quot;emoji&quot;: &quot;🍓🍉&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Mixed Berry&quot;, &quot;emoji&quot;: &quot;🫐🍓&quot;, &quot;cats&quot;: [&quot;fruit&quot;]}, {&quot;name&quot;: &quot;Mixed Berries&quot;, &quot;emoji&quot;: &quot;🫐🍓&quot;, &quot;cats&quot;: [&quot;fruit&quot;]}, {&quot;name&quot;: &quot;Lemon & Lime&quot;, &quot;emoji&quot;: &quot;🍋🟢&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Lemon Lime&quot;, &quot;emoji&quot;: &quot;🍋🟢&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Gummy Bear&quot;, &quot;emoji&quot;: &quot;🍬🐻&quot;, &quot;cats&quot;: [&quot;bonbon&quot;]}, {&quot;name&quot;: &quot;Watermelon Lychee&quot;, &quot;emoji&quot;: &quot;🍉🌸&quot;, &quot;cats&quot;: [&quot;tropical&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Peach Ice&quot;, &quot;emoji&quot;: &quot;🍑🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;]}, {&quot;name&quot;: &quot;Peach Mango Ice&quot;, &quot;emoji&quot;: &quot;🍑🥭🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;, &quot;tropical&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Pineapple Peach Mango&quot;, &quot;emoji&quot;: &quot;🍍🍑🥭&quot;, &quot;cats&quot;: [&quot;tropical&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Mango Peach Watermelon&quot;, &quot;emoji&quot;: &quot;🥭🍑🍉&quot;, &quot;cats&quot;: [&quot;tropical&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Grape Ice&quot;, &quot;emoji&quot;: &quot;🍇🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;]}, {&quot;name&quot;: &quot;Cola Ice&quot;, &quot;emoji&quot;: &quot;🥤🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;boisson&quot;]}, {&quot;name&quot;: &quot;Banana Ice&quot;, &quot;emoji&quot;: &quot;🍌🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;]}, {&quot;name&quot;: &quot;Lush Ice&quot;, &quot;emoji&quot;: &quot;🍉🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;]}, {&quot;name&quot;: &quot;Cool Mint&quot;, &quot;emoji&quot;: &quot;🌿❄️&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;menthe&quot;]}]" data-pb="60" data-box="10" data-u="6.0">
+  <div class="pc-img">
+    <img src="images/img021.jpg" alt="JNR 32K AeroX Pod" loading="lazy"><span class="pbdg bt">Top vente</span>
+    <span class="ppf">32,000 puffs</span>
+  </div>
+  <div class="pc-info">
+    <div><div class="pc-title">JNR 32K AeroX Pod</div><div class="pc-series">AeroX Pod</div>
+    <div class="pc-binfo">📦 Boîte de 10 • 25 goûts</div></div>
+    <div class="pc-flavor">
+      <div class="pc-lbl">Goût</div>
+      <button class="flv-btn" onclick="openFP(this)"><span class="flv-cur">— Choisir un goût —</span><span>▾</span></button>
+    </div>
+    <div>
+      <div class="pc-lbl">Quantité de boîtes</div>
+      <div class="qty-row">
+        <div class="qty-ctrl">
+          <button class="qty-btn" onclick="chgQ(this,-1)">−</button>
+          <span class="qty-n">1</span>
+          <button class="qty-btn" onclick="chgQ(this,1)">+</button>
+        </div>
+        <div class="qty-info">
+          <div><div class="qi-lbl">Prix unitaire</div><div class="qi-val" data-out="u">6.00€</div></div>
+          <div><div class="qi-lbl">/ boîte</div><div class="qi-val" data-out="b">60.00€</div></div>
+        </div>
+      </div>
+    </div>
+    <button class="add-btn" onclick="addCart(this,'JNR 32K AeroX Pod','images/img021.jpg')">Ajouter au panier →</button>
+  </div>
+</div><div class="pc" data-b="jnr" data-s="shisha" data-model="JNR 45K Shisha Ultra" data-flavors="[{&quot;name&quot;: &quot;Lemon Mint&quot;, &quot;emoji&quot;: &quot;🍋🌿&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;menthe&quot;]}, {&quot;name&quot;: &quot;Magic Love&quot;, &quot;emoji&quot;: &quot;💜🍓&quot;, &quot;cats&quot;: [&quot;chicha&quot;]}, {&quot;name&quot;: &quot;Love 66&quot;, &quot;emoji&quot;: &quot;💜🍉🍓&quot;, &quot;cats&quot;: [&quot;chicha&quot;]}, {&quot;name&quot;: &quot;Blueberry Mint&quot;, &quot;emoji&quot;: &quot;🫐🌿&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;menthe&quot;, &quot;chicha&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Blueberry Mint Candy&quot;, &quot;emoji&quot;: &quot;🫐🌿🍬&quot;, &quot;cats&quot;: [&quot;menthe&quot;, &quot;bonbon&quot;, &quot;mix&quot;, &quot;fruit&quot;, &quot;chicha&quot;]}, {&quot;name&quot;: &quot;Blueberry On Ice&quot;, &quot;emoji&quot;: &quot;🫐🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Blue Razz Cherry&quot;, &quot;emoji&quot;: &quot;🫐🍒&quot;, &quot;cats&quot;: [&quot;fruit&quot;]}, {&quot;name&quot;: &quot;Blue Razz Ice&quot;, &quot;emoji&quot;: &quot;🫐🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;]}, {&quot;name&quot;: &quot;Strawberry Kiwi&quot;, &quot;emoji&quot;: &quot;🍓🥝&quot;, &quot;cats&quot;: [&quot;tropical&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Strawberry Ice&quot;, &quot;emoji&quot;: &quot;🍓🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Strawberry Banana&quot;, &quot;emoji&quot;: &quot;🍓🍌&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Peach Ice&quot;, &quot;emoji&quot;: &quot;🍑🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;]}, {&quot;name&quot;: &quot;Mango Banana&quot;, &quot;emoji&quot;: &quot;🥭🍌&quot;, &quot;cats&quot;: [&quot;tropical&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Mango Ice&quot;, &quot;emoji&quot;: &quot;🥭🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;, &quot;tropical&quot;]}, {&quot;name&quot;: &quot;Lady Killer&quot;, &quot;emoji&quot;: &quot;🍑🥭🌿&quot;, &quot;cats&quot;: [&quot;chicha&quot;]}, {&quot;name&quot;: &quot;Lady Killa&quot;, &quot;emoji&quot;: &quot;🍑🥭🌿&quot;, &quot;cats&quot;: [&quot;chicha&quot;]}, {&quot;name&quot;: &quot;Hawaii&quot;, &quot;emoji&quot;: &quot;🍍🥭🌴&quot;, &quot;cats&quot;: [&quot;tropical&quot;, &quot;chicha&quot;]}, {&quot;name&quot;: &quot;Blue Melon&quot;, &quot;emoji&quot;: &quot;🫐🍈&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;chicha&quot;]}, {&quot;name&quot;: &quot;Watermelon Ice&quot;, &quot;emoji&quot;: &quot;🍉🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Watermelon Bubblegum&quot;, &quot;emoji&quot;: &quot;🍉🍬&quot;, &quot;cats&quot;: [&quot;bonbon&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Cherry&quot;, &quot;emoji&quot;: &quot;🍒&quot;, &quot;cats&quot;: [&quot;fruit&quot;]}, {&quot;name&quot;: &quot;Cherry Ice&quot;, &quot;emoji&quot;: &quot;🍒🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;]}, {&quot;name&quot;: &quot;Grape Ice&quot;, &quot;emoji&quot;: &quot;🍇🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;]}, {&quot;name&quot;: &quot;Cola Ice&quot;, &quot;emoji&quot;: &quot;🥤🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;boisson&quot;]}, {&quot;name&quot;: &quot;Gum Mint&quot;, &quot;emoji&quot;: &quot;🍬🌿&quot;, &quot;cats&quot;: [&quot;bonbon&quot;, &quot;menthe&quot;]}, {&quot;name&quot;: &quot;Mint&quot;, &quot;emoji&quot;: &quot;🌿&quot;, &quot;cats&quot;: [&quot;menthe&quot;]}, {&quot;name&quot;: &quot;Cool Mint&quot;, &quot;emoji&quot;: &quot;🌿❄️&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;menthe&quot;]}]" data-pb="60" data-box="10" data-u="6.0">
+  <div class="pc-img">
+    <img src="images/img022.jpg" alt="JNR 45K Shisha Ultra" loading="lazy"><span class="pbdg bt">Premium ⭐</span>
+    <span class="ppf">45,000 puffs</span>
+  </div>
+  <div class="pc-info">
+    <div><div class="pc-title">JNR 45K Shisha Ultra</div><div class="pc-series">Shisha Ultra • OLED</div>
+    <div class="pc-binfo">📦 Boîte de 10 • 27 goûts</div></div>
+    <div class="pc-flavor">
+      <div class="pc-lbl">Goût</div>
+      <button class="flv-btn" onclick="openFP(this)"><span class="flv-cur">— Choisir un goût —</span><span>▾</span></button>
+    </div>
+    <div>
+      <div class="pc-lbl">Quantité de boîtes</div>
+      <div class="qty-row">
+        <div class="qty-ctrl">
+          <button class="qty-btn" onclick="chgQ(this,-1)">−</button>
+          <span class="qty-n">1</span>
+          <button class="qty-btn" onclick="chgQ(this,1)">+</button>
+        </div>
+        <div class="qty-info">
+          <div><div class="qi-lbl">Prix unitaire</div><div class="qi-val" data-out="u">6.00€</div></div>
+          <div><div class="qi-lbl">/ boîte</div><div class="qi-val" data-out="b">60.00€</div></div>
+        </div>
+      </div>
+    </div>
+    <button class="add-btn" onclick="addCart(this,'JNR 45K Shisha Ultra','images/img022.jpg')">Ajouter au panier →</button>
+  </div>
+</div><div class="pc" data-b="jnr" data-s="mega" data-model="JNR 50K Mega Box Pro" data-flavors="[{&quot;name&quot;: &quot;Fresh Strawberry&quot;, &quot;emoji&quot;: &quot;🍓&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Strawberry Kiwi&quot;, &quot;emoji&quot;: &quot;🍓🥝&quot;, &quot;cats&quot;: [&quot;tropical&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Strawberry Watermelon Ice&quot;, &quot;emoji&quot;: &quot;🍓🍉🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Strawberry Raspberry Cherry Ice&quot;, &quot;emoji&quot;: &quot;🍓🍒🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Blue Razz Cherry&quot;, &quot;emoji&quot;: &quot;🫐🍒&quot;, &quot;cats&quot;: [&quot;fruit&quot;]}, {&quot;name&quot;: &quot;Blue Razz Ice&quot;, &quot;emoji&quot;: &quot;🫐🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;]}, {&quot;name&quot;: &quot;Blueberry Sour Raspberry&quot;, &quot;emoji&quot;: &quot;🫐🍓⚡&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Blueberry Gum&quot;, &quot;emoji&quot;: &quot;🫐🍬&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Blueberry Ice&quot;, &quot;emoji&quot;: &quot;🫐🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Berry Ice&quot;, &quot;emoji&quot;: &quot;🫐🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;]}, {&quot;name&quot;: &quot;Mixed Berry&quot;, &quot;emoji&quot;: &quot;🫐🍓&quot;, &quot;cats&quot;: [&quot;fruit&quot;]}, {&quot;name&quot;: &quot;Cherry Cola&quot;, &quot;emoji&quot;: &quot;🍒🥤&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;boisson&quot;]}, {&quot;name&quot;: &quot;Sour Cherry Ice&quot;, &quot;emoji&quot;: &quot;🍒⚡🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;]}, {&quot;name&quot;: &quot;Cola Ice&quot;, &quot;emoji&quot;: &quot;🥤🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;boisson&quot;]}, {&quot;name&quot;: &quot;Watermelon Ice&quot;, &quot;emoji&quot;: &quot;🍉🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Kiwi Watermelon Ice&quot;, &quot;emoji&quot;: &quot;🥝🍉🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;, &quot;tropical&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Lush Ice&quot;, &quot;emoji&quot;: &quot;🍉🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;]}, {&quot;name&quot;: &quot;Double Apple&quot;, &quot;emoji&quot;: &quot;🍎🍏&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;chicha&quot;]}, {&quot;name&quot;: &quot;Green Apple Peach Pear&quot;, &quot;emoji&quot;: &quot;🍏🍑🍐&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Peach Ice&quot;, &quot;emoji&quot;: &quot;🍑🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;]}, {&quot;name&quot;: &quot;White Peach Razz&quot;, &quot;emoji&quot;: &quot;🍑🫐&quot;, &quot;cats&quot;: [&quot;fruit&quot;]}, {&quot;name&quot;: &quot;Summer Peaches&quot;, &quot;emoji&quot;: &quot;🍑☀️&quot;, &quot;cats&quot;: [&quot;fruit&quot;]}, {&quot;name&quot;: &quot;Mango Pineapple&quot;, &quot;emoji&quot;: &quot;🥭🍍&quot;, &quot;cats&quot;: [&quot;tropical&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Pineapple Mango&quot;, &quot;emoji&quot;: &quot;🍍🥭&quot;, &quot;cats&quot;: [&quot;tropical&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Passion Fruit Kiwi&quot;, &quot;emoji&quot;: &quot;🌴🥝&quot;, &quot;cats&quot;: [&quot;tropical&quot;, &quot;fruit&quot;]}, {&quot;name&quot;: &quot;Love 66&quot;, &quot;emoji&quot;: &quot;💜🍉🍓&quot;, &quot;cats&quot;: [&quot;chicha&quot;]}, {&quot;name&quot;: &quot;Hawaii&quot;, &quot;emoji&quot;: &quot;🍍🥭🌴&quot;, &quot;cats&quot;: [&quot;tropical&quot;, &quot;chicha&quot;]}, {&quot;name&quot;: &quot;Magic Love&quot;, &quot;emoji&quot;: &quot;💜🍓&quot;, &quot;cats&quot;: [&quot;chicha&quot;]}, {&quot;name&quot;: &quot;Blackcurrant Ice&quot;, &quot;emoji&quot;: &quot;🍇🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;]}, {&quot;name&quot;: &quot;Lemon Mint&quot;, &quot;emoji&quot;: &quot;🍋🌿&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;menthe&quot;]}, {&quot;name&quot;: &quot;Mint&quot;, &quot;emoji&quot;: &quot;🌿&quot;, &quot;cats&quot;: [&quot;menthe&quot;]}, {&quot;name&quot;: &quot;Cool Mint&quot;, &quot;emoji&quot;: &quot;🌿❄️&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;menthe&quot;]}]" data-pb="64" data-box="10" data-u="6.4">
+  <div class="pc-img">
+    <img src="images/img023.jpg" alt="JNR 50K Mega Box Pro" loading="lazy"><span class="pbdg bt">Gold ⭐</span>
+    <span class="ppf">50,000 puffs</span>
+  </div>
+  <div class="pc-info">
+    <div><div class="pc-title">JNR 50K Mega Box Pro</div><div class="pc-series">Gold Edition • OLED</div>
+    <div class="pc-binfo">📦 Boîte de 10 • 32 goûts</div></div>
+    <div class="pc-flavor">
+      <div class="pc-lbl">Goût</div>
+      <button class="flv-btn" onclick="openFP(this)"><span class="flv-cur">— Choisir un goût —</span><span>▾</span></button>
+    </div>
+    <div>
+      <div class="pc-lbl">Quantité de boîtes</div>
+      <div class="qty-row">
+        <div class="qty-ctrl">
+          <button class="qty-btn" onclick="chgQ(this,-1)">−</button>
+          <span class="qty-n">1</span>
+          <button class="qty-btn" onclick="chgQ(this,1)">+</button>
+        </div>
+        <div class="qty-info">
+          <div><div class="qi-lbl">Prix unitaire</div><div class="qi-val" data-out="u">6.40€</div></div>
+          <div><div class="qi-lbl">/ boîte</div><div class="qi-val" data-out="b">64.00€</div></div>
+        </div>
+      </div>
+    </div>
+    <button class="add-btn" onclick="addCart(this,'JNR 50K Mega Box Pro','images/img023.jpg')">Ajouter au panier →</button>
+  </div>
+</div></div></div>
+</div>
+
+<div class="pg" id="pg-adalya">
+  <div class="chd" style="background:#065F46"><div class="chdi">
+    <img class="chl" src="images/img005.jpg" alt="Adalya">
+    <div class="cht">
+      <div class="chbr"><a onclick="go('home')">Accueil</a> › Adalya</div>
+      <h1 class="chmain">Adalya</h1><p class="chsub">6 modèles • Boîtes de 10</p>
+    </div>
+  </div></div>
+  <div class="fbr"><span class="flbl">Filtrer :</span><button class="fc2 on" onclick="fi(this,'all','adalya')">Tous (6)</button></div>
+  <div class="gw"><p class="gcn" id="cn-adalya">6 produits</p><div class="pgrid" id="gr-adalya"><div class="pc" data-b="adalya" data-model="Adalya 10K Love 66" data-flavors="[{&quot;name&quot;: &quot;Love 66&quot;, &quot;emoji&quot;: &quot;💜🍉🍓&quot;, &quot;cats&quot;: [&quot;chicha&quot;]}, {&quot;name&quot;: &quot;Lady Killer&quot;, &quot;emoji&quot;: &quot;🍑🥭🌿&quot;, &quot;cats&quot;: [&quot;chicha&quot;]}, {&quot;name&quot;: &quot;Hawaii&quot;, &quot;emoji&quot;: &quot;🍍🥭🌴&quot;, &quot;cats&quot;: [&quot;tropical&quot;, &quot;chicha&quot;]}, {&quot;name&quot;: &quot;Blue Melon&quot;, &quot;emoji&quot;: &quot;🫐🍈&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;chicha&quot;]}, {&quot;name&quot;: &quot;Mint Point&quot;, &quot;emoji&quot;: &quot;🌿❄️&quot;, &quot;cats&quot;: [&quot;menthe&quot;]}, {&quot;name&quot;: &quot;Double Melon Ice&quot;, &quot;emoji&quot;: &quot;🍈🍉🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;]}, {&quot;name&quot;: &quot;Mi Amor&quot;, &quot;emoji&quot;: &quot;💕🍓&quot;, &quot;cats&quot;: [&quot;chicha&quot;]}, {&quot;name&quot;: &quot;African Crush&quot;, &quot;emoji&quot;: &quot;🍍🥭&quot;, &quot;cats&quot;: [&quot;tropical&quot;]}, {&quot;name&quot;: &quot;English Lord&quot;, &quot;emoji&quot;: &quot;🍋🌿&quot;, &quot;cats&quot;: [&quot;chicha&quot;]}, {&quot;name&quot;: &quot;Watermelon Ice&quot;, &quot;emoji&quot;: &quot;🍉🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Watermelon Mint&quot;, &quot;emoji&quot;: &quot;🍉🌿&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;menthe&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Strawberry&quot;, &quot;emoji&quot;: &quot;🍓&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Strawberry Ice&quot;, &quot;emoji&quot;: &quot;🍓🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Strawberry Kiwi&quot;, &quot;emoji&quot;: &quot;🍓🥝&quot;, &quot;cats&quot;: [&quot;tropical&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Peach Ice&quot;, &quot;emoji&quot;: &quot;🍑🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;]}, {&quot;name&quot;: &quot;Mango Peach&quot;, &quot;emoji&quot;: &quot;🥭🍑&quot;, &quot;cats&quot;: [&quot;tropical&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Mango Ice&quot;, &quot;emoji&quot;: &quot;🥭🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;, &quot;tropical&quot;]}, {&quot;name&quot;: &quot;Passion Fruit Guava Kiwi&quot;, &quot;emoji&quot;: &quot;🌴🥝&quot;, &quot;cats&quot;: [&quot;tropical&quot;, &quot;fruit&quot;]}, {&quot;name&quot;: &quot;Ice Bonbon&quot;, &quot;emoji&quot;: &quot;🍬🧊&quot;, &quot;cats&quot;: [&quot;bonbon&quot;, &quot;ice&quot;]}, {&quot;name&quot;: &quot;Swiss Bonbon&quot;, &quot;emoji&quot;: &quot;🍬🧊&quot;, &quot;cats&quot;: [&quot;bonbon&quot;]}, {&quot;name&quot;: &quot;Blueberry Mint&quot;, &quot;emoji&quot;: &quot;🫐🌿&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;menthe&quot;, &quot;chicha&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Lemon Mint&quot;, &quot;emoji&quot;: &quot;🍋🌿&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;menthe&quot;]}, {&quot;name&quot;: &quot;Gum Mint&quot;, &quot;emoji&quot;: &quot;🍬🌿&quot;, &quot;cats&quot;: [&quot;bonbon&quot;, &quot;menthe&quot;]}, {&quot;name&quot;: &quot;Cola Ice&quot;, &quot;emoji&quot;: &quot;🥤🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;boisson&quot;]}, {&quot;name&quot;: &quot;Grape Ice&quot;, &quot;emoji&quot;: &quot;🍇🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;]}]" data-pb="32" data-box="10" data-u="3.2">
+  <div class="pc-img">
+    <img src="images/img024.jpg" alt="Adalya 10K Love 66" loading="lazy"><span class="pbdg bn">Nouveau</span>
+    <span class="ppf">10,000 puffs</span>
+  </div>
+  <div class="pc-info">
+    <div><div class="pc-title">Adalya 10K Love 66</div><div class="pc-series">AD10000 • 650mAh</div>
+    <div class="pc-binfo">📦 Boîte de 10 • 25 goûts</div></div>
+    <div class="pc-flavor">
+      <div class="pc-lbl">Goût</div>
+      <button class="flv-btn" onclick="openFP(this)"><span class="flv-cur">— Choisir un goût —</span><span>▾</span></button>
+    </div>
+    <div>
+      <div class="pc-lbl">Quantité de boîtes</div>
+      <div class="qty-row">
+        <div class="qty-ctrl">
+          <button class="qty-btn" onclick="chgQ(this,-1)">−</button>
+          <span class="qty-n">1</span>
+          <button class="qty-btn" onclick="chgQ(this,1)">+</button>
+        </div>
+        <div class="qty-info">
+          <div><div class="qi-lbl">Prix unitaire</div><div class="qi-val" data-out="u">3.20€</div></div>
+          <div><div class="qi-lbl">/ boîte</div><div class="qi-val" data-out="b">32.00€</div></div>
+        </div>
+      </div>
+    </div>
+    <button class="add-btn" onclick="addCart(this,'Adalya 10K Love 66','images/img024.jpg')">Ajouter au panier →</button>
+  </div>
+</div><div class="pc" data-b="adalya" data-model="Adalya 16K Hawaii" data-flavors="[{&quot;name&quot;: &quot;Love 66&quot;, &quot;emoji&quot;: &quot;💜🍉🍓&quot;, &quot;cats&quot;: [&quot;chicha&quot;]}, {&quot;name&quot;: &quot;Lady Killer&quot;, &quot;emoji&quot;: &quot;🍑🥭🌿&quot;, &quot;cats&quot;: [&quot;chicha&quot;]}, {&quot;name&quot;: &quot;Hawaii&quot;, &quot;emoji&quot;: &quot;🍍🥭🌴&quot;, &quot;cats&quot;: [&quot;tropical&quot;, &quot;chicha&quot;]}, {&quot;name&quot;: &quot;Blue Melon&quot;, &quot;emoji&quot;: &quot;🫐🍈&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;chicha&quot;]}, {&quot;name&quot;: &quot;Mint Point&quot;, &quot;emoji&quot;: &quot;🌿❄️&quot;, &quot;cats&quot;: [&quot;menthe&quot;]}, {&quot;name&quot;: &quot;Double Melon Ice&quot;, &quot;emoji&quot;: &quot;🍈🍉🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;]}, {&quot;name&quot;: &quot;Mi Amor&quot;, &quot;emoji&quot;: &quot;💕🍓&quot;, &quot;cats&quot;: [&quot;chicha&quot;]}, {&quot;name&quot;: &quot;African Crush&quot;, &quot;emoji&quot;: &quot;🍍🥭&quot;, &quot;cats&quot;: [&quot;tropical&quot;]}, {&quot;name&quot;: &quot;English Lord&quot;, &quot;emoji&quot;: &quot;🍋🌿&quot;, &quot;cats&quot;: [&quot;chicha&quot;]}, {&quot;name&quot;: &quot;Watermelon Ice&quot;, &quot;emoji&quot;: &quot;🍉🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Watermelon Mint&quot;, &quot;emoji&quot;: &quot;🍉🌿&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;menthe&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Strawberry Ice&quot;, &quot;emoji&quot;: &quot;🍓🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Strawberry Kiwi&quot;, &quot;emoji&quot;: &quot;🍓🥝&quot;, &quot;cats&quot;: [&quot;tropical&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Peach Ice&quot;, &quot;emoji&quot;: &quot;🍑🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;]}, {&quot;name&quot;: &quot;Mango Peach&quot;, &quot;emoji&quot;: &quot;🥭🍑&quot;, &quot;cats&quot;: [&quot;tropical&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Mango Ice&quot;, &quot;emoji&quot;: &quot;🥭🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;, &quot;tropical&quot;]}, {&quot;name&quot;: &quot;Passion Fruit Guava Kiwi&quot;, &quot;emoji&quot;: &quot;🌴🥝&quot;, &quot;cats&quot;: [&quot;tropical&quot;, &quot;fruit&quot;]}, {&quot;name&quot;: &quot;Ice Bonbon&quot;, &quot;emoji&quot;: &quot;🍬🧊&quot;, &quot;cats&quot;: [&quot;bonbon&quot;, &quot;ice&quot;]}, {&quot;name&quot;: &quot;Swiss Bonbon&quot;, &quot;emoji&quot;: &quot;🍬🧊&quot;, &quot;cats&quot;: [&quot;bonbon&quot;]}, {&quot;name&quot;: &quot;Blueberry Mint&quot;, &quot;emoji&quot;: &quot;🫐🌿&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;menthe&quot;, &quot;chicha&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Lemon Mint&quot;, &quot;emoji&quot;: &quot;🍋🌿&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;menthe&quot;]}, {&quot;name&quot;: &quot;Gum Mint&quot;, &quot;emoji&quot;: &quot;🍬🌿&quot;, &quot;cats&quot;: [&quot;bonbon&quot;, &quot;menthe&quot;]}, {&quot;name&quot;: &quot;Cola Ice&quot;, &quot;emoji&quot;: &quot;🥤🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;boisson&quot;]}, {&quot;name&quot;: &quot;Grape Ice&quot;, &quot;emoji&quot;: &quot;🍇🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;]}]" data-pb="46" data-box="10" data-u="4.6">
+  <div class="pc-img">
+    <img src="images/img025.jpg" alt="Adalya 16K Hawaii" loading="lazy"><span class="pbdg bt">Top vente</span>
+    <span class="ppf">16,000 puffs</span>
+  </div>
+  <div class="pc-info">
+    <div><div class="pc-title">Adalya 16K Hawaii</div><div class="pc-series">ADL16000 • 850mAh</div>
+    <div class="pc-binfo">📦 Boîte de 10 • 24 goûts</div></div>
+    <div class="pc-flavor">
+      <div class="pc-lbl">Goût</div>
+      <button class="flv-btn" onclick="openFP(this)"><span class="flv-cur">— Choisir un goût —</span><span>▾</span></button>
+    </div>
+    <div>
+      <div class="pc-lbl">Quantité de boîtes</div>
+      <div class="qty-row">
+        <div class="qty-ctrl">
+          <button class="qty-btn" onclick="chgQ(this,-1)">−</button>
+          <span class="qty-n">1</span>
+          <button class="qty-btn" onclick="chgQ(this,1)">+</button>
+        </div>
+        <div class="qty-info">
+          <div><div class="qi-lbl">Prix unitaire</div><div class="qi-val" data-out="u">4.60€</div></div>
+          <div><div class="qi-lbl">/ boîte</div><div class="qi-val" data-out="b">46.00€</div></div>
+        </div>
+      </div>
+    </div>
+    <button class="add-btn" onclick="addCart(this,'Adalya 16K Hawaii','images/img025.jpg')">Ajouter au panier →</button>
+  </div>
+</div><div class="pc" data-b="adalya" data-model="Adalya 20K Mint Point" data-flavors="[{&quot;name&quot;: &quot;Mint Point&quot;, &quot;emoji&quot;: &quot;🌿❄️&quot;, &quot;cats&quot;: [&quot;menthe&quot;]}, {&quot;name&quot;: &quot;Love 66&quot;, &quot;emoji&quot;: &quot;💜🍉🍓&quot;, &quot;cats&quot;: [&quot;chicha&quot;]}, {&quot;name&quot;: &quot;Lady Killer&quot;, &quot;emoji&quot;: &quot;🍑🥭🌿&quot;, &quot;cats&quot;: [&quot;chicha&quot;]}, {&quot;name&quot;: &quot;Hawaii&quot;, &quot;emoji&quot;: &quot;🍍🥭🌴&quot;, &quot;cats&quot;: [&quot;tropical&quot;, &quot;chicha&quot;]}, {&quot;name&quot;: &quot;Blue Melon&quot;, &quot;emoji&quot;: &quot;🫐🍈&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;chicha&quot;]}, {&quot;name&quot;: &quot;Double Melon Ice&quot;, &quot;emoji&quot;: &quot;🍈🍉🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;]}, {&quot;name&quot;: &quot;Mi Amor&quot;, &quot;emoji&quot;: &quot;💕🍓&quot;, &quot;cats&quot;: [&quot;chicha&quot;]}, {&quot;name&quot;: &quot;African Crush&quot;, &quot;emoji&quot;: &quot;🍍🥭&quot;, &quot;cats&quot;: [&quot;tropical&quot;]}, {&quot;name&quot;: &quot;English Lord&quot;, &quot;emoji&quot;: &quot;🍋🌿&quot;, &quot;cats&quot;: [&quot;chicha&quot;]}, {&quot;name&quot;: &quot;Watermelon Ice&quot;, &quot;emoji&quot;: &quot;🍉🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Watermelon Mint&quot;, &quot;emoji&quot;: &quot;🍉🌿&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;menthe&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Strawberry Kiwi&quot;, &quot;emoji&quot;: &quot;🍓🥝&quot;, &quot;cats&quot;: [&quot;tropical&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Strawberry Ice&quot;, &quot;emoji&quot;: &quot;🍓🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Peach Ice&quot;, &quot;emoji&quot;: &quot;🍑🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;]}, {&quot;name&quot;: &quot;Mango Peach&quot;, &quot;emoji&quot;: &quot;🥭🍑&quot;, &quot;cats&quot;: [&quot;tropical&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Passion Fruit Guava Kiwi&quot;, &quot;emoji&quot;: &quot;🌴🥝&quot;, &quot;cats&quot;: [&quot;tropical&quot;, &quot;fruit&quot;]}, {&quot;name&quot;: &quot;Ice Bonbon&quot;, &quot;emoji&quot;: &quot;🍬🧊&quot;, &quot;cats&quot;: [&quot;bonbon&quot;, &quot;ice&quot;]}, {&quot;name&quot;: &quot;Swiss Bonbon&quot;, &quot;emoji&quot;: &quot;🍬🧊&quot;, &quot;cats&quot;: [&quot;bonbon&quot;]}, {&quot;name&quot;: &quot;Lemon Mint&quot;, &quot;emoji&quot;: &quot;🍋🌿&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;menthe&quot;]}, {&quot;name&quot;: &quot;Blueberry Mint&quot;, &quot;emoji&quot;: &quot;🫐🌿&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;menthe&quot;, &quot;chicha&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Cola Ice&quot;, &quot;emoji&quot;: &quot;🥤🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;boisson&quot;]}]" data-pb="48" data-box="10" data-u="4.8">
+  <div class="pc-img">
+    <img src="images/img026.jpg" alt="Adalya 20K Mint Point" loading="lazy"><span class="pbdg bh">Hot 🔥</span>
+    <span class="ppf">20,000 puffs</span>
+  </div>
+  <div class="pc-info">
+    <div><div class="pc-title">Adalya 20K Mint Point</div><div class="pc-series">ADL20000 • Adjustable Power</div>
+    <div class="pc-binfo">📦 Boîte de 10 • 21 goûts</div></div>
+    <div class="pc-flavor">
+      <div class="pc-lbl">Goût</div>
+      <button class="flv-btn" onclick="openFP(this)"><span class="flv-cur">— Choisir un goût —</span><span>▾</span></button>
+    </div>
+    <div>
+      <div class="pc-lbl">Quantité de boîtes</div>
+      <div class="qty-row">
+        <div class="qty-ctrl">
+          <button class="qty-btn" onclick="chgQ(this,-1)">−</button>
+          <span class="qty-n">1</span>
+          <button class="qty-btn" onclick="chgQ(this,1)">+</button>
+        </div>
+        <div class="qty-info">
+          <div><div class="qi-lbl">Prix unitaire</div><div class="qi-val" data-out="u">4.80€</div></div>
+          <div><div class="qi-lbl">/ boîte</div><div class="qi-val" data-out="b">48.00€</div></div>
+        </div>
+      </div>
+    </div>
+    <button class="add-btn" onclick="addCart(this,'Adalya 20K Mint Point','images/img026.jpg')">Ajouter au panier →</button>
+  </div>
+</div><div class="pc" data-b="adalya" data-model="Adalya 25K" data-flavors="[{&quot;name&quot;: &quot;Double Melon Ice&quot;, &quot;emoji&quot;: &quot;🍈🍉🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;]}, {&quot;name&quot;: &quot;Love 66&quot;, &quot;emoji&quot;: &quot;💜🍉🍓&quot;, &quot;cats&quot;: [&quot;chicha&quot;]}, {&quot;name&quot;: &quot;Lady Killer&quot;, &quot;emoji&quot;: &quot;🍑🥭🌿&quot;, &quot;cats&quot;: [&quot;chicha&quot;]}, {&quot;name&quot;: &quot;Hawaii&quot;, &quot;emoji&quot;: &quot;🍍🥭🌴&quot;, &quot;cats&quot;: [&quot;tropical&quot;, &quot;chicha&quot;]}, {&quot;name&quot;: &quot;Blue Melon&quot;, &quot;emoji&quot;: &quot;🫐🍈&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;chicha&quot;]}, {&quot;name&quot;: &quot;Mint Point&quot;, &quot;emoji&quot;: &quot;🌿❄️&quot;, &quot;cats&quot;: [&quot;menthe&quot;]}, {&quot;name&quot;: &quot;Mi Amor&quot;, &quot;emoji&quot;: &quot;💕🍓&quot;, &quot;cats&quot;: [&quot;chicha&quot;]}, {&quot;name&quot;: &quot;African Crush&quot;, &quot;emoji&quot;: &quot;🍍🥭&quot;, &quot;cats&quot;: [&quot;tropical&quot;]}, {&quot;name&quot;: &quot;English Lord&quot;, &quot;emoji&quot;: &quot;🍋🌿&quot;, &quot;cats&quot;: [&quot;chicha&quot;]}, {&quot;name&quot;: &quot;Watermelon Ice&quot;, &quot;emoji&quot;: &quot;🍉🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Watermelon Mint&quot;, &quot;emoji&quot;: &quot;🍉🌿&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;menthe&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Strawberry Ice&quot;, &quot;emoji&quot;: &quot;🍓🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Strawberry Kiwi&quot;, &quot;emoji&quot;: &quot;🍓🥝&quot;, &quot;cats&quot;: [&quot;tropical&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Peach Ice&quot;, &quot;emoji&quot;: &quot;🍑🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;]}, {&quot;name&quot;: &quot;Mango Peach&quot;, &quot;emoji&quot;: &quot;🥭🍑&quot;, &quot;cats&quot;: [&quot;tropical&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Mango Ice&quot;, &quot;emoji&quot;: &quot;🥭🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;, &quot;tropical&quot;]}, {&quot;name&quot;: &quot;Passion Fruit Guava Kiwi&quot;, &quot;emoji&quot;: &quot;🌴🥝&quot;, &quot;cats&quot;: [&quot;tropical&quot;, &quot;fruit&quot;]}, {&quot;name&quot;: &quot;Ice Bonbon&quot;, &quot;emoji&quot;: &quot;🍬🧊&quot;, &quot;cats&quot;: [&quot;bonbon&quot;, &quot;ice&quot;]}, {&quot;name&quot;: &quot;Swiss Bonbon&quot;, &quot;emoji&quot;: &quot;🍬🧊&quot;, &quot;cats&quot;: [&quot;bonbon&quot;]}, {&quot;name&quot;: &quot;Blueberry Mint&quot;, &quot;emoji&quot;: &quot;🫐🌿&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;menthe&quot;, &quot;chicha&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Lemon Mint&quot;, &quot;emoji&quot;: &quot;🍋🌿&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;menthe&quot;]}, {&quot;name&quot;: &quot;Gum Mint&quot;, &quot;emoji&quot;: &quot;🍬🌿&quot;, &quot;cats&quot;: [&quot;bonbon&quot;, &quot;menthe&quot;]}]" data-pb="52" data-box="10" data-u="5.2">
+  <div class="pc-img">
+    <img src="images/img027.jpg" alt="Adalya 25K" loading="lazy"><span class="pbdg bn">Nouveau</span>
+    <span class="ppf">25,000 puffs</span>
+  </div>
+  <div class="pc-info">
+    <div><div class="pc-title">Adalya 25K</div><div class="pc-series">ADC25000 • Double Mesh</div>
+    <div class="pc-binfo">📦 Boîte de 10 • 22 goûts</div></div>
+    <div class="pc-flavor">
+      <div class="pc-lbl">Goût</div>
+      <button class="flv-btn" onclick="openFP(this)"><span class="flv-cur">— Choisir un goût —</span><span>▾</span></button>
+    </div>
+    <div>
+      <div class="pc-lbl">Quantité de boîtes</div>
+      <div class="qty-row">
+        <div class="qty-ctrl">
+          <button class="qty-btn" onclick="chgQ(this,-1)">−</button>
+          <span class="qty-n">1</span>
+          <button class="qty-btn" onclick="chgQ(this,1)">+</button>
+        </div>
+        <div class="qty-info">
+          <div><div class="qi-lbl">Prix unitaire</div><div class="qi-val" data-out="u">5.20€</div></div>
+          <div><div class="qi-lbl">/ boîte</div><div class="qi-val" data-out="b">52.00€</div></div>
+        </div>
+      </div>
+    </div>
+    <button class="add-btn" onclick="addCart(this,'Adalya 25K','images/img027.jpg')">Ajouter au panier →</button>
+  </div>
+</div><div class="pc" data-b="adalya" data-model="Adalya 30K Myvo" data-flavors="[{&quot;name&quot;: &quot;Love 66&quot;, &quot;emoji&quot;: &quot;💜🍉🍓&quot;, &quot;cats&quot;: [&quot;chicha&quot;]}, {&quot;name&quot;: &quot;Strawberry Burst&quot;, &quot;emoji&quot;: &quot;🍓💦&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Lady Killer&quot;, &quot;emoji&quot;: &quot;🍑🥭🌿&quot;, &quot;cats&quot;: [&quot;chicha&quot;]}, {&quot;name&quot;: &quot;Hawaii&quot;, &quot;emoji&quot;: &quot;🍍🥭🌴&quot;, &quot;cats&quot;: [&quot;tropical&quot;, &quot;chicha&quot;]}, {&quot;name&quot;: &quot;Blue Melon&quot;, &quot;emoji&quot;: &quot;🫐🍈&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;chicha&quot;]}, {&quot;name&quot;: &quot;Mint Point&quot;, &quot;emoji&quot;: &quot;🌿❄️&quot;, &quot;cats&quot;: [&quot;menthe&quot;]}, {&quot;name&quot;: &quot;Double Melon Ice&quot;, &quot;emoji&quot;: &quot;🍈🍉🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;]}, {&quot;name&quot;: &quot;Mi Amor&quot;, &quot;emoji&quot;: &quot;💕🍓&quot;, &quot;cats&quot;: [&quot;chicha&quot;]}, {&quot;name&quot;: &quot;African Crush&quot;, &quot;emoji&quot;: &quot;🍍🥭&quot;, &quot;cats&quot;: [&quot;tropical&quot;]}, {&quot;name&quot;: &quot;English Lord&quot;, &quot;emoji&quot;: &quot;🍋🌿&quot;, &quot;cats&quot;: [&quot;chicha&quot;]}, {&quot;name&quot;: &quot;Watermelon Ice&quot;, &quot;emoji&quot;: &quot;🍉🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Watermelon Mint&quot;, &quot;emoji&quot;: &quot;🍉🌿&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;menthe&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Strawberry Kiwi&quot;, &quot;emoji&quot;: &quot;🍓🥝&quot;, &quot;cats&quot;: [&quot;tropical&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Strawberry Ice&quot;, &quot;emoji&quot;: &quot;🍓🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Peach Ice&quot;, &quot;emoji&quot;: &quot;🍑🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;]}, {&quot;name&quot;: &quot;Mango Peach&quot;, &quot;emoji&quot;: &quot;🥭🍑&quot;, &quot;cats&quot;: [&quot;tropical&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Passion Fruit Guava Kiwi&quot;, &quot;emoji&quot;: &quot;🌴🥝&quot;, &quot;cats&quot;: [&quot;tropical&quot;, &quot;fruit&quot;]}, {&quot;name&quot;: &quot;Ice Bonbon&quot;, &quot;emoji&quot;: &quot;🍬🧊&quot;, &quot;cats&quot;: [&quot;bonbon&quot;, &quot;ice&quot;]}, {&quot;name&quot;: &quot;Swiss Bonbon&quot;, &quot;emoji&quot;: &quot;🍬🧊&quot;, &quot;cats&quot;: [&quot;bonbon&quot;]}, {&quot;name&quot;: &quot;Lemon Mint&quot;, &quot;emoji&quot;: &quot;🍋🌿&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;menthe&quot;]}, {&quot;name&quot;: &quot;Gum Mint&quot;, &quot;emoji&quot;: &quot;🍬🌿&quot;, &quot;cats&quot;: [&quot;bonbon&quot;, &quot;menthe&quot;]}, {&quot;name&quot;: &quot;Blueberry Mint&quot;, &quot;emoji&quot;: &quot;🫐🌿&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;menthe&quot;, &quot;chicha&quot;, &quot;mix&quot;]}]" data-pb="56" data-box="10" data-u="5.6">
+  <div class="pc-img">
+    <img src="images/img028.jpg" alt="Adalya 30K Myvo" loading="lazy"><span class="pbdg bt">Premium ⭐</span>
+    <span class="ppf">30,000 puffs</span>
+  </div>
+  <div class="pc-info">
+    <div><div class="pc-title">Adalya 30K Myvo</div><div class="pc-series">Myvo • Dual Mesh</div>
+    <div class="pc-binfo">📦 Boîte de 10 • 22 goûts</div></div>
+    <div class="pc-flavor">
+      <div class="pc-lbl">Goût</div>
+      <button class="flv-btn" onclick="openFP(this)"><span class="flv-cur">— Choisir un goût —</span><span>▾</span></button>
+    </div>
+    <div>
+      <div class="pc-lbl">Quantité de boîtes</div>
+      <div class="qty-row">
+        <div class="qty-ctrl">
+          <button class="qty-btn" onclick="chgQ(this,-1)">−</button>
+          <span class="qty-n">1</span>
+          <button class="qty-btn" onclick="chgQ(this,1)">+</button>
+        </div>
+        <div class="qty-info">
+          <div><div class="qi-lbl">Prix unitaire</div><div class="qi-val" data-out="u">5.60€</div></div>
+          <div><div class="qi-lbl">/ boîte</div><div class="qi-val" data-out="b">56.00€</div></div>
+        </div>
+      </div>
+    </div>
+    <button class="add-btn" onclick="addCart(this,'Adalya 30K Myvo','images/img028.jpg')">Ajouter au panier →</button>
+  </div>
+</div><div class="pc" data-b="adalya" data-model="Adalya 30K Levo" data-flavors="[{&quot;name&quot;: &quot;Love 66&quot;, &quot;emoji&quot;: &quot;💜🍉🍓&quot;, &quot;cats&quot;: [&quot;chicha&quot;]}, {&quot;name&quot;: &quot;Lady Killer&quot;, &quot;emoji&quot;: &quot;🍑🥭🌿&quot;, &quot;cats&quot;: [&quot;chicha&quot;]}, {&quot;name&quot;: &quot;Hawaii&quot;, &quot;emoji&quot;: &quot;🍍🥭🌴&quot;, &quot;cats&quot;: [&quot;tropical&quot;, &quot;chicha&quot;]}, {&quot;name&quot;: &quot;Blue Melon&quot;, &quot;emoji&quot;: &quot;🫐🍈&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;chicha&quot;]}, {&quot;name&quot;: &quot;Mint Point&quot;, &quot;emoji&quot;: &quot;🌿❄️&quot;, &quot;cats&quot;: [&quot;menthe&quot;]}, {&quot;name&quot;: &quot;Double Melon Ice&quot;, &quot;emoji&quot;: &quot;🍈🍉🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;]}, {&quot;name&quot;: &quot;Mi Amor&quot;, &quot;emoji&quot;: &quot;💕🍓&quot;, &quot;cats&quot;: [&quot;chicha&quot;]}, {&quot;name&quot;: &quot;African Crush&quot;, &quot;emoji&quot;: &quot;🍍🥭&quot;, &quot;cats&quot;: [&quot;tropical&quot;]}, {&quot;name&quot;: &quot;English Lord&quot;, &quot;emoji&quot;: &quot;🍋🌿&quot;, &quot;cats&quot;: [&quot;chicha&quot;]}, {&quot;name&quot;: &quot;Watermelon Ice&quot;, &quot;emoji&quot;: &quot;🍉🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Watermelon Mint&quot;, &quot;emoji&quot;: &quot;🍉🌿&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;menthe&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Strawberry Kiwi&quot;, &quot;emoji&quot;: &quot;🍓🥝&quot;, &quot;cats&quot;: [&quot;tropical&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Strawberry Ice&quot;, &quot;emoji&quot;: &quot;🍓🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Peach Ice&quot;, &quot;emoji&quot;: &quot;🍑🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;]}, {&quot;name&quot;: &quot;Mango Peach&quot;, &quot;emoji&quot;: &quot;🥭🍑&quot;, &quot;cats&quot;: [&quot;tropical&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Passion Fruit Guava Kiwi&quot;, &quot;emoji&quot;: &quot;🌴🥝&quot;, &quot;cats&quot;: [&quot;tropical&quot;, &quot;fruit&quot;]}, {&quot;name&quot;: &quot;Ice Bonbon&quot;, &quot;emoji&quot;: &quot;🍬🧊&quot;, &quot;cats&quot;: [&quot;bonbon&quot;, &quot;ice&quot;]}, {&quot;name&quot;: &quot;Swiss Bonbon&quot;, &quot;emoji&quot;: &quot;🍬🧊&quot;, &quot;cats&quot;: [&quot;bonbon&quot;]}, {&quot;name&quot;: &quot;Lemon Mint&quot;, &quot;emoji&quot;: &quot;🍋🌿&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;menthe&quot;]}, {&quot;name&quot;: &quot;Gum Mint&quot;, &quot;emoji&quot;: &quot;🍬🌿&quot;, &quot;cats&quot;: [&quot;bonbon&quot;, &quot;menthe&quot;]}, {&quot;name&quot;: &quot;Blueberry Mint&quot;, &quot;emoji&quot;: &quot;🫐🌿&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;menthe&quot;, &quot;chicha&quot;, &quot;mix&quot;]}]" data-pb="56" data-box="10" data-u="5.6">
+  <div class="pc-img">
+    <img src="images/img029.jpg" alt="Adalya 30K Levo" loading="lazy"><span class="pbdg bh">Hot 🔥</span>
+    <span class="ppf">30,000 puffs</span>
+  </div>
+  <div class="pc-info">
+    <div><div class="pc-title">Adalya 30K Levo</div><div class="pc-series">Levo • 1000mAh • Norm/Boost</div>
+    <div class="pc-binfo">📦 Boîte de 10 • 21 goûts</div></div>
+    <div class="pc-flavor">
+      <div class="pc-lbl">Goût</div>
+      <button class="flv-btn" onclick="openFP(this)"><span class="flv-cur">— Choisir un goût —</span><span>▾</span></button>
+    </div>
+    <div>
+      <div class="pc-lbl">Quantité de boîtes</div>
+      <div class="qty-row">
+        <div class="qty-ctrl">
+          <button class="qty-btn" onclick="chgQ(this,-1)">−</button>
+          <span class="qty-n">1</span>
+          <button class="qty-btn" onclick="chgQ(this,1)">+</button>
+        </div>
+        <div class="qty-info">
+          <div><div class="qi-lbl">Prix unitaire</div><div class="qi-val" data-out="u">5.60€</div></div>
+          <div><div class="qi-lbl">/ boîte</div><div class="qi-val" data-out="b">56.00€</div></div>
+        </div>
+      </div>
+    </div>
+    <button class="add-btn" onclick="addCart(this,'Adalya 30K Levo','images/img029.jpg')">Ajouter au panier →</button>
+  </div>
+</div></div></div>
+</div>
+
+<div class="pg" id="pg-tornado">
+  <div class="chd" style="background:#0F766E"><div class="chdi">
+    <img class="chl" src="images/img006.jpg" alt="Tornado">
+    <div class="cht">
+      <div class="chbr"><a onclick="go('home')">Accueil</a> › Tornado</div>
+      <h1 class="chmain">Tornado</h1><p class="chsub">6 modèles • Boîtes de 10</p>
+    </div>
+  </div></div>
+  <div class="fbr"><span class="flbl">Filtrer :</span><button class="fc2 on" onclick="fi(this,'all','tornado')">Tous (6)</button></div>
+  <div class="gw"><p class="gcn" id="cn-tornado">6 produits</p><div class="pgrid" id="gr-tornado"><div class="pc" data-b="tornado" data-model="Tornado 9K" data-flavors="[{&quot;name&quot;: &quot;Aloe Grape&quot;, &quot;emoji&quot;: &quot;🍇🌿&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Mixed Berries&quot;, &quot;emoji&quot;: &quot;🫐🍓&quot;, &quot;cats&quot;: [&quot;fruit&quot;]}, {&quot;name&quot;: &quot;Mixed Berry&quot;, &quot;emoji&quot;: &quot;🫐🍓&quot;, &quot;cats&quot;: [&quot;fruit&quot;]}, {&quot;name&quot;: &quot;Blue Razz Ice&quot;, &quot;emoji&quot;: &quot;🫐🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;]}, {&quot;name&quot;: &quot;Cool Mint&quot;, &quot;emoji&quot;: &quot;🌿❄️&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;menthe&quot;]}, {&quot;name&quot;: &quot;Gummy Bear&quot;, &quot;emoji&quot;: &quot;🍬🐻&quot;, &quot;cats&quot;: [&quot;bonbon&quot;]}, {&quot;name&quot;: &quot;Kiwi Passion Fruit Guava&quot;, &quot;emoji&quot;: &quot;🥝🌴&quot;, &quot;cats&quot;: [&quot;tropical&quot;, &quot;fruit&quot;]}, {&quot;name&quot;: &quot;Mr Blue&quot;, &quot;emoji&quot;: &quot;🫐💙&quot;, &quot;cats&quot;: [&quot;fruit&quot;]}, {&quot;name&quot;: &quot;Pink Lemonade&quot;, &quot;emoji&quot;: &quot;🍋💕&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;boisson&quot;]}, {&quot;name&quot;: &quot;Rainbow Candy&quot;, &quot;emoji&quot;: &quot;🌈🍬&quot;, &quot;cats&quot;: [&quot;bonbon&quot;]}, {&quot;name&quot;: &quot;Raspberry Watermelon&quot;, &quot;emoji&quot;: &quot;🍓🍉&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Strawberry Ice&quot;, &quot;emoji&quot;: &quot;🍓🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Strawberry Watermelon&quot;, &quot;emoji&quot;: &quot;🍓🍉&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Black Ice&quot;, &quot;emoji&quot;: &quot;🖤🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;]}, {&quot;name&quot;: &quot;Blueberry Raspberry&quot;, &quot;emoji&quot;: &quot;🫐🍓&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Blueberry Sour Raspberry&quot;, &quot;emoji&quot;: &quot;🫐🍓⚡&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Blueberry Cherry Cranberry&quot;, &quot;emoji&quot;: &quot;🫐🍒&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Cherry Peach Lemonade&quot;, &quot;emoji&quot;: &quot;🍒🍑🍋&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;boisson&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Cherry&quot;, &quot;emoji&quot;: &quot;🍒&quot;, &quot;cats&quot;: [&quot;fruit&quot;]}, {&quot;name&quot;: &quot;Ice Pop&quot;, &quot;emoji&quot;: &quot;🧊🍭&quot;, &quot;cats&quot;: [&quot;bonbon&quot;, &quot;ice&quot;]}, {&quot;name&quot;: &quot;Vimto&quot;, &quot;emoji&quot;: &quot;🍇🥤&quot;, &quot;cats&quot;: [&quot;boisson&quot;]}, {&quot;name&quot;: &quot;Dr Vimto&quot;, &quot;emoji&quot;: &quot;🍇🥤&quot;, &quot;cats&quot;: [&quot;boisson&quot;]}, {&quot;name&quot;: &quot;Fizzy Cherry&quot;, &quot;emoji&quot;: &quot;🍒🥤&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;boisson&quot;]}, {&quot;name&quot;: &quot;Skittles&quot;, &quot;emoji&quot;: &quot;🌈🍬&quot;, &quot;cats&quot;: [&quot;bonbon&quot;]}, {&quot;name&quot;: &quot;Strawberry Raspberry Ice&quot;, &quot;emoji&quot;: &quot;🍓🫐🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Guava Ice&quot;, &quot;emoji&quot;: &quot;🌴🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;tropical&quot;]}, {&quot;name&quot;: &quot;Triple Mango&quot;, &quot;emoji&quot;: &quot;🥭🥭🥭&quot;, &quot;cats&quot;: [&quot;tropical&quot;, &quot;fruit&quot;]}, {&quot;name&quot;: &quot;Peach Mango Pineapple&quot;, &quot;emoji&quot;: &quot;🍑🥭🍍&quot;, &quot;cats&quot;: [&quot;tropical&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Strawberry Raspberry Cherry Ice&quot;, &quot;emoji&quot;: &quot;🍓🍒🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Watermelon Bubblegum&quot;, &quot;emoji&quot;: &quot;🍉🍬&quot;, &quot;cats&quot;: [&quot;bonbon&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Peach Lemonade&quot;, &quot;emoji&quot;: &quot;🍑🍋&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;boisson&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Strawberry Lemonade&quot;, &quot;emoji&quot;: &quot;🍓🍋&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;boisson&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Lush Ice&quot;, &quot;emoji&quot;: &quot;🍉🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;]}, {&quot;name&quot;: &quot;Orange Soda&quot;, &quot;emoji&quot;: &quot;🍊🥤&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;boisson&quot;]}, {&quot;name&quot;: &quot;Strawberry Banana&quot;, &quot;emoji&quot;: &quot;🍓🍌&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Blue Razz Kush&quot;, &quot;emoji&quot;: &quot;🫐🌿&quot;, &quot;cats&quot;: [&quot;fruit&quot;]}, {&quot;name&quot;: &quot;Strawberry Cream&quot;, &quot;emoji&quot;: &quot;🍓🍦&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Prime Strawberry Watermelon&quot;, &quot;emoji&quot;: &quot;🍓🍉&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Watermelon Skittles&quot;, &quot;emoji&quot;: &quot;🍉🌈&quot;, &quot;cats&quot;: [&quot;bonbon&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Cherry Berry&quot;, &quot;emoji&quot;: &quot;🍒🫐&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Watermelon Brazz Ice&quot;, &quot;emoji&quot;: &quot;🍉🫐🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Sour Candy&quot;, &quot;emoji&quot;: &quot;🍬⚡&quot;, &quot;cats&quot;: [&quot;bonbon&quot;]}, {&quot;name&quot;: &quot;Grape&quot;, &quot;emoji&quot;: &quot;🍇&quot;, &quot;cats&quot;: [&quot;fruit&quot;]}, {&quot;name&quot;: &quot;Strawberry Mango&quot;, &quot;emoji&quot;: &quot;🍓🥭&quot;, &quot;cats&quot;: [&quot;tropical&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Black Dragon Ice&quot;, &quot;emoji&quot;: &quot;🐉🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;]}, {&quot;name&quot;: &quot;Banana Custard&quot;, &quot;emoji&quot;: &quot;🍌🍮&quot;, &quot;cats&quot;: [&quot;fruit&quot;]}, {&quot;name&quot;: &quot;Lemon Lime&quot;, &quot;emoji&quot;: &quot;🍋🟢&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Bluelicious Ice&quot;, &quot;emoji&quot;: &quot;🫐🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;]}, {&quot;name&quot;: &quot;Watermelon Ice&quot;, &quot;emoji&quot;: &quot;🍉🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Strawberry Pomegranate&quot;, &quot;emoji&quot;: &quot;🍓❤️&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Peach Berry&quot;, &quot;emoji&quot;: &quot;🍑🫐&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Pineapple&quot;, &quot;emoji&quot;: &quot;🍍&quot;, &quot;cats&quot;: [&quot;tropical&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Blueberry Ice&quot;, &quot;emoji&quot;: &quot;🫐🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Summer Peach Ice&quot;, &quot;emoji&quot;: &quot;🍑☀️🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;]}]" data-pb="28" data-box="10" data-u="2.8">
+  <div class="pc-img">
+    <img src="images/img030.jpg" alt="Tornado 9K" loading="lazy"><span class="pbdg bt">Best seller</span>
+    <span class="ppf">9,000 puffs</span>
+  </div>
+  <div class="pc-info">
+    <div><div class="pc-title">Tornado 9K</div><div class="pc-series">RandM Tornado • Mesh Coil</div>
+    <div class="pc-binfo">📦 Boîte de 10 • 54 goûts</div></div>
+    <div class="pc-flavor">
+      <div class="pc-lbl">Goût</div>
+      <button class="flv-btn" onclick="openFP(this)"><span class="flv-cur">— Choisir un goût —</span><span>▾</span></button>
+    </div>
+    <div>
+      <div class="pc-lbl">Quantité de boîtes</div>
+      <div class="qty-row">
+        <div class="qty-ctrl">
+          <button class="qty-btn" onclick="chgQ(this,-1)">−</button>
+          <span class="qty-n">1</span>
+          <button class="qty-btn" onclick="chgQ(this,1)">+</button>
+        </div>
+        <div class="qty-info">
+          <div><div class="qi-lbl">Prix unitaire</div><div class="qi-val" data-out="u">2.80€</div></div>
+          <div><div class="qi-lbl">/ boîte</div><div class="qi-val" data-out="b">28.00€</div></div>
+        </div>
+      </div>
+    </div>
+    <button class="add-btn" onclick="addCart(this,'Tornado 9K','images/img030.jpg')">Ajouter au panier →</button>
+  </div>
+</div><div class="pc" data-b="tornado" data-model="Tornado 10K" data-flavors="[{&quot;name&quot;: &quot;Mixed Berry&quot;, &quot;emoji&quot;: &quot;🫐🍓&quot;, &quot;cats&quot;: [&quot;fruit&quot;]}, {&quot;name&quot;: &quot;Blueberry Raspberry&quot;, &quot;emoji&quot;: &quot;🫐🍓&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Blueberry Sour Raspberry&quot;, &quot;emoji&quot;: &quot;🫐🍓⚡&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Blueberry Cherry Cranberry&quot;, &quot;emoji&quot;: &quot;🫐🍒&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Blue Razz Cherry&quot;, &quot;emoji&quot;: &quot;🫐🍒&quot;, &quot;cats&quot;: [&quot;fruit&quot;]}, {&quot;name&quot;: &quot;Blue Razz Ice&quot;, &quot;emoji&quot;: &quot;🫐🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;]}, {&quot;name&quot;: &quot;Blueberry Ice&quot;, &quot;emoji&quot;: &quot;🫐🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Lemon & Lime&quot;, &quot;emoji&quot;: &quot;🍋🟢&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Lemon Lime&quot;, &quot;emoji&quot;: &quot;🍋🟢&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Gummy Bear&quot;, &quot;emoji&quot;: &quot;🍬🐻&quot;, &quot;cats&quot;: [&quot;bonbon&quot;]}, {&quot;name&quot;: &quot;Watermelon Lychee&quot;, &quot;emoji&quot;: &quot;🍉🌸&quot;, &quot;cats&quot;: [&quot;tropical&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Watermelon Bubblegum&quot;, &quot;emoji&quot;: &quot;🍉🍬&quot;, &quot;cats&quot;: [&quot;bonbon&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Strawberry Candy Ice&quot;, &quot;emoji&quot;: &quot;🍓🍬🧊&quot;, &quot;cats&quot;: [&quot;bonbon&quot;, &quot;ice&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Strawberry Kiwi&quot;, &quot;emoji&quot;: &quot;🍓🥝&quot;, &quot;cats&quot;: [&quot;tropical&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Strawberry Banana&quot;, &quot;emoji&quot;: &quot;🍓🍌&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Strawberry Mango&quot;, &quot;emoji&quot;: &quot;🍓🥭&quot;, &quot;cats&quot;: [&quot;tropical&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Strawberry Watermelon&quot;, &quot;emoji&quot;: &quot;🍓🍉&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Strawberry Ice&quot;, &quot;emoji&quot;: &quot;🍓🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Peach Mango Ice&quot;, &quot;emoji&quot;: &quot;🍑🥭🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;, &quot;tropical&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Pineapple Peach Mango&quot;, &quot;emoji&quot;: &quot;🍍🍑🥭&quot;, &quot;cats&quot;: [&quot;tropical&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Mango Peach Watermelon&quot;, &quot;emoji&quot;: &quot;🥭🍑🍉&quot;, &quot;cats&quot;: [&quot;tropical&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Banana Ice&quot;, &quot;emoji&quot;: &quot;🍌🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;]}, {&quot;name&quot;: &quot;Grape Ice&quot;, &quot;emoji&quot;: &quot;🍇🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;]}, {&quot;name&quot;: &quot;Cola Ice&quot;, &quot;emoji&quot;: &quot;🥤🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;boisson&quot;]}, {&quot;name&quot;: &quot;Cherry Cola&quot;, &quot;emoji&quot;: &quot;🍒🥤&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;boisson&quot;]}, {&quot;name&quot;: &quot;Lush Ice&quot;, &quot;emoji&quot;: &quot;🍉🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;]}, {&quot;name&quot;: &quot;Pink Lemonade&quot;, &quot;emoji&quot;: &quot;🍋💕&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;boisson&quot;]}, {&quot;name&quot;: &quot;Rainbow Candy&quot;, &quot;emoji&quot;: &quot;🌈🍬&quot;, &quot;cats&quot;: [&quot;bonbon&quot;]}, {&quot;name&quot;: &quot;Cool Mint&quot;, &quot;emoji&quot;: &quot;🌿❄️&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;menthe&quot;]}, {&quot;name&quot;: &quot;Mint&quot;, &quot;emoji&quot;: &quot;🌿&quot;, &quot;cats&quot;: [&quot;menthe&quot;]}]" data-pb="32" data-box="10" data-u="3.2">
+  <div class="pc-img">
+    <img src="images/img031.jpg" alt="Tornado 10K" loading="lazy"><span class="pbdg bn">Nouveau</span>
+    <span class="ppf">10,000 puffs</span>
+  </div>
+  <div class="pc-info">
+    <div><div class="pc-title">Tornado 10K</div><div class="pc-series">RandM Tornado</div>
+    <div class="pc-binfo">📦 Boîte de 10 • 30 goûts</div></div>
+    <div class="pc-flavor">
+      <div class="pc-lbl">Goût</div>
+      <button class="flv-btn" onclick="openFP(this)"><span class="flv-cur">— Choisir un goût —</span><span>▾</span></button>
+    </div>
+    <div>
+      <div class="pc-lbl">Quantité de boîtes</div>
+      <div class="qty-row">
+        <div class="qty-ctrl">
+          <button class="qty-btn" onclick="chgQ(this,-1)">−</button>
+          <span class="qty-n">1</span>
+          <button class="qty-btn" onclick="chgQ(this,1)">+</button>
+        </div>
+        <div class="qty-info">
+          <div><div class="qi-lbl">Prix unitaire</div><div class="qi-val" data-out="u">3.20€</div></div>
+          <div><div class="qi-lbl">/ boîte</div><div class="qi-val" data-out="b">32.00€</div></div>
+        </div>
+      </div>
+    </div>
+    <button class="add-btn" onclick="addCart(this,'Tornado 10K','images/img031.jpg')">Ajouter au panier →</button>
+  </div>
+</div><div class="pc" data-b="tornado" data-model="Tornado 12K" data-flavors="[{&quot;name&quot;: &quot;Strawberry Ice&quot;, &quot;emoji&quot;: &quot;🍓🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Peach Ice&quot;, &quot;emoji&quot;: &quot;🍑🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;]}, {&quot;name&quot;: &quot;Watermelon Ice&quot;, &quot;emoji&quot;: &quot;🍉🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Blueberry Ice&quot;, &quot;emoji&quot;: &quot;🫐🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Mixed Berry&quot;, &quot;emoji&quot;: &quot;🫐🍓&quot;, &quot;cats&quot;: [&quot;fruit&quot;]}, {&quot;name&quot;: &quot;Mixed Berries&quot;, &quot;emoji&quot;: &quot;🫐🍓&quot;, &quot;cats&quot;: [&quot;fruit&quot;]}, {&quot;name&quot;: &quot;Strawberry Kiwi&quot;, &quot;emoji&quot;: &quot;🍓🥝&quot;, &quot;cats&quot;: [&quot;tropical&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Cherry Cola&quot;, &quot;emoji&quot;: &quot;🍒🥤&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;boisson&quot;]}, {&quot;name&quot;: &quot;Lemon Lime&quot;, &quot;emoji&quot;: &quot;🍋🟢&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Mango Peach&quot;, &quot;emoji&quot;: &quot;🥭🍑&quot;, &quot;cats&quot;: [&quot;tropical&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Blue Razz Ice&quot;, &quot;emoji&quot;: &quot;🫐🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;]}, {&quot;name&quot;: &quot;Blue Razz Cherry&quot;, &quot;emoji&quot;: &quot;🫐🍒&quot;, &quot;cats&quot;: [&quot;fruit&quot;]}, {&quot;name&quot;: &quot;Blueberry Raspberry&quot;, &quot;emoji&quot;: &quot;🫐🍓&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Strawberry Banana&quot;, &quot;emoji&quot;: &quot;🍓🍌&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Strawberry Watermelon&quot;, &quot;emoji&quot;: &quot;🍓🍉&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Grape Ice&quot;, &quot;emoji&quot;: &quot;🍇🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;]}, {&quot;name&quot;: &quot;Peach Mango Watermelon&quot;, &quot;emoji&quot;: &quot;🍑🥭🍉&quot;, &quot;cats&quot;: [&quot;tropical&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Pineapple Mango&quot;, &quot;emoji&quot;: &quot;🍍🥭&quot;, &quot;cats&quot;: [&quot;tropical&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Pink Lemonade&quot;, &quot;emoji&quot;: &quot;🍋💕&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;boisson&quot;]}, {&quot;name&quot;: &quot;Lush Ice&quot;, &quot;emoji&quot;: &quot;🍉🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;]}, {&quot;name&quot;: &quot;Cool Mint&quot;, &quot;emoji&quot;: &quot;🌿❄️&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;menthe&quot;]}, {&quot;name&quot;: &quot;Banana Ice&quot;, &quot;emoji&quot;: &quot;🍌🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;]}, {&quot;name&quot;: &quot;Apple Berry Blast&quot;, &quot;emoji&quot;: &quot;🍏🫐💥&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Cherry Ice&quot;, &quot;emoji&quot;: &quot;🍒🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;]}, {&quot;name&quot;: &quot;Gummy Bear&quot;, &quot;emoji&quot;: &quot;🍬🐻&quot;, &quot;cats&quot;: [&quot;bonbon&quot;]}]" data-pb="36" data-box="10" data-u="3.6">
+  <div class="pc-img">
+    <img src="images/img032.jpg" alt="Tornado 12K" loading="lazy"><span class="pbdg bh">Hot 🔥</span>
+    <span class="ppf">12,000 puffs</span>
+  </div>
+  <div class="pc-info">
+    <div><div class="pc-title">Tornado 12K</div><div class="pc-series">RandM Tornado • Écran</div>
+    <div class="pc-binfo">📦 Boîte de 10 • 25 goûts</div></div>
+    <div class="pc-flavor">
+      <div class="pc-lbl">Goût</div>
+      <button class="flv-btn" onclick="openFP(this)"><span class="flv-cur">— Choisir un goût —</span><span>▾</span></button>
+    </div>
+    <div>
+      <div class="pc-lbl">Quantité de boîtes</div>
+      <div class="qty-row">
+        <div class="qty-ctrl">
+          <button class="qty-btn" onclick="chgQ(this,-1)">−</button>
+          <span class="qty-n">1</span>
+          <button class="qty-btn" onclick="chgQ(this,1)">+</button>
+        </div>
+        <div class="qty-info">
+          <div><div class="qi-lbl">Prix unitaire</div><div class="qi-val" data-out="u">3.60€</div></div>
+          <div><div class="qi-lbl">/ boîte</div><div class="qi-val" data-out="b">36.00€</div></div>
+        </div>
+      </div>
+    </div>
+    <button class="add-btn" onclick="addCart(this,'Tornado 12K','images/img032.jpg')">Ajouter au panier →</button>
+  </div>
+</div><div class="pc" data-b="tornado" data-model="Tornado 15K" data-flavors="[{&quot;name&quot;: &quot;Pink Lemonade&quot;, &quot;emoji&quot;: &quot;🍋💕&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;boisson&quot;]}, {&quot;name&quot;: &quot;Watermelon Bubblegum&quot;, &quot;emoji&quot;: &quot;🍉🍬&quot;, &quot;cats&quot;: [&quot;bonbon&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Mr Blue&quot;, &quot;emoji&quot;: &quot;🫐💙&quot;, &quot;cats&quot;: [&quot;fruit&quot;]}, {&quot;name&quot;: &quot;Strawberry Kiwi&quot;, &quot;emoji&quot;: &quot;🍓🥝&quot;, &quot;cats&quot;: [&quot;tropical&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Blue Razz Cherry&quot;, &quot;emoji&quot;: &quot;🫐🍒&quot;, &quot;cats&quot;: [&quot;fruit&quot;]}, {&quot;name&quot;: &quot;Blue Razz Ice&quot;, &quot;emoji&quot;: &quot;🫐🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;]}, {&quot;name&quot;: &quot;Peach Mango Watermelon&quot;, &quot;emoji&quot;: &quot;🍑🥭🍉&quot;, &quot;cats&quot;: [&quot;tropical&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Mango Peach Watermelon&quot;, &quot;emoji&quot;: &quot;🥭🍑🍉&quot;, &quot;cats&quot;: [&quot;tropical&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Grape Ice&quot;, &quot;emoji&quot;: &quot;🍇🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;]}, {&quot;name&quot;: &quot;Banana Ice&quot;, &quot;emoji&quot;: &quot;🍌🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;]}, {&quot;name&quot;: &quot;Cherry Cola&quot;, &quot;emoji&quot;: &quot;🍒🥤&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;boisson&quot;]}, {&quot;name&quot;: &quot;Mixed Berries&quot;, &quot;emoji&quot;: &quot;🫐🍓&quot;, &quot;cats&quot;: [&quot;fruit&quot;]}, {&quot;name&quot;: &quot;Mixed Berry&quot;, &quot;emoji&quot;: &quot;🫐🍓&quot;, &quot;cats&quot;: [&quot;fruit&quot;]}, {&quot;name&quot;: &quot;Blueberry Raspberry&quot;, &quot;emoji&quot;: &quot;🫐🍓&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Blueberry Sour Raspberry&quot;, &quot;emoji&quot;: &quot;🫐🍓⚡&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Blueberry Ice&quot;, &quot;emoji&quot;: &quot;🫐🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Strawberry Banana&quot;, &quot;emoji&quot;: &quot;🍓🍌&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Strawberry Ice&quot;, &quot;emoji&quot;: &quot;🍓🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Strawberry Watermelon&quot;, &quot;emoji&quot;: &quot;🍓🍉&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Strawberry Mango&quot;, &quot;emoji&quot;: &quot;🍓🥭&quot;, &quot;cats&quot;: [&quot;tropical&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Strawberry Raspberry Ice&quot;, &quot;emoji&quot;: &quot;🍓🫐🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Lemon Lime&quot;, &quot;emoji&quot;: &quot;🍋🟢&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Lemon Mint&quot;, &quot;emoji&quot;: &quot;🍋🌿&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;menthe&quot;]}, {&quot;name&quot;: &quot;Cola Ice&quot;, &quot;emoji&quot;: &quot;🥤🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;boisson&quot;]}, {&quot;name&quot;: &quot;Watermelon Ice&quot;, &quot;emoji&quot;: &quot;🍉🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Lush Ice&quot;, &quot;emoji&quot;: &quot;🍉🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;]}, {&quot;name&quot;: &quot;Pineapple Ice&quot;, &quot;emoji&quot;: &quot;🍍🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;, &quot;tropical&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Pineapple Mango&quot;, &quot;emoji&quot;: &quot;🍍🥭&quot;, &quot;cats&quot;: [&quot;tropical&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Pineapple Coconut&quot;, &quot;emoji&quot;: &quot;🍍🥥&quot;, &quot;cats&quot;: [&quot;tropical&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Mango Ice&quot;, &quot;emoji&quot;: &quot;🥭🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;, &quot;tropical&quot;]}, {&quot;name&quot;: &quot;Peach Ice&quot;, &quot;emoji&quot;: &quot;🍑🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;]}, {&quot;name&quot;: &quot;Juicy Peach Ice&quot;, &quot;emoji&quot;: &quot;🍑🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;]}, {&quot;name&quot;: &quot;Kiwi Passion Fruit Guava&quot;, &quot;emoji&quot;: &quot;🥝🌴&quot;, &quot;cats&quot;: [&quot;tropical&quot;, &quot;fruit&quot;]}, {&quot;name&quot;: &quot;Black Ice&quot;, &quot;emoji&quot;: &quot;🖤🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;]}, {&quot;name&quot;: &quot;Cool Mint&quot;, &quot;emoji&quot;: &quot;🌿❄️&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;menthe&quot;]}, {&quot;name&quot;: &quot;Mint&quot;, &quot;emoji&quot;: &quot;🌿&quot;, &quot;cats&quot;: [&quot;menthe&quot;]}, {&quot;name&quot;: &quot;Gummy Bear&quot;, &quot;emoji&quot;: &quot;🍬🐻&quot;, &quot;cats&quot;: [&quot;bonbon&quot;]}, {&quot;name&quot;: &quot;Rainbow Candy&quot;, &quot;emoji&quot;: &quot;🌈🍬&quot;, &quot;cats&quot;: [&quot;bonbon&quot;]}, {&quot;name&quot;: &quot;Sour Apple&quot;, &quot;emoji&quot;: &quot;🍏⚡&quot;, &quot;cats&quot;: [&quot;fruit&quot;]}, {&quot;name&quot;: &quot;Sour Candy&quot;, &quot;emoji&quot;: &quot;🍬⚡&quot;, &quot;cats&quot;: [&quot;bonbon&quot;]}, {&quot;name&quot;: &quot;Red Energy Ice&quot;, &quot;emoji&quot;: &quot;⚡🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;boisson&quot;]}, {&quot;name&quot;: &quot;Berry Lemonade&quot;, &quot;emoji&quot;: &quot;🫐🍋&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;boisson&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Orange Soda&quot;, &quot;emoji&quot;: &quot;🍊🥤&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;boisson&quot;]}, {&quot;name&quot;: &quot;Ice Pop&quot;, &quot;emoji&quot;: &quot;🧊🍭&quot;, &quot;cats&quot;: [&quot;bonbon&quot;, &quot;ice&quot;]}, {&quot;name&quot;: &quot;Vimto&quot;, &quot;emoji&quot;: &quot;🍇🥤&quot;, &quot;cats&quot;: [&quot;boisson&quot;]}, {&quot;name&quot;: &quot;Dr Blue&quot;, &quot;emoji&quot;: &quot;🫐💙&quot;, &quot;cats&quot;: [&quot;boisson&quot;]}]" data-pb="40" data-box="10" data-u="4.0">
+  <div class="pc-img">
+    <img src="images/img033.jpg" alt="Tornado 15K" loading="lazy"><span class="pbdg bt">Top vente</span>
+    <span class="ppf">15,000 puffs</span>
+  </div>
+  <div class="pc-info">
+    <div><div class="pc-title">Tornado 15K</div><div class="pc-series">RandM Tornado • Airflow</div>
+    <div class="pc-binfo">📦 Boîte de 10 • 46 goûts</div></div>
+    <div class="pc-flavor">
+      <div class="pc-lbl">Goût</div>
+      <button class="flv-btn" onclick="openFP(this)"><span class="flv-cur">— Choisir un goût —</span><span>▾</span></button>
+    </div>
+    <div>
+      <div class="pc-lbl">Quantité de boîtes</div>
+      <div class="qty-row">
+        <div class="qty-ctrl">
+          <button class="qty-btn" onclick="chgQ(this,-1)">−</button>
+          <span class="qty-n">1</span>
+          <button class="qty-btn" onclick="chgQ(this,1)">+</button>
+        </div>
+        <div class="qty-info">
+          <div><div class="qi-lbl">Prix unitaire</div><div class="qi-val" data-out="u">4.00€</div></div>
+          <div><div class="qi-lbl">/ boîte</div><div class="qi-val" data-out="b">40.00€</div></div>
+        </div>
+      </div>
+    </div>
+    <button class="add-btn" onclick="addCart(this,'Tornado 15K','images/img033.jpg')">Ajouter au panier →</button>
+  </div>
+</div><div class="pc" data-b="tornado" data-model="Tornado 20K" data-flavors="[{&quot;name&quot;: &quot;Peach Ice&quot;, &quot;emoji&quot;: &quot;🍑🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;]}, {&quot;name&quot;: &quot;Strawberry Ice&quot;, &quot;emoji&quot;: &quot;🍓🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Watermelon Ice&quot;, &quot;emoji&quot;: &quot;🍉🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Blueberry Ice&quot;, &quot;emoji&quot;: &quot;🫐🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Blue Razz Ice&quot;, &quot;emoji&quot;: &quot;🫐🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;]}, {&quot;name&quot;: &quot;Blue Razz Cherry&quot;, &quot;emoji&quot;: &quot;🫐🍒&quot;, &quot;cats&quot;: [&quot;fruit&quot;]}, {&quot;name&quot;: &quot;Mixed Berries&quot;, &quot;emoji&quot;: &quot;🫐🍓&quot;, &quot;cats&quot;: [&quot;fruit&quot;]}, {&quot;name&quot;: &quot;Mixed Berry&quot;, &quot;emoji&quot;: &quot;🫐🍓&quot;, &quot;cats&quot;: [&quot;fruit&quot;]}, {&quot;name&quot;: &quot;Strawberry Kiwi&quot;, &quot;emoji&quot;: &quot;🍓🥝&quot;, &quot;cats&quot;: [&quot;tropical&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Peach Mango Watermelon&quot;, &quot;emoji&quot;: &quot;🍑🥭🍉&quot;, &quot;cats&quot;: [&quot;tropical&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Mango Peach Watermelon&quot;, &quot;emoji&quot;: &quot;🥭🍑🍉&quot;, &quot;cats&quot;: [&quot;tropical&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Grape Ice&quot;, &quot;emoji&quot;: &quot;🍇🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;]}, {&quot;name&quot;: &quot;Cherry Cola&quot;, &quot;emoji&quot;: &quot;🍒🥤&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;boisson&quot;]}, {&quot;name&quot;: &quot;Strawberry Banana&quot;, &quot;emoji&quot;: &quot;🍓🍌&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Strawberry Watermelon&quot;, &quot;emoji&quot;: &quot;🍓🍉&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Strawberry Mango&quot;, &quot;emoji&quot;: &quot;🍓🥭&quot;, &quot;cats&quot;: [&quot;tropical&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Blueberry Raspberry&quot;, &quot;emoji&quot;: &quot;🫐🍓&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Blueberry Sour Raspberry&quot;, &quot;emoji&quot;: &quot;🫐🍓⚡&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Cola Ice&quot;, &quot;emoji&quot;: &quot;🥤🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;boisson&quot;]}, {&quot;name&quot;: &quot;Lemon Lime&quot;, &quot;emoji&quot;: &quot;🍋🟢&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Lush Ice&quot;, &quot;emoji&quot;: &quot;🍉🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;]}, {&quot;name&quot;: &quot;Banana Ice&quot;, &quot;emoji&quot;: &quot;🍌🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;]}, {&quot;name&quot;: &quot;Pineapple Ice&quot;, &quot;emoji&quot;: &quot;🍍🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;, &quot;tropical&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Pineapple Mango&quot;, &quot;emoji&quot;: &quot;🍍🥭&quot;, &quot;cats&quot;: [&quot;tropical&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Cool Mint&quot;, &quot;emoji&quot;: &quot;🌿❄️&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;menthe&quot;]}, {&quot;name&quot;: &quot;Gummy Bear&quot;, &quot;emoji&quot;: &quot;🍬🐻&quot;, &quot;cats&quot;: [&quot;bonbon&quot;]}, {&quot;name&quot;: &quot;Pink Lemonade&quot;, &quot;emoji&quot;: &quot;🍋💕&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;boisson&quot;]}, {&quot;name&quot;: &quot;Mr Blue&quot;, &quot;emoji&quot;: &quot;🫐💙&quot;, &quot;cats&quot;: [&quot;fruit&quot;]}]" data-pb="48" data-box="10" data-u="4.8">
+  <div class="pc-img">
+    <img src="images/img034.jpg" alt="Tornado 20K" loading="lazy"><span class="pbdg bn">Nouveau</span>
+    <span class="ppf">20,000 puffs</span>
+  </div>
+  <div class="pc-info">
+    <div><div class="pc-title">Tornado 20K</div><div class="pc-series">RandM Tornado • Display</div>
+    <div class="pc-binfo">📦 Boîte de 10 • 28 goûts</div></div>
+    <div class="pc-flavor">
+      <div class="pc-lbl">Goût</div>
+      <button class="flv-btn" onclick="openFP(this)"><span class="flv-cur">— Choisir un goût —</span><span>▾</span></button>
+    </div>
+    <div>
+      <div class="pc-lbl">Quantité de boîtes</div>
+      <div class="qty-row">
+        <div class="qty-ctrl">
+          <button class="qty-btn" onclick="chgQ(this,-1)">−</button>
+          <span class="qty-n">1</span>
+          <button class="qty-btn" onclick="chgQ(this,1)">+</button>
+        </div>
+        <div class="qty-info">
+          <div><div class="qi-lbl">Prix unitaire</div><div class="qi-val" data-out="u">4.80€</div></div>
+          <div><div class="qi-lbl">/ boîte</div><div class="qi-val" data-out="b">48.00€</div></div>
+        </div>
+      </div>
+    </div>
+    <button class="add-btn" onclick="addCart(this,'Tornado 20K','images/img034.jpg')">Ajouter au panier →</button>
+  </div>
+</div><div class="pc" data-b="tornado" data-model="Tornado 25K" data-flavors="[{&quot;name&quot;: &quot;Banana Ice&quot;, &quot;emoji&quot;: &quot;🍌🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;]}, {&quot;name&quot;: &quot;Black Ice&quot;, &quot;emoji&quot;: &quot;🖤🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;]}, {&quot;name&quot;: &quot;Blueberry On Ice&quot;, &quot;emoji&quot;: &quot;🫐🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Blueberry Raspberry&quot;, &quot;emoji&quot;: &quot;🫐🍓&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Blueberry Sour Raspberry&quot;, &quot;emoji&quot;: &quot;🫐🍓⚡&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Blueberry Ice&quot;, &quot;emoji&quot;: &quot;🫐🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Blue Razz Ice&quot;, &quot;emoji&quot;: &quot;🫐🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;]}, {&quot;name&quot;: &quot;Blue Razz Cherry&quot;, &quot;emoji&quot;: &quot;🫐🍒&quot;, &quot;cats&quot;: [&quot;fruit&quot;]}, {&quot;name&quot;: &quot;Cherry Bomb&quot;, &quot;emoji&quot;: &quot;🍒💣&quot;, &quot;cats&quot;: [&quot;fruit&quot;]}, {&quot;name&quot;: &quot;Cherry Cola&quot;, &quot;emoji&quot;: &quot;🍒🥤&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;boisson&quot;]}, {&quot;name&quot;: &quot;Cherry Ice&quot;, &quot;emoji&quot;: &quot;🍒🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;]}, {&quot;name&quot;: &quot;Cool Mint&quot;, &quot;emoji&quot;: &quot;🌿❄️&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;menthe&quot;]}, {&quot;name&quot;: &quot;Double Apple&quot;, &quot;emoji&quot;: &quot;🍎🍏&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;chicha&quot;]}, {&quot;name&quot;: &quot;Dr Blue&quot;, &quot;emoji&quot;: &quot;🫐💙&quot;, &quot;cats&quot;: [&quot;boisson&quot;]}, {&quot;name&quot;: &quot;Grape Ice&quot;, &quot;emoji&quot;: &quot;🍇🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;]}, {&quot;name&quot;: &quot;Grape Lemon&quot;, &quot;emoji&quot;: &quot;🍇🍋&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Juicy Peach Ice&quot;, &quot;emoji&quot;: &quot;🍑🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;]}, {&quot;name&quot;: &quot;Peach Ice&quot;, &quot;emoji&quot;: &quot;🍑🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;]}, {&quot;name&quot;: &quot;Kiwi Passion Fruit Guava&quot;, &quot;emoji&quot;: &quot;🥝🌴&quot;, &quot;cats&quot;: [&quot;tropical&quot;, &quot;fruit&quot;]}, {&quot;name&quot;: &quot;Lush Ice&quot;, &quot;emoji&quot;: &quot;🍉🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;]}, {&quot;name&quot;: &quot;Miami Mint&quot;, &quot;emoji&quot;: &quot;🌿🌴&quot;, &quot;cats&quot;: [&quot;menthe&quot;]}, {&quot;name&quot;: &quot;Peach Mango Watermelon&quot;, &quot;emoji&quot;: &quot;🍑🥭🍉&quot;, &quot;cats&quot;: [&quot;tropical&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Mango Peach Watermelon&quot;, &quot;emoji&quot;: &quot;🥭🍑🍉&quot;, &quot;cats&quot;: [&quot;tropical&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Pineapple Ice&quot;, &quot;emoji&quot;: &quot;🍍🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;, &quot;tropical&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Pineapple Mango&quot;, &quot;emoji&quot;: &quot;🍍🥭&quot;, &quot;cats&quot;: [&quot;tropical&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Pink Lemonade&quot;, &quot;emoji&quot;: &quot;🍋💕&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;boisson&quot;]}, {&quot;name&quot;: &quot;Strawberry Ice&quot;, &quot;emoji&quot;: &quot;🍓🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Strawberry Mango&quot;, &quot;emoji&quot;: &quot;🍓🥭&quot;, &quot;cats&quot;: [&quot;tropical&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Strawberry Mint Candy&quot;, &quot;emoji&quot;: &quot;🍓🌿🍬&quot;, &quot;cats&quot;: [&quot;bonbon&quot;, &quot;fruit&quot;, &quot;menthe&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Strawberry Watermelon&quot;, &quot;emoji&quot;: &quot;🍓🍉&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Strawberry Kiwi&quot;, &quot;emoji&quot;: &quot;🍓🥝&quot;, &quot;cats&quot;: [&quot;tropical&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Strawberry Banana&quot;, &quot;emoji&quot;: &quot;🍓🍌&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Tropical Rainbow Blast&quot;, &quot;emoji&quot;: &quot;🌈🍍&quot;, &quot;cats&quot;: [&quot;bonbon&quot;, &quot;tropical&quot;]}, {&quot;name&quot;: &quot;Watermelon Ice&quot;, &quot;emoji&quot;: &quot;🍉🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Watermelon Bubblegum&quot;, &quot;emoji&quot;: &quot;🍉🍬&quot;, &quot;cats&quot;: [&quot;bonbon&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Strawberry Redbull&quot;, &quot;emoji&quot;: &quot;🍓⚡&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;boisson&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Mixed Berries&quot;, &quot;emoji&quot;: &quot;🫐🍓&quot;, &quot;cats&quot;: [&quot;fruit&quot;]}, {&quot;name&quot;: &quot;Cola Ice&quot;, &quot;emoji&quot;: &quot;🥤🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;boisson&quot;]}, {&quot;name&quot;: &quot;Lemon Lime&quot;, &quot;emoji&quot;: &quot;🍋🟢&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Gummy Bear&quot;, &quot;emoji&quot;: &quot;🍬🐻&quot;, &quot;cats&quot;: [&quot;bonbon&quot;]}, {&quot;name&quot;: &quot;Mr Blue&quot;, &quot;emoji&quot;: &quot;🫐💙&quot;, &quot;cats&quot;: [&quot;fruit&quot;]}]" data-pb="52" data-box="10" data-u="5.2">
+  <div class="pc-img">
+    <img src="images/img035.jpg" alt="Tornado 25K" loading="lazy"><span class="pbdg bt">Premium ⭐</span>
+    <span class="ppf">25,000 puffs</span>
+  </div>
+  <div class="pc-info">
+    <div><div class="pc-title">Tornado 25K</div><div class="pc-series">RandM Tornado • Mesh Coil</div>
+    <div class="pc-binfo">📦 Boîte de 10 • 41 goûts</div></div>
+    <div class="pc-flavor">
+      <div class="pc-lbl">Goût</div>
+      <button class="flv-btn" onclick="openFP(this)"><span class="flv-cur">— Choisir un goût —</span><span>▾</span></button>
+    </div>
+    <div>
+      <div class="pc-lbl">Quantité de boîtes</div>
+      <div class="qty-row">
+        <div class="qty-ctrl">
+          <button class="qty-btn" onclick="chgQ(this,-1)">−</button>
+          <span class="qty-n">1</span>
+          <button class="qty-btn" onclick="chgQ(this,1)">+</button>
+        </div>
+        <div class="qty-info">
+          <div><div class="qi-lbl">Prix unitaire</div><div class="qi-val" data-out="u">5.20€</div></div>
+          <div><div class="qi-lbl">/ boîte</div><div class="qi-val" data-out="b">52.00€</div></div>
+        </div>
+      </div>
+    </div>
+    <button class="add-btn" onclick="addCart(this,'Tornado 25K','images/img035.jpg')">Ajouter au panier →</button>
+  </div>
+</div></div></div>
+</div>
+
+<div class="pg" id="pg-razzbar">
+  <div class="chd" style="background:#9D174D"><div class="chdi">
+    <img class="chl" src="images/img007.jpg" alt="Razzbar">
+    <div class="cht">
+      <div class="chbr"><a onclick="go('home')">Accueil</a> › Razzbar</div>
+      <h1 class="chmain">Razzbar</h1><p class="chsub">5 modèles • Boîtes de 10</p>
+    </div>
+  </div></div>
+  <div class="fbr"><span class="flbl">Filtrer :</span><button class="fc2 on" onclick="fi(this,'all','razzbar')">Tous (5)</button></div>
+  <div class="gw"><p class="gcn" id="cn-razzbar">5 produits</p><div class="pgrid" id="gr-razzbar"><div class="pc" data-b="razzbar" data-model="Razzbar 15K" data-flavors="[{&quot;name&quot;: &quot;Strawberry Banana&quot;, &quot;emoji&quot;: &quot;🍓🍌&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Mango Peach Watermelon&quot;, &quot;emoji&quot;: &quot;🥭🍑🍉&quot;, &quot;cats&quot;: [&quot;tropical&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Juicy Peach Ice&quot;, &quot;emoji&quot;: &quot;🍑🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;]}, {&quot;name&quot;: &quot;Cola Ice&quot;, &quot;emoji&quot;: &quot;🥤🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;boisson&quot;]}, {&quot;name&quot;: &quot;Blue Razz Ice&quot;, &quot;emoji&quot;: &quot;🫐🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;]}, {&quot;name&quot;: &quot;Blackberry Ice&quot;, &quot;emoji&quot;: &quot;🫐🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;]}, {&quot;name&quot;: &quot;Strawberry Kiwi&quot;, &quot;emoji&quot;: &quot;🍓🥝&quot;, &quot;cats&quot;: [&quot;tropical&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Lemon Lime&quot;, &quot;emoji&quot;: &quot;🍋🟢&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Sour Apple&quot;, &quot;emoji&quot;: &quot;🍏⚡&quot;, &quot;cats&quot;: [&quot;fruit&quot;]}, {&quot;name&quot;: &quot;Triple Melon&quot;, &quot;emoji&quot;: &quot;🍈🍉🍈&quot;, &quot;cats&quot;: [&quot;fruit&quot;]}, {&quot;name&quot;: &quot;Watermelon Ice&quot;, &quot;emoji&quot;: &quot;🍉🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Strawberry Ice&quot;, &quot;emoji&quot;: &quot;🍓🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Mixed Berries&quot;, &quot;emoji&quot;: &quot;🫐🍓&quot;, &quot;cats&quot;: [&quot;fruit&quot;]}, {&quot;name&quot;: &quot;Blueberry Raspberry&quot;, &quot;emoji&quot;: &quot;🫐🍓&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Grape Ice&quot;, &quot;emoji&quot;: &quot;🍇🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;]}, {&quot;name&quot;: &quot;Pineapple Mango&quot;, &quot;emoji&quot;: &quot;🍍🥭&quot;, &quot;cats&quot;: [&quot;tropical&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Peach Mango Watermelon&quot;, &quot;emoji&quot;: &quot;🍑🥭🍉&quot;, &quot;cats&quot;: [&quot;tropical&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Strawberry Watermelon&quot;, &quot;emoji&quot;: &quot;🍓🍉&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Summer Dream&quot;, &quot;emoji&quot;: &quot;🥭🌴&quot;, &quot;cats&quot;: [&quot;fruit&quot;]}, {&quot;name&quot;: &quot;Lush Ice&quot;, &quot;emoji&quot;: &quot;🍉🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;]}]" data-pb="32" data-box="10" data-u="3.2">
+  <div class="pc-img">
+    <img src="images/img036.jpg" alt="Razzbar 15K" loading="lazy"><span class="pbdg bt">Top vente</span>
+    <span class="ppf">15,000 puffs</span>
+  </div>
+  <div class="pc-info">
+    <div><div class="pc-title">Razzbar 15K</div><div class="pc-series">Razzbar • Mesh Coil</div>
+    <div class="pc-binfo">📦 Boîte de 10 • 20 goûts</div></div>
+    <div class="pc-flavor">
+      <div class="pc-lbl">Goût</div>
+      <button class="flv-btn" onclick="openFP(this)"><span class="flv-cur">— Choisir un goût —</span><span>▾</span></button>
+    </div>
+    <div>
+      <div class="pc-lbl">Quantité de boîtes</div>
+      <div class="qty-row">
+        <div class="qty-ctrl">
+          <button class="qty-btn" onclick="chgQ(this,-1)">−</button>
+          <span class="qty-n">1</span>
+          <button class="qty-btn" onclick="chgQ(this,1)">+</button>
+        </div>
+        <div class="qty-info">
+          <div><div class="qi-lbl">Prix unitaire</div><div class="qi-val" data-out="u">3.20€</div></div>
+          <div><div class="qi-lbl">/ boîte</div><div class="qi-val" data-out="b">32.00€</div></div>
+        </div>
+      </div>
+    </div>
+    <button class="add-btn" onclick="addCart(this,'Razzbar 15K','images/img036.jpg')">Ajouter au panier →</button>
+  </div>
+</div><div class="pc" data-b="razzbar" data-model="Razzbar 30K" data-flavors="[{&quot;name&quot;: &quot;Sour Apple&quot;, &quot;emoji&quot;: &quot;🍏⚡&quot;, &quot;cats&quot;: [&quot;fruit&quot;]}, {&quot;name&quot;: &quot;Triple Melon&quot;, &quot;emoji&quot;: &quot;🍈🍉🍈&quot;, &quot;cats&quot;: [&quot;fruit&quot;]}, {&quot;name&quot;: &quot;Grape Ice&quot;, &quot;emoji&quot;: &quot;🍇🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;]}, {&quot;name&quot;: &quot;Strawberry Kiwi&quot;, &quot;emoji&quot;: &quot;🍓🥝&quot;, &quot;cats&quot;: [&quot;tropical&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Blueberry Raspberry&quot;, &quot;emoji&quot;: &quot;🫐🍓&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Blue Grape&quot;, &quot;emoji&quot;: &quot;🫐🍇&quot;, &quot;cats&quot;: [&quot;fruit&quot;]}, {&quot;name&quot;: &quot;Strawberry Ice&quot;, &quot;emoji&quot;: &quot;🍓🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Blueberry Sour Raspberry&quot;, &quot;emoji&quot;: &quot;🫐🍓⚡&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Blueberry Ice&quot;, &quot;emoji&quot;: &quot;🫐🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Watermelon Ice&quot;, &quot;emoji&quot;: &quot;🍉🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Cola Ice&quot;, &quot;emoji&quot;: &quot;🥤🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;boisson&quot;]}, {&quot;name&quot;: &quot;Strawberry Banana&quot;, &quot;emoji&quot;: &quot;🍓🍌&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Pineapple Mango&quot;, &quot;emoji&quot;: &quot;🍍🥭&quot;, &quot;cats&quot;: [&quot;tropical&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Juicy Peach Ice&quot;, &quot;emoji&quot;: &quot;🍑🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;]}, {&quot;name&quot;: &quot;Blueberry Raspberry Cranberry&quot;, &quot;emoji&quot;: &quot;🫐🍓&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Mango Peach Watermelon&quot;, &quot;emoji&quot;: &quot;🥭🍑🍉&quot;, &quot;cats&quot;: [&quot;tropical&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Mixed Berries&quot;, &quot;emoji&quot;: &quot;🫐🍓&quot;, &quot;cats&quot;: [&quot;fruit&quot;]}, {&quot;name&quot;: &quot;Blackberry Ice&quot;, &quot;emoji&quot;: &quot;🫐🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;]}, {&quot;name&quot;: &quot;Lemon Lime&quot;, &quot;emoji&quot;: &quot;🍋🟢&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Strawberry Watermelon&quot;, &quot;emoji&quot;: &quot;🍓🍉&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Summer Dream&quot;, &quot;emoji&quot;: &quot;🥭🌴&quot;, &quot;cats&quot;: [&quot;fruit&quot;]}, {&quot;name&quot;: &quot;Lush Ice&quot;, &quot;emoji&quot;: &quot;🍉🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;]}, {&quot;name&quot;: &quot;Blue Razz Ice&quot;, &quot;emoji&quot;: &quot;🫐🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;]}, {&quot;name&quot;: &quot;Gummy Bear&quot;, &quot;emoji&quot;: &quot;🍬🐻&quot;, &quot;cats&quot;: [&quot;bonbon&quot;]}]" data-pb="48" data-box="10" data-u="4.8">
+  <div class="pc-img">
+    <img src="images/img037.jpg" alt="Razzbar 30K" loading="lazy"><span class="pbdg bn">Nouveau</span>
+    <span class="ppf">30,000 puffs</span>
+  </div>
+  <div class="pc-info">
+    <div><div class="pc-title">Razzbar 30K</div><div class="pc-series">Razzbar • Airflow</div>
+    <div class="pc-binfo">📦 Boîte de 10 • 24 goûts</div></div>
+    <div class="pc-flavor">
+      <div class="pc-lbl">Goût</div>
+      <button class="flv-btn" onclick="openFP(this)"><span class="flv-cur">— Choisir un goût —</span><span>▾</span></button>
+    </div>
+    <div>
+      <div class="pc-lbl">Quantité de boîtes</div>
+      <div class="qty-row">
+        <div class="qty-ctrl">
+          <button class="qty-btn" onclick="chgQ(this,-1)">−</button>
+          <span class="qty-n">1</span>
+          <button class="qty-btn" onclick="chgQ(this,1)">+</button>
+        </div>
+        <div class="qty-info">
+          <div><div class="qi-lbl">Prix unitaire</div><div class="qi-val" data-out="u">4.80€</div></div>
+          <div><div class="qi-lbl">/ boîte</div><div class="qi-val" data-out="b">48.00€</div></div>
+        </div>
+      </div>
+    </div>
+    <button class="add-btn" onclick="addCart(this,'Razzbar 30K','images/img037.jpg')">Ajouter au panier →</button>
+  </div>
+</div><div class="pc" data-b="razzbar" data-model="Razzbar 40K" data-flavors="[{&quot;name&quot;: &quot;Pineapple Coconut&quot;, &quot;emoji&quot;: &quot;🍍🥥&quot;, &quot;cats&quot;: [&quot;tropical&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Strawberry Kiwi&quot;, &quot;emoji&quot;: &quot;🍓🥝&quot;, &quot;cats&quot;: [&quot;tropical&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Blue Razz Lemonade&quot;, &quot;emoji&quot;: &quot;🫐🍋&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;boisson&quot;]}, {&quot;name&quot;: &quot;Blueberry Raspberry&quot;, &quot;emoji&quot;: &quot;🫐🍓&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Peach Mango Watermelon&quot;, &quot;emoji&quot;: &quot;🍑🥭🍉&quot;, &quot;cats&quot;: [&quot;tropical&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Strawberry Banana&quot;, &quot;emoji&quot;: &quot;🍓🍌&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Watermelon Ice&quot;, &quot;emoji&quot;: &quot;🍉🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Cola Ice&quot;, &quot;emoji&quot;: &quot;🥤🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;boisson&quot;]}, {&quot;name&quot;: &quot;Grape Ice&quot;, &quot;emoji&quot;: &quot;🍇🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;]}, {&quot;name&quot;: &quot;Lemon Lime&quot;, &quot;emoji&quot;: &quot;🍋🟢&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Blue Razz Ice / Strawberry Watermelon Bubblegum&quot;, &quot;emoji&quot;: &quot;🫐🧊🍓🍉🍬&quot;, &quot;cats&quot;: [&quot;bonbon&quot;, &quot;ice&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Blueberry Ice / Love 66&quot;, &quot;emoji&quot;: &quot;🫐🧊💜&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;, &quot;chicha&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Lemon Lime / Lush Ice&quot;, &quot;emoji&quot;: &quot;🍋🟢🍉🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Mixed Berries / Watermelon Ice&quot;, &quot;emoji&quot;: &quot;🫐🍓🍉🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Peach Ice / Blueberry Ice&quot;, &quot;emoji&quot;: &quot;🍑🧊🫐&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Strawberry Banana / Red Bull Ice&quot;, &quot;emoji&quot;: &quot;🍓🍌⚡🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;, &quot;boisson&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Strawberry Ice / Mixed Berries&quot;, &quot;emoji&quot;: &quot;🍓🧊🫐&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Strawberry Kiwi / Blueberry Sour Raspberry&quot;, &quot;emoji&quot;: &quot;🍓🥝🫐⚡&quot;, &quot;cats&quot;: [&quot;tropical&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Strawberry Watermelon / Grape Ice&quot;, &quot;emoji&quot;: &quot;🍓🍉🍇🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Watermelon Ice / Cola Ice&quot;, &quot;emoji&quot;: &quot;🍉🧊🥤&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;, &quot;boisson&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Banana Ice&quot;, &quot;emoji&quot;: &quot;🍌🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;]}, {&quot;name&quot;: &quot;Mr Blue&quot;, &quot;emoji&quot;: &quot;🫐💙&quot;, &quot;cats&quot;: [&quot;fruit&quot;]}, {&quot;name&quot;: &quot;Gummy Bear&quot;, &quot;emoji&quot;: &quot;🍬🐻&quot;, &quot;cats&quot;: [&quot;bonbon&quot;]}]" data-pb="52" data-box="10" data-u="5.2">
+  <div class="pc-img">
+    <img src="images/img038.jpg" alt="Razzbar 40K" loading="lazy"><span class="pbdg bh">Hot 🔥</span>
+    <span class="ppf">40,000 puffs</span>
+  </div>
+  <div class="pc-info">
+    <div><div class="pc-title">Razzbar 40K</div><div class="pc-series">Razzbar • Airflow ajustable</div>
+    <div class="pc-binfo">📦 Boîte de 10 • 23 goûts</div></div>
+    <div class="pc-flavor">
+      <div class="pc-lbl">Goût</div>
+      <button class="flv-btn" onclick="openFP(this)"><span class="flv-cur">— Choisir un goût —</span><span>▾</span></button>
+    </div>
+    <div>
+      <div class="pc-lbl">Quantité de boîtes</div>
+      <div class="qty-row">
+        <div class="qty-ctrl">
+          <button class="qty-btn" onclick="chgQ(this,-1)">−</button>
+          <span class="qty-n">1</span>
+          <button class="qty-btn" onclick="chgQ(this,1)">+</button>
+        </div>
+        <div class="qty-info">
+          <div><div class="qi-lbl">Prix unitaire</div><div class="qi-val" data-out="u">5.20€</div></div>
+          <div><div class="qi-lbl">/ boîte</div><div class="qi-val" data-out="b">52.00€</div></div>
+        </div>
+      </div>
+    </div>
+    <button class="add-btn" onclick="addCart(this,'Razzbar 40K','images/img038.jpg')">Ajouter au panier →</button>
+  </div>
+</div><div class="pc" data-b="razzbar" data-model="Razzbar 45K" data-flavors="[{&quot;name&quot;: &quot;Cherry Cola&quot;, &quot;emoji&quot;: &quot;🍒🥤&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;boisson&quot;]}, {&quot;name&quot;: &quot;Blue Planet&quot;, &quot;emoji&quot;: &quot;🌌🫐&quot;, &quot;cats&quot;: [&quot;fruit&quot;]}, {&quot;name&quot;: &quot;Space Blue&quot;, &quot;emoji&quot;: &quot;🌌💙&quot;, &quot;cats&quot;: [&quot;fruit&quot;]}, {&quot;name&quot;: &quot;Strawberry Ice&quot;, &quot;emoji&quot;: &quot;🍓🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Blueberry Raspberry&quot;, &quot;emoji&quot;: &quot;🫐🍓&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Peach Ice&quot;, &quot;emoji&quot;: &quot;🍑🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;]}, {&quot;name&quot;: &quot;Grape Ice&quot;, &quot;emoji&quot;: &quot;🍇🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;]}, {&quot;name&quot;: &quot;Watermelon Ice&quot;, &quot;emoji&quot;: &quot;🍉🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Lemon Lime&quot;, &quot;emoji&quot;: &quot;🍋🟢&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Pineapple Coconut&quot;, &quot;emoji&quot;: &quot;🍍🥥&quot;, &quot;cats&quot;: [&quot;tropical&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Mixed Berry&quot;, &quot;emoji&quot;: &quot;🫐🍓&quot;, &quot;cats&quot;: [&quot;fruit&quot;]}, {&quot;name&quot;: &quot;Strawberry Kiwi&quot;, &quot;emoji&quot;: &quot;🍓🥝&quot;, &quot;cats&quot;: [&quot;tropical&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Strawberry Banana&quot;, &quot;emoji&quot;: &quot;🍓🍌&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Blue Razz Lemonade&quot;, &quot;emoji&quot;: &quot;🫐🍋&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;boisson&quot;]}, {&quot;name&quot;: &quot;Blue Razz Ice&quot;, &quot;emoji&quot;: &quot;🫐🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;]}, {&quot;name&quot;: &quot;Mango Peach Watermelon&quot;, &quot;emoji&quot;: &quot;🥭🍑🍉&quot;, &quot;cats&quot;: [&quot;tropical&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Gummy Bear&quot;, &quot;emoji&quot;: &quot;🍬🐻&quot;, &quot;cats&quot;: [&quot;bonbon&quot;]}, {&quot;name&quot;: &quot;Lush Ice&quot;, &quot;emoji&quot;: &quot;🍉🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;]}, {&quot;name&quot;: &quot;Banana Ice&quot;, &quot;emoji&quot;: &quot;🍌🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;]}, {&quot;name&quot;: &quot;Mr Blue&quot;, &quot;emoji&quot;: &quot;🫐💙&quot;, &quot;cats&quot;: [&quot;fruit&quot;]}]" data-pb="52" data-box="10" data-u="5.2">
+  <div class="pc-img">
+    <img src="images/img039.jpg" alt="Razzbar 45K" loading="lazy"><span class="pbdg bt">Premium ⭐</span>
+    <span class="ppf">45,000 puffs</span>
+  </div>
+  <div class="pc-info">
+    <div><div class="pc-title">Razzbar 45K</div><div class="pc-series">Razzbar • LED Display</div>
+    <div class="pc-binfo">📦 Boîte de 10 • 20 goûts</div></div>
+    <div class="pc-flavor">
+      <div class="pc-lbl">Goût</div>
+      <button class="flv-btn" onclick="openFP(this)"><span class="flv-cur">— Choisir un goût —</span><span>▾</span></button>
+    </div>
+    <div>
+      <div class="pc-lbl">Quantité de boîtes</div>
+      <div class="qty-row">
+        <div class="qty-ctrl">
+          <button class="qty-btn" onclick="chgQ(this,-1)">−</button>
+          <span class="qty-n">1</span>
+          <button class="qty-btn" onclick="chgQ(this,1)">+</button>
+        </div>
+        <div class="qty-info">
+          <div><div class="qi-lbl">Prix unitaire</div><div class="qi-val" data-out="u">5.20€</div></div>
+          <div><div class="qi-lbl">/ boîte</div><div class="qi-val" data-out="b">52.00€</div></div>
+        </div>
+      </div>
+    </div>
+    <button class="add-btn" onclick="addCart(this,'Razzbar 45K','images/img039.jpg')">Ajouter au panier →</button>
+  </div>
+</div><div class="pc" data-b="razzbar" data-model="Razzbar 50K" data-flavors="[{&quot;name&quot;: &quot;Mr Blue&quot;, &quot;emoji&quot;: &quot;🫐💙&quot;, &quot;cats&quot;: [&quot;fruit&quot;]}, {&quot;name&quot;: &quot;Banana Ice&quot;, &quot;emoji&quot;: &quot;🍌🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;]}, {&quot;name&quot;: &quot;Gummy Bear&quot;, &quot;emoji&quot;: &quot;🍬🐻&quot;, &quot;cats&quot;: [&quot;bonbon&quot;]}, {&quot;name&quot;: &quot;Strawberry Kiwi&quot;, &quot;emoji&quot;: &quot;🍓🥝&quot;, &quot;cats&quot;: [&quot;tropical&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Watermelon Ice&quot;, &quot;emoji&quot;: &quot;🍉🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Blueberry Raspberry&quot;, &quot;emoji&quot;: &quot;🫐🍓&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Peach Ice&quot;, &quot;emoji&quot;: &quot;🍑🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;]}, {&quot;name&quot;: &quot;Pineapple Mango&quot;, &quot;emoji&quot;: &quot;🍍🥭&quot;, &quot;cats&quot;: [&quot;tropical&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Strawberry Banana&quot;, &quot;emoji&quot;: &quot;🍓🍌&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Lush Ice&quot;, &quot;emoji&quot;: &quot;🍉🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;]}, {&quot;name&quot;: &quot;Blue Razz Ice&quot;, &quot;emoji&quot;: &quot;🫐🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;]}, {&quot;name&quot;: &quot;Blue Razz Lemonade&quot;, &quot;emoji&quot;: &quot;🫐🍋&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;boisson&quot;]}, {&quot;name&quot;: &quot;Blueberry Ice&quot;, &quot;emoji&quot;: &quot;🫐🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Grape Ice&quot;, &quot;emoji&quot;: &quot;🍇🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;]}, {&quot;name&quot;: &quot;Lemon Lime&quot;, &quot;emoji&quot;: &quot;🍋🟢&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Cola Ice&quot;, &quot;emoji&quot;: &quot;🥤🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;boisson&quot;]}, {&quot;name&quot;: &quot;Mango Peach Watermelon&quot;, &quot;emoji&quot;: &quot;🥭🍑🍉&quot;, &quot;cats&quot;: [&quot;tropical&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Strawberry Watermelon&quot;, &quot;emoji&quot;: &quot;🍓🍉&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Mixed Berries&quot;, &quot;emoji&quot;: &quot;🫐🍓&quot;, &quot;cats&quot;: [&quot;fruit&quot;]}, {&quot;name&quot;: &quot;Pineapple Coconut&quot;, &quot;emoji&quot;: &quot;🍍🥥&quot;, &quot;cats&quot;: [&quot;tropical&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Peach Mango&quot;, &quot;emoji&quot;: &quot;🍑🥭&quot;, &quot;cats&quot;: [&quot;tropical&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Kiwi Passion Fruit Guava&quot;, &quot;emoji&quot;: &quot;🥝🌴&quot;, &quot;cats&quot;: [&quot;tropical&quot;, &quot;fruit&quot;]}, {&quot;name&quot;: &quot;Strawberry Ice&quot;, &quot;emoji&quot;: &quot;🍓🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Cherry Cola&quot;, &quot;emoji&quot;: &quot;🍒🥤&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;boisson&quot;]}]" data-pb="56" data-box="10" data-u="5.6">
+  <div class="pc-img">
+    <img src="images/img040.jpg" alt="Razzbar 50K" loading="lazy"><span class="pbdg bt">Gold ⭐</span>
+    <span class="ppf">50,000 puffs</span>
+  </div>
+  <div class="pc-info">
+    <div><div class="pc-title">Razzbar 50K</div><div class="pc-series">Razzbar • 650mAh</div>
+    <div class="pc-binfo">📦 Boîte de 10 • 24 goûts</div></div>
+    <div class="pc-flavor">
+      <div class="pc-lbl">Goût</div>
+      <button class="flv-btn" onclick="openFP(this)"><span class="flv-cur">— Choisir un goût —</span><span>▾</span></button>
+    </div>
+    <div>
+      <div class="pc-lbl">Quantité de boîtes</div>
+      <div class="qty-row">
+        <div class="qty-ctrl">
+          <button class="qty-btn" onclick="chgQ(this,-1)">−</button>
+          <span class="qty-n">1</span>
+          <button class="qty-btn" onclick="chgQ(this,1)">+</button>
+        </div>
+        <div class="qty-info">
+          <div><div class="qi-lbl">Prix unitaire</div><div class="qi-val" data-out="u">5.60€</div></div>
+          <div><div class="qi-lbl">/ boîte</div><div class="qi-val" data-out="b">56.00€</div></div>
+        </div>
+      </div>
+    </div>
+    <button class="add-btn" onclick="addCart(this,'Razzbar 50K','images/img040.jpg')">Ajouter au panier →</button>
+  </div>
+</div></div></div>
+</div>
+
+<div class="pg" id="pg-alfaker">
+  <div class="chd" style="background:#1E40AF"><div class="chdi">
+    <img class="chl" src="images/img008.jpg" alt="Al Faker">
+    <div class="cht">
+      <div class="chbr"><a onclick="go('home')">Accueil</a> › Al Faker</div>
+      <h1 class="chmain">Al Faker</h1><p class="chsub">6 modèles • Boîtes de 5</p>
+    </div>
+  </div></div>
+  <div class="fbr"><span class="flbl">Filtrer :</span><button class="fc2 on" onclick="fi(this,'all','alfaker')">Tous (6)</button></div>
+  <div class="gw"><p class="gcn" id="cn-alfaker">6 produits</p><div class="pgrid" id="gr-alfaker"><div class="pc" data-b="alfaker" data-model="Crown Bar 8K Pro" data-flavors="[{&quot;name&quot;: &quot;Cherry Fiesta&quot;, &quot;emoji&quot;: &quot;🍒&quot;, &quot;cats&quot;: [&quot;fruit&quot;]}, {&quot;name&quot;: &quot;Two Apple&quot;, &quot;emoji&quot;: &quot;🍎🍏&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;chicha&quot;]}, {&quot;name&quot;: &quot;Double Apple&quot;, &quot;emoji&quot;: &quot;🍎🍏&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;chicha&quot;]}, {&quot;name&quot;: &quot;Peach Ice&quot;, &quot;emoji&quot;: &quot;🍑🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;]}, {&quot;name&quot;: &quot;Blueberry Gum&quot;, &quot;emoji&quot;: &quot;🫐🍬&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Grape Mint&quot;, &quot;emoji&quot;: &quot;🍇🌿&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;menthe&quot;]}, {&quot;name&quot;: &quot;Mint&quot;, &quot;emoji&quot;: &quot;🌿&quot;, &quot;cats&quot;: [&quot;menthe&quot;]}, {&quot;name&quot;: &quot;Spearmint&quot;, &quot;emoji&quot;: &quot;🌿❄️&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;menthe&quot;]}, {&quot;name&quot;: &quot;Strawberry Punch&quot;, &quot;emoji&quot;: &quot;🍓🥊&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Watermelon Kiwi&quot;, &quot;emoji&quot;: &quot;🍉🥝&quot;, &quot;cats&quot;: [&quot;tropical&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Cherry Ice&quot;, &quot;emoji&quot;: &quot;🍒🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;]}, {&quot;name&quot;: &quot;Cherry Fizz&quot;, &quot;emoji&quot;: &quot;🍒🥤&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;boisson&quot;]}, {&quot;name&quot;: &quot;Gum Mint&quot;, &quot;emoji&quot;: &quot;🍬🌿&quot;, &quot;cats&quot;: [&quot;bonbon&quot;, &quot;menthe&quot;]}, {&quot;name&quot;: &quot;Lemon Mint&quot;, &quot;emoji&quot;: &quot;🍋🌿&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;menthe&quot;]}, {&quot;name&quot;: &quot;Magic Love&quot;, &quot;emoji&quot;: &quot;💜🍓&quot;, &quot;cats&quot;: [&quot;chicha&quot;]}, {&quot;name&quot;: &quot;Berry Ice&quot;, &quot;emoji&quot;: &quot;🫐🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;]}, {&quot;name&quot;: &quot;Blue Razz Lemonade&quot;, &quot;emoji&quot;: &quot;🫐🍋&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;boisson&quot;]}, {&quot;name&quot;: &quot;Mango Pineapple&quot;, &quot;emoji&quot;: &quot;🥭🍍&quot;, &quot;cats&quot;: [&quot;tropical&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Lush Ice&quot;, &quot;emoji&quot;: &quot;🍉🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;]}, {&quot;name&quot;: &quot;Blackcurrant Ice&quot;, &quot;emoji&quot;: &quot;🍇🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;]}]" data-pb="16" data-box="5" data-u="3.2">
+  <div class="pc-img">
+    <img src="images/img041.jpg" alt="Crown Bar 8K Pro" loading="lazy"><span class="pbdg bn">Nouveau</span>
+    <span class="ppf">8,000 puffs</span>
+  </div>
+  <div class="pc-info">
+    <div><div class="pc-title">Crown Bar 8K Pro</div><div class="pc-series">Al Fakher • Dual Mode</div>
+    <div class="pc-binfo">📦 Boîte de 5 • 20 goûts</div></div>
+    <div class="pc-flavor">
+      <div class="pc-lbl">Goût</div>
+      <button class="flv-btn" onclick="openFP(this)"><span class="flv-cur">— Choisir un goût —</span><span>▾</span></button>
+    </div>
+    <div>
+      <div class="pc-lbl">Quantité de boîtes</div>
+      <div class="qty-row">
+        <div class="qty-ctrl">
+          <button class="qty-btn" onclick="chgQ(this,-1)">−</button>
+          <span class="qty-n">1</span>
+          <button class="qty-btn" onclick="chgQ(this,1)">+</button>
+        </div>
+        <div class="qty-info">
+          <div><div class="qi-lbl">Prix unitaire</div><div class="qi-val" data-out="u">3.20€</div></div>
+          <div><div class="qi-lbl">/ boîte</div><div class="qi-val" data-out="b">16.00€</div></div>
+        </div>
+      </div>
+    </div>
+    <button class="add-btn" onclick="addCart(this,'Crown Bar 8K Pro','images/img041.jpg')">Ajouter au panier →</button>
+  </div>
+</div><div class="pc" data-b="alfaker" data-model="Crown Bar 12K Hookah" data-flavors="[{&quot;name&quot;: &quot;Peach Ice&quot;, &quot;emoji&quot;: &quot;🍑🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;]}, {&quot;name&quot;: &quot;Two Apple&quot;, &quot;emoji&quot;: &quot;🍎🍏&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;chicha&quot;]}, {&quot;name&quot;: &quot;Double Apple&quot;, &quot;emoji&quot;: &quot;🍎🍏&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;chicha&quot;]}, {&quot;name&quot;: &quot;Cherry Fiesta&quot;, &quot;emoji&quot;: &quot;🍒&quot;, &quot;cats&quot;: [&quot;fruit&quot;]}, {&quot;name&quot;: &quot;Watermelon Kiwi&quot;, &quot;emoji&quot;: &quot;🍉🥝&quot;, &quot;cats&quot;: [&quot;tropical&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Blueberry Gum&quot;, &quot;emoji&quot;: &quot;🫐🍬&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Spearmint&quot;, &quot;emoji&quot;: &quot;🌿❄️&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;menthe&quot;]}, {&quot;name&quot;: &quot;Gum Mint&quot;, &quot;emoji&quot;: &quot;🍬🌿&quot;, &quot;cats&quot;: [&quot;bonbon&quot;, &quot;menthe&quot;]}, {&quot;name&quot;: &quot;Lemon Mint&quot;, &quot;emoji&quot;: &quot;🍋🌿&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;menthe&quot;]}, {&quot;name&quot;: &quot;Cherry Fizz&quot;, &quot;emoji&quot;: &quot;🍒🥤&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;boisson&quot;]}, {&quot;name&quot;: &quot;Strawberry Punch&quot;, &quot;emoji&quot;: &quot;🍓🥊&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Mint&quot;, &quot;emoji&quot;: &quot;🌿&quot;, &quot;cats&quot;: [&quot;menthe&quot;]}, {&quot;name&quot;: &quot;Magic Love&quot;, &quot;emoji&quot;: &quot;💜🍓&quot;, &quot;cats&quot;: [&quot;chicha&quot;]}, {&quot;name&quot;: &quot;Berry Ice&quot;, &quot;emoji&quot;: &quot;🫐🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;]}, {&quot;name&quot;: &quot;Grape Mint&quot;, &quot;emoji&quot;: &quot;🍇🌿&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;menthe&quot;]}, {&quot;name&quot;: &quot;Blue Razz Lemonade&quot;, &quot;emoji&quot;: &quot;🫐🍋&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;boisson&quot;]}, {&quot;name&quot;: &quot;Mango Pineapple&quot;, &quot;emoji&quot;: &quot;🥭🍍&quot;, &quot;cats&quot;: [&quot;tropical&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Lush Ice&quot;, &quot;emoji&quot;: &quot;🍉🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;]}, {&quot;name&quot;: &quot;Blackcurrant Ice&quot;, &quot;emoji&quot;: &quot;🍇🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;]}, {&quot;name&quot;: &quot;Cherry Ice&quot;, &quot;emoji&quot;: &quot;🍒🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;]}]" data-pb="20" data-box="5" data-u="4.0">
+  <div class="pc-img">
+    <img src="images/img042.jpg" alt="Crown Bar 12K Hookah" loading="lazy"><span class="pbdg bh">Hot 🔥</span>
+    <span class="ppf">12,000 puffs</span>
+  </div>
+  <div class="pc-info">
+    <div><div class="pc-title">Crown Bar 12K Hookah</div><div class="pc-series">Al Fakher • Hookah Soundwaves</div>
+    <div class="pc-binfo">📦 Boîte de 5 • 20 goûts</div></div>
+    <div class="pc-flavor">
+      <div class="pc-lbl">Goût</div>
+      <button class="flv-btn" onclick="openFP(this)"><span class="flv-cur">— Choisir un goût —</span><span>▾</span></button>
+    </div>
+    <div>
+      <div class="pc-lbl">Quantité de boîtes</div>
+      <div class="qty-row">
+        <div class="qty-ctrl">
+          <button class="qty-btn" onclick="chgQ(this,-1)">−</button>
+          <span class="qty-n">1</span>
+          <button class="qty-btn" onclick="chgQ(this,1)">+</button>
+        </div>
+        <div class="qty-info">
+          <div><div class="qi-lbl">Prix unitaire</div><div class="qi-val" data-out="u">4.00€</div></div>
+          <div><div class="qi-lbl">/ boîte</div><div class="qi-val" data-out="b">20.00€</div></div>
+        </div>
+      </div>
+    </div>
+    <button class="add-btn" onclick="addCart(this,'Crown Bar 12K Hookah','images/img042.jpg')">Ajouter au panier →</button>
+  </div>
+</div><div class="pc" data-b="alfaker" data-model="Crown Bar 15K HyperMax" data-flavors="[{&quot;name&quot;: &quot;Black Currant Mint&quot;, &quot;emoji&quot;: &quot;🍇🌿&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;menthe&quot;]}, {&quot;name&quot;: &quot;Blackcurrant Ice&quot;, &quot;emoji&quot;: &quot;🍇🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;]}, {&quot;name&quot;: &quot;Spearmint&quot;, &quot;emoji&quot;: &quot;🌿❄️&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;menthe&quot;]}, {&quot;name&quot;: &quot;Cherry Fizz&quot;, &quot;emoji&quot;: &quot;🍒🥤&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;boisson&quot;]}, {&quot;name&quot;: &quot;Cherry Fiesta&quot;, &quot;emoji&quot;: &quot;🍒&quot;, &quot;cats&quot;: [&quot;fruit&quot;]}, {&quot;name&quot;: &quot;Menthol&quot;, &quot;emoji&quot;: &quot;❄️&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;menthe&quot;]}, {&quot;name&quot;: &quot;Mint&quot;, &quot;emoji&quot;: &quot;🌿&quot;, &quot;cats&quot;: [&quot;menthe&quot;]}, {&quot;name&quot;: &quot;Blue Razz Lemonade&quot;, &quot;emoji&quot;: &quot;🫐🍋&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;boisson&quot;]}, {&quot;name&quot;: &quot;Strawberry Punch&quot;, &quot;emoji&quot;: &quot;🍓🥊&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Gum Mint&quot;, &quot;emoji&quot;: &quot;🍬🌿&quot;, &quot;cats&quot;: [&quot;bonbon&quot;, &quot;menthe&quot;]}, {&quot;name&quot;: &quot;Watermelon Kiwi&quot;, &quot;emoji&quot;: &quot;🍉🥝&quot;, &quot;cats&quot;: [&quot;tropical&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Blueberry Gum&quot;, &quot;emoji&quot;: &quot;🫐🍬&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Two Apple&quot;, &quot;emoji&quot;: &quot;🍎🍏&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;chicha&quot;]}, {&quot;name&quot;: &quot;Double Apple&quot;, &quot;emoji&quot;: &quot;🍎🍏&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;chicha&quot;]}, {&quot;name&quot;: &quot;Peach Ice&quot;, &quot;emoji&quot;: &quot;🍑🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;]}, {&quot;name&quot;: &quot;Berry Ice&quot;, &quot;emoji&quot;: &quot;🫐🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;]}, {&quot;name&quot;: &quot;Grape Mint&quot;, &quot;emoji&quot;: &quot;🍇🌿&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;menthe&quot;]}, {&quot;name&quot;: &quot;Lemon Mint&quot;, &quot;emoji&quot;: &quot;🍋🌿&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;menthe&quot;]}, {&quot;name&quot;: &quot;Mango Pineapple&quot;, &quot;emoji&quot;: &quot;🥭🍍&quot;, &quot;cats&quot;: [&quot;tropical&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Watermelon Cherry&quot;, &quot;emoji&quot;: &quot;🍉🍒&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Lush Ice&quot;, &quot;emoji&quot;: &quot;🍉🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;]}, {&quot;name&quot;: &quot;Magic Love&quot;, &quot;emoji&quot;: &quot;💜🍓&quot;, &quot;cats&quot;: [&quot;chicha&quot;]}, {&quot;name&quot;: &quot;Cool Mango&quot;, &quot;emoji&quot;: &quot;🥭❄️&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;, &quot;tropical&quot;]}]" data-pb="22" data-box="5" data-u="4.4">
+  <div class="pc-img">
+    <img src="images/img043.jpg" alt="Crown Bar 15K HyperMax" loading="lazy"><span class="pbdg bt">Top vente</span>
+    <span class="ppf">15,000 puffs</span>
+  </div>
+  <div class="pc-info">
+    <div><div class="pc-title">Crown Bar 15K HyperMax</div><div class="pc-series">Al Fakher • HyperMax</div>
+    <div class="pc-binfo">📦 Boîte de 5 • 23 goûts</div></div>
+    <div class="pc-flavor">
+      <div class="pc-lbl">Goût</div>
+      <button class="flv-btn" onclick="openFP(this)"><span class="flv-cur">— Choisir un goût —</span><span>▾</span></button>
+    </div>
+    <div>
+      <div class="pc-lbl">Quantité de boîtes</div>
+      <div class="qty-row">
+        <div class="qty-ctrl">
+          <button class="qty-btn" onclick="chgQ(this,-1)">−</button>
+          <span class="qty-n">1</span>
+          <button class="qty-btn" onclick="chgQ(this,1)">+</button>
+        </div>
+        <div class="qty-info">
+          <div><div class="qi-lbl">Prix unitaire</div><div class="qi-val" data-out="u">4.40€</div></div>
+          <div><div class="qi-lbl">/ boîte</div><div class="qi-val" data-out="b">22.00€</div></div>
+        </div>
+      </div>
+    </div>
+    <button class="add-btn" onclick="addCart(this,'Crown Bar 15K HyperMax','images/img043.jpg')">Ajouter au panier →</button>
+  </div>
+</div><div class="pc" data-b="alfaker" data-model="Crown Bar 30K HyperMax" data-flavors="[{&quot;name&quot;: &quot;Strawberry Punch&quot;, &quot;emoji&quot;: &quot;🍓🥊&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Mixed Berry&quot;, &quot;emoji&quot;: &quot;🫐🍓&quot;, &quot;cats&quot;: [&quot;fruit&quot;]}, {&quot;name&quot;: &quot;Mixed Berries&quot;, &quot;emoji&quot;: &quot;🫐🍓&quot;, &quot;cats&quot;: [&quot;fruit&quot;]}, {&quot;name&quot;: &quot;Pineapple Ice&quot;, &quot;emoji&quot;: &quot;🍍🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;, &quot;tropical&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Cherry Fizz&quot;, &quot;emoji&quot;: &quot;🍒🥤&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;boisson&quot;]}, {&quot;name&quot;: &quot;Cherry Ice&quot;, &quot;emoji&quot;: &quot;🍒🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;]}, {&quot;name&quot;: &quot;Cherry Fiesta&quot;, &quot;emoji&quot;: &quot;🍒&quot;, &quot;cats&quot;: [&quot;fruit&quot;]}, {&quot;name&quot;: &quot;Blueberry Sour Raspberry&quot;, &quot;emoji&quot;: &quot;🫐🍓⚡&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Lemon Mint&quot;, &quot;emoji&quot;: &quot;🍋🌿&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;menthe&quot;]}, {&quot;name&quot;: &quot;Blueberry Mint&quot;, &quot;emoji&quot;: &quot;🫐🌿&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;menthe&quot;, &quot;chicha&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Blueberry Cherry&quot;, &quot;emoji&quot;: &quot;🫐🍒&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Blue Razz Blast&quot;, &quot;emoji&quot;: &quot;🫐💥&quot;, &quot;cats&quot;: [&quot;fruit&quot;]}, {&quot;name&quot;: &quot;Blue Razz Lemonade&quot;, &quot;emoji&quot;: &quot;🫐🍋&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;boisson&quot;]}, {&quot;name&quot;: &quot;Summer Dream&quot;, &quot;emoji&quot;: &quot;🥭🌴&quot;, &quot;cats&quot;: [&quot;fruit&quot;]}, {&quot;name&quot;: &quot;Space Dream&quot;, &quot;emoji&quot;: &quot;🌌🍬&quot;, &quot;cats&quot;: [&quot;fruit&quot;]}, {&quot;name&quot;: &quot;Watermelon Kiwi&quot;, &quot;emoji&quot;: &quot;🍉🥝&quot;, &quot;cats&quot;: [&quot;tropical&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Watermelon Lime&quot;, &quot;emoji&quot;: &quot;🍉🍋&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Watermelon Pineapple&quot;, &quot;emoji&quot;: &quot;🍉🍍&quot;, &quot;cats&quot;: [&quot;tropical&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Peach Ice&quot;, &quot;emoji&quot;: &quot;🍑🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;]}, {&quot;name&quot;: &quot;Two Apple&quot;, &quot;emoji&quot;: &quot;🍎🍏&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;chicha&quot;]}, {&quot;name&quot;: &quot;Double Apple&quot;, &quot;emoji&quot;: &quot;🍎🍏&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;chicha&quot;]}, {&quot;name&quot;: &quot;Gum Mint&quot;, &quot;emoji&quot;: &quot;🍬🌿&quot;, &quot;cats&quot;: [&quot;bonbon&quot;, &quot;menthe&quot;]}, {&quot;name&quot;: &quot;Mint&quot;, &quot;emoji&quot;: &quot;🌿&quot;, &quot;cats&quot;: [&quot;menthe&quot;]}, {&quot;name&quot;: &quot;Cool Mango&quot;, &quot;emoji&quot;: &quot;🥭❄️&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;, &quot;tropical&quot;]}, {&quot;name&quot;: &quot;Magic Love&quot;, &quot;emoji&quot;: &quot;💜🍓&quot;, &quot;cats&quot;: [&quot;chicha&quot;]}, {&quot;name&quot;: &quot;Blackcurrant Ice&quot;, &quot;emoji&quot;: &quot;🍇🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;]}]" data-pb="28" data-box="5" data-u="5.6">
+  <div class="pc-img">
+    <img src="images/img044.jpg" alt="Crown Bar 30K HyperMax" loading="lazy"><span class="pbdg bn">Nouveau</span>
+    <span class="ppf">30,000 puffs</span>
+  </div>
+  <div class="pc-info">
+    <div><div class="pc-title">Crown Bar 30K HyperMax</div><div class="pc-series">Al Fakher • HyperMax Advanced</div>
+    <div class="pc-binfo">📦 Boîte de 5 • 26 goûts</div></div>
+    <div class="pc-flavor">
+      <div class="pc-lbl">Goût</div>
+      <button class="flv-btn" onclick="openFP(this)"><span class="flv-cur">— Choisir un goût —</span><span>▾</span></button>
+    </div>
+    <div>
+      <div class="pc-lbl">Quantité de boîtes</div>
+      <div class="qty-row">
+        <div class="qty-ctrl">
+          <button class="qty-btn" onclick="chgQ(this,-1)">−</button>
+          <span class="qty-n">1</span>
+          <button class="qty-btn" onclick="chgQ(this,1)">+</button>
+        </div>
+        <div class="qty-info">
+          <div><div class="qi-lbl">Prix unitaire</div><div class="qi-val" data-out="u">5.60€</div></div>
+          <div><div class="qi-lbl">/ boîte</div><div class="qi-val" data-out="b">28.00€</div></div>
+        </div>
+      </div>
+    </div>
+    <button class="add-btn" onclick="addCart(this,'Crown Bar 30K HyperMax','images/img044.jpg')">Ajouter au panier →</button>
+  </div>
+</div><div class="pc" data-b="alfaker" data-model="Crown Bar 40K MegaMax" data-flavors="[{&quot;name&quot;: &quot;Blueberry Raspberry&quot;, &quot;emoji&quot;: &quot;🫐🍓&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Blueberry Gum&quot;, &quot;emoji&quot;: &quot;🫐🍬&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Blueberry Raspberry Ice&quot;, &quot;emoji&quot;: &quot;🫐🍓🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Blueberry Cherry&quot;, &quot;emoji&quot;: &quot;🫐🍒&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Watermelon Kiwi&quot;, &quot;emoji&quot;: &quot;🍉🥝&quot;, &quot;cats&quot;: [&quot;tropical&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Lemon Mint&quot;, &quot;emoji&quot;: &quot;🍋🌿&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;menthe&quot;]}, {&quot;name&quot;: &quot;Berry Ice&quot;, &quot;emoji&quot;: &quot;🫐🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;]}, {&quot;name&quot;: &quot;Mango Pineapple&quot;, &quot;emoji&quot;: &quot;🥭🍍&quot;, &quot;cats&quot;: [&quot;tropical&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Lush Ice&quot;, &quot;emoji&quot;: &quot;🍉🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;]}, {&quot;name&quot;: &quot;Blackcurrant Ice&quot;, &quot;emoji&quot;: &quot;🍇🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;]}, {&quot;name&quot;: &quot;Mint&quot;, &quot;emoji&quot;: &quot;🌿&quot;, &quot;cats&quot;: [&quot;menthe&quot;]}, {&quot;name&quot;: &quot;Spearmint&quot;, &quot;emoji&quot;: &quot;🌿❄️&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;menthe&quot;]}, {&quot;name&quot;: &quot;Magic Love&quot;, &quot;emoji&quot;: &quot;💜🍓&quot;, &quot;cats&quot;: [&quot;chicha&quot;]}, {&quot;name&quot;: &quot;Strawberry Punch&quot;, &quot;emoji&quot;: &quot;🍓🥊&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Cherry Fizz&quot;, &quot;emoji&quot;: &quot;🍒🥤&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;boisson&quot;]}, {&quot;name&quot;: &quot;Cherry Ice&quot;, &quot;emoji&quot;: &quot;🍒🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;]}, {&quot;name&quot;: &quot;Peach Ice&quot;, &quot;emoji&quot;: &quot;🍑🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;]}, {&quot;name&quot;: &quot;Two Apple&quot;, &quot;emoji&quot;: &quot;🍎🍏&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;chicha&quot;]}, {&quot;name&quot;: &quot;Double Apple&quot;, &quot;emoji&quot;: &quot;🍎🍏&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;chicha&quot;]}, {&quot;name&quot;: &quot;Gum Mint&quot;, &quot;emoji&quot;: &quot;🍬🌿&quot;, &quot;cats&quot;: [&quot;bonbon&quot;, &quot;menthe&quot;]}, {&quot;name&quot;: &quot;Blue Razz Lemonade&quot;, &quot;emoji&quot;: &quot;🫐🍋&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;boisson&quot;]}, {&quot;name&quot;: &quot;Cool Mango&quot;, &quot;emoji&quot;: &quot;🥭❄️&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;, &quot;tropical&quot;]}]" data-pb="32" data-box="5" data-u="6.4">
+  <div class="pc-img">
+    <img src="images/img045.jpg" alt="Crown Bar 40K MegaMax" loading="lazy"><span class="pbdg bt">Premium ⭐</span>
+    <span class="ppf">40,000 puffs</span>
+  </div>
+  <div class="pc-info">
+    <div><div class="pc-title">Crown Bar 40K MegaMax</div><div class="pc-series">Al Fakher • MegaMax</div>
+    <div class="pc-binfo">📦 Boîte de 5 • 22 goûts</div></div>
+    <div class="pc-flavor">
+      <div class="pc-lbl">Goût</div>
+      <button class="flv-btn" onclick="openFP(this)"><span class="flv-cur">— Choisir un goût —</span><span>▾</span></button>
+    </div>
+    <div>
+      <div class="pc-lbl">Quantité de boîtes</div>
+      <div class="qty-row">
+        <div class="qty-ctrl">
+          <button class="qty-btn" onclick="chgQ(this,-1)">−</button>
+          <span class="qty-n">1</span>
+          <button class="qty-btn" onclick="chgQ(this,1)">+</button>
+        </div>
+        <div class="qty-info">
+          <div><div class="qi-lbl">Prix unitaire</div><div class="qi-val" data-out="u">6.40€</div></div>
+          <div><div class="qi-lbl">/ boîte</div><div class="qi-val" data-out="b">32.00€</div></div>
+        </div>
+      </div>
+    </div>
+    <button class="add-btn" onclick="addCart(this,'Crown Bar 40K MegaMax','images/img045.jpg')">Ajouter au panier →</button>
+  </div>
+</div><div class="pc" data-b="alfaker" data-model="Crown Bar 60K EhoseX" data-flavors="[{&quot;name&quot;: &quot;Blueberry Gum&quot;, &quot;emoji&quot;: &quot;🫐🍬&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Blueberry Cherry&quot;, &quot;emoji&quot;: &quot;🫐🍒&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Blueberry Raspberry&quot;, &quot;emoji&quot;: &quot;🫐🍓&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Blueberry Raspberry Ice&quot;, &quot;emoji&quot;: &quot;🫐🍓🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Blackcurrant Ice&quot;, &quot;emoji&quot;: &quot;🍇🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;]}, {&quot;name&quot;: &quot;Mango Pineapple&quot;, &quot;emoji&quot;: &quot;🥭🍍&quot;, &quot;cats&quot;: [&quot;tropical&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Berry Ice&quot;, &quot;emoji&quot;: &quot;🫐🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;]}, {&quot;name&quot;: &quot;Lush Ice&quot;, &quot;emoji&quot;: &quot;🍉🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;]}, {&quot;name&quot;: &quot;Magic Love&quot;, &quot;emoji&quot;: &quot;💜🍓&quot;, &quot;cats&quot;: [&quot;chicha&quot;]}, {&quot;name&quot;: &quot;Mint&quot;, &quot;emoji&quot;: &quot;🌿&quot;, &quot;cats&quot;: [&quot;menthe&quot;]}, {&quot;name&quot;: &quot;Spearmint&quot;, &quot;emoji&quot;: &quot;🌿❄️&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;menthe&quot;]}, {&quot;name&quot;: &quot;Berry Blue&quot;, &quot;emoji&quot;: &quot;🫐💙&quot;, &quot;cats&quot;: [&quot;fruit&quot;]}, {&quot;name&quot;: &quot;Lemon Mint&quot;, &quot;emoji&quot;: &quot;🍋🌿&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;menthe&quot;]}, {&quot;name&quot;: &quot;Blueberry Gum Ice&quot;, &quot;emoji&quot;: &quot;🫐🍬🧊&quot;, &quot;cats&quot;: [&quot;bonbon&quot;, &quot;ice&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Strawberry Punch&quot;, &quot;emoji&quot;: &quot;🍓🥊&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Cherry Fizz&quot;, &quot;emoji&quot;: &quot;🍒🥤&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;boisson&quot;]}, {&quot;name&quot;: &quot;Cherry Ice&quot;, &quot;emoji&quot;: &quot;🍒🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;]}, {&quot;name&quot;: &quot;Watermelon Kiwi&quot;, &quot;emoji&quot;: &quot;🍉🥝&quot;, &quot;cats&quot;: [&quot;tropical&quot;, &quot;fruit&quot;, &quot;mix&quot;]}, {&quot;name&quot;: &quot;Peach Ice&quot;, &quot;emoji&quot;: &quot;🍑🧊&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;]}, {&quot;name&quot;: &quot;Two Apple&quot;, &quot;emoji&quot;: &quot;🍎🍏&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;chicha&quot;]}, {&quot;name&quot;: &quot;Double Apple&quot;, &quot;emoji&quot;: &quot;🍎🍏&quot;, &quot;cats&quot;: [&quot;fruit&quot;, &quot;chicha&quot;]}, {&quot;name&quot;: &quot;Gum Mint&quot;, &quot;emoji&quot;: &quot;🍬🌿&quot;, &quot;cats&quot;: [&quot;bonbon&quot;, &quot;menthe&quot;]}, {&quot;name&quot;: &quot;Cool Mango&quot;, &quot;emoji&quot;: &quot;🥭❄️&quot;, &quot;cats&quot;: [&quot;ice&quot;, &quot;fruit&quot;, &quot;tropical&quot;]}]" data-pb="40" data-box="5" data-u="8.0">
+  <div class="pc-img">
+    <img src="images/img046.jpg" alt="Crown Bar 60K EhoseX" loading="lazy"><span class="pbdg bt">Gold ⭐</span>
+    <span class="ppf">60,000 puffs</span>
+  </div>
+  <div class="pc-info">
+    <div><div class="pc-title">Crown Bar 60K EhoseX</div><div class="pc-series">Al Fakher • EhoseX • DTL/MTL</div>
+    <div class="pc-binfo">📦 Boîte de 5 • 23 goûts</div></div>
+    <div class="pc-flavor">
+      <div class="pc-lbl">Goût</div>
+      <button class="flv-btn" onclick="openFP(this)"><span class="flv-cur">— Choisir un goût —</span><span>▾</span></button>
+    </div>
+    <div>
+      <div class="pc-lbl">Quantité de boîtes</div>
+      <div class="qty-row">
+        <div class="qty-ctrl">
+          <button class="qty-btn" onclick="chgQ(this,-1)">−</button>
+          <span class="qty-n">1</span>
+          <button class="qty-btn" onclick="chgQ(this,1)">+</button>
+        </div>
+        <div class="qty-info">
+          <div><div class="qi-lbl">Prix unitaire</div><div class="qi-val" data-out="u">8.00€</div></div>
+          <div><div class="qi-lbl">/ boîte</div><div class="qi-val" data-out="b">40.00€</div></div>
+        </div>
+      </div>
+    </div>
+    <button class="add-btn" onclick="addCart(this,'Crown Bar 60K EhoseX','images/img046.jpg')">Ajouter au panier →</button>
+  </div>
+</div></div></div>
+</div>
+
+<!-- HISTOIRE -->
+<div class="pg" id="pg-histoire">
+  <div class="hhr"><div class="hhi"><img class="hhlogo" src="images/img001.jpg" alt="Logo"><h1 class="hht">Notre Histoire</h1><p class="hhs">De la passion pour la vape à la boutique de référence.</p></div></div>
+  <div class="hhc">
+    <div class="hblk"><div class="hyr">2022</div><h3>Les débuts de Puff JNR</h3><div class="hdv"></div><p>Une vision simple : rendre la vape premium accessible à tous.</p></div>
+    <div class="hblk"><div class="hyr">2023</div><h3>La naissance de Shop Ta Puff</h3><div class="hdv"></div><p>Le meilleur stock au meilleur prix avec 5 marques phares.</p></div>
+    <div class="hblk"><div class="hyr">2024</div><h3>L'explosion</h3><div class="hdv"></div><p>Des milliers de clients, +700 produits au catalogue.</p></div>
+    <div class="hblk"><div class="hyr">2025</div><h3>Aujourd'hui</h3><div class="hdv"></div><p>On continue de grandir. La suite va déchirer.</p></div>
+    <div class="vgr">
+      <div class="vc"><span class="vi">💜</span><span class="vt">Passion</span><span class="vd">On ne vend que ce qu'on teste.</span></div>
+      <div class="vc"><span class="vi">⚡</span><span class="vt">Rapidité</span><span class="vd">Livraison 48h.</span></div>
+      <div class="vc"><span class="vi">🤝</span><span class="vt">Confiance</span><span class="vd">Prix honnêtes, produits authentiques.</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<div class="pg" id="pg-contact">
+  <div class="cp">
+    <p class="eyebrow">On est là pour toi</p>
+    <h1 class="sec-title" style="font-size:clamp(2rem,4vw,3rem)">Contacte-nous</h1>
+    <div class="cgg">
+      <div class="cif">
+        <img class="cico" src="images/img012.jpg" alt="">
+        <div class="cbk"><h3>📧 Email</h3><p><a href="mailto:contact@shoptapuff.fr">contact@shoptapuff.fr</a></p></div>
+        <div class="cbk"><h3>📱 WhatsApp</h3><p>Via le bouton de commande du panier.</p></div>
+        <div class="cbk"><h3>⏰ Horaires</h3><p>Lun–Ven, 9h–19h.</p></div>
+      </div>
+      <div class="cfm">
+        <h3>Envoie-nous un message</h3>
+        <div class="fg"><label class="fl">Prénom</label><input class="fi" type="text" placeholder="Jordan"></div>
+        <div class="fg"><label class="fl">Email</label><input class="fi" type="email" placeholder="ton@email.com"></div>
+        <div class="fg"><label class="fl">Message</label><textarea class="fi ta" placeholder="Dis-nous tout..."></textarea></div>
+        <button class="fsb" onclick="toast('✅ Message envoyé !')">Envoyer →</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- LEGAL -->
+<div class="pg" id="pg-legal">
+  <div class="hhr"><div class="hhi"><img class="hhlogo" src="images/img001.jpg" alt="Logo"><h1 class="hht">Mentions Légales</h1><p class="hhs">CGV • Confidentialité • Avertissements</p></div></div>
+  <div class="hhc">
+    <div class="hblk"><h3>📋 Éditeur</h3><div class="hdv"></div><p><strong>Shop Ta Puff</strong> — Marque Puff JNR<br>SIRET : [À compléter] — contact@shoptapuff.fr</p></div>
+    <div class="hblk"><h3>📜 CGV</h3><div class="hdv"></div>
+      <p>Vente réservée aux +18 ans. Remises automatiques sur le total du panier :</p>
+      <ul><li>≥ 5 boîtes (total) : −5%</li><li>≥ 10 boîtes : −10%</li><li>≥ 30 boîtes : −15%</li><li>≥ 50 boîtes : −20%</li></ul>
+      <p>Commande via WhatsApp. Livraison 24–48h. Rétractation 14 jours. Garantie légale 2 ans.</p>
+    </div>
+    <div class="hblk"><h3>🔒 RGPD</h3><div class="hdv"></div><p>Données utilisées uniquement pour la commande. Pas de revente. Contact : contact@shoptapuff.fr</p></div>
+    <div class="hblk"><h3>⚠️ Avertissements</h3><div class="hdv"></div>
+      <p style="background:#FEF2F2;border:1px solid #FECACA;border-radius:12px;padding:1rem;color:#991B1B;font-weight:600">La nicotine est hautement addictive. Déconseillé aux femmes enceintes, mineurs et personnes avec troubles cardiovasculaires.</p>
+    </div>
+  </div>
+</div>
+
+<!-- FLAVOR PICKER -->
+<div class="fp-ov" id="fpOv" onclick="if(event.target===this)closeFP()">
+  <div class="fp-box">
+    <div class="fp-hd">
+      <div class="fp-hd-top">
+        <div><div class="fp-ttl">Choisir un goût</div><div class="fp-stl" id="fpModel"></div></div>
+        <button class="fp-cls" onclick="closeFP()">✕</button>
+      </div>
+      <div class="fp-srch">
+        <span>🔍</span>
+        <input class="fp-si" id="fpSI" type="text" placeholder="Rechercher un goût…" oninput="renderFP()" autocomplete="off">
+        <button class="fp-sx" id="fpSX" onclick="fpSI.value='';fpSX.classList.remove('sh');renderFP()">✕</button>
+      </div>
+      <div class="fp-qfs">
+        <button class="fp-qf on" onclick="setQF(this,'all')">Tous</button>
+        <button class="fp-qf" onclick="setQF(this,'fruit')">🍓 Fruité</button>
+        <button class="fp-qf" onclick="setQF(this,'ice')">🧊 Ice</button>
+        <button class="fp-qf" onclick="setQF(this,'menthe')">🌿 Menthe</button>
+        <button class="fp-qf" onclick="setQF(this,'bonbon')">🍬 Bonbon</button>
+        <button class="fp-qf" onclick="setQF(this,'boisson')">🥤 Boisson</button>
+        <button class="fp-qf" onclick="setQF(this,'tropical')">🍍 Tropical</button>
+        <button class="fp-qf" onclick="setQF(this,'chicha')">💨 Chicha</button>
+        <button class="fp-qf" onclick="setQF(this,'mix')">🫐 Mix</button>
+      </div>
+    </div>
+    <div class="fp-list" id="fpList"></div>
+    <div class="fp-ft" id="fpFt"></div>
+  </div>
+</div>
+
+<!-- CART -->
+<div class="ov" id="ov" onclick="closeCart()"></div>
+<div class="cdr" id="cdr">
+  <div class="cdh"><span class="cdht">Mon panier</span><button class="cdc" onclick="closeCart()">✕</button></div>
+  <div id="cartDiscountBar"></div>
+  <div class="cdb" id="cdb"><div class="cdem"><img src="images/img013.jpg" alt=""><p>Ton panier est vide !</p></div></div>
+  <div class="cdf">
+    <div class="cdt">
+      <div class="ctr"><span class="ctrl">Sous-total brut</span><span class="ctrv" id="cRaw">0,00 €</span></div>
+      <div class="ctr saving" id="cSavRow" style="display:none"><span class="ctrl">Remise appliquée</span><span class="ctrv" id="cSav">−0,00 €</span></div>
+      <div class="ctr"><span class="ctrl">Livraison</span><span class="ctrv" id="cShip">Gratuite dès 30€</span></div>
+      <div class="ctr big"><span class="ctrl">Total TTC</span><span class="ctrv" id="cTot">0,00 €</span></div>
+    </div>
+    <button class="chk" onclick="openCheckout()">
+      <svg viewBox="0 0 24 24"><path d="M20.5 3.5A11 11 0 0 0 3.6 17.6L2 22l4.5-1.5a11 11 0 0 0 14-17zm-8.5 17a9 9 0 0 1-4.6-1.3l-.3-.2-2.7.9.9-2.6-.2-.3a9 9 0 1 1 6.9 3.5z"/></svg>
+      Commander via WhatsApp
+    </button>
+  </div>
+</div>
+
+<!-- CHECKOUT -->
+<div class="chkmod" id="chkmod" onclick="if(event.target===this)closeCheckout()">
+  <div class="chkbox">
+    <div class="chkh">
+      <div style="display:flex;align-items:center">
+        <div class="chkhi"><svg viewBox="0 0 24 24"><path d="M20.5 3.5A11 11 0 0 0 3.6 17.6L2 22l4.5-1.5a11 11 0 0 0 14-17zm-8.5 17a9 9 0 0 1-4.6-1.3l-.3-.2-2.7.9.9-2.6-.2-.3a9 9 0 1 1 6.9 3.5z"/></svg></div>
+        <div><div class="chk-tt">Finaliser ma commande</div><div class="chk-st">Envoi via WhatsApp</div></div>
+      </div>
+      <button class="cdc" onclick="closeCheckout()">✕</button>
+    </div>
+    <div class="chkbody">
+      <div class="chksum" id="chkSum"></div>
+      <div class="frow">
+        <div class="fg"><label class="fl req">Prénom</label><input class="fi" id="fPrenom" type="text" placeholder="Jordan"></div>
+        <div class="fg"><label class="fl req">Nom</label><input class="fi" id="fNom" type="text" placeholder="Dupont"></div>
+      </div>
+      <div class="fg"><label class="fl req">Téléphone</label><input class="fi" id="fTel" type="tel" placeholder="06 12 34 56 78"></div>
+      <div class="fg"><label class="fl">Email</label><input class="fi" id="fEmail" type="email" placeholder="ton@email.com"></div>
+      <div class="fg"><label class="fl req">Adresse</label><input class="fi" id="fAddr" type="text" placeholder="N° et rue"></div>
+      <div class="frow">
+        <div class="fg"><label class="fl req">Code postal</label><input class="fi" id="fCp" type="text" placeholder="75001"></div>
+        <div class="fg"><label class="fl req">Ville</label><input class="fi" id="fVille" type="text" placeholder="Paris"></div>
+      </div>
+      <div class="fg"><label class="fl">Note</label><textarea class="fi ta" id="fNote" placeholder="Précisions..."></textarea></div>
+    </div>
+    <div class="chkft">
+      <button class="bwa" onclick="sendWA()">
+        <svg viewBox="0 0 24 24"><path d="M20.5 3.5A11 11 0 0 0 3.6 17.6L2 22l4.5-1.5a11 11 0 0 0 14-17zm-8.5 17a9 9 0 0 1-4.6-1.3l-.3-.2-2.7.9.9-2.6-.2-.3a9 9 0 1 1 6.9 3.5z"/></svg>
+        Envoyer ma commande
+      </button>
+      <button class="bbk" onclick="closeCheckout()">← Modifier mon panier</button>
+      <p class="chk-note">Ta commande sera envoyée sur notre WhatsApp. On te rappelle pour confirmer.</p>
+    </div>
+  </div>
+</div>
+
+<div class="tst" id="tst"></div>
+
+<script src="js/main.js"></script>
+</body>
+</html>
